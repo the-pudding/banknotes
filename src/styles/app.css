@@ -1,0 +1,86 @@
+@import "variables.css";
+@import "normalize.css";
+@import "font.css";
+@import "reset.css";
+
+/* colors defined in variables.css */
+:root {
+  /* font */
+  --sans: "National 2 Web", Helvetica, Arial, sans-serif;
+  --serif: "Tiempos Text Web", Georgia, Times, serif;
+  --mono: Menlo, Consolas, Monaco, "Courier New", monospace;
+
+  /* z-index */
+  --z-bottom: -100;
+  --z-middle: 0;
+  --z-top: 100;
+  --z-overlay: 1000;
+
+  /* presets */
+  --border-radius: 4px;
+  --font-body: var(--sans);
+  --font-form: var(--sans);
+  --color-bg: var(--color-white);
+  --color-fg: var(--color-off-black);
+  --color-placeholder: var(--color-gray-dark);
+  --color-link: var(--color-purple);
+  --color-focus: var(--color-red);
+  --color-form-bg: var(--color-gray-dark);
+  --color-form-fg: var(--color-off-black);
+  --color-border: var(--color-gray-light);
+  --color-selection: var(--color-gray-light);
+  --color-highlight: var(--color-yellow);
+}
+
+/* * {
+  border: solid 1px red;
+} */
+
+main {
+  width: 100%;
+  background-color: var(--color-background);
+  margin: 0 auto;
+  font-size: 16px;
+  text-align: center;
+  color: var(--color-gray-dark);
+}
+
+section {
+  width: 70vw;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+h1 {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Baloo Bhai 2", cursive;
+  font-size: 100px;
+  line-height: 100px;
+}
+
+h2 {
+  margin: 1em 0;
+  font-family: "ABeeZee", sans-serif;
+  font-style: italic;
+  font-size: 72px;
+  line-height: 100px;
+}
+
+p {
+  margin: 2em auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.prose {
+  max-width: 80%;
+  margin: 0 auto;
+  font-family: "Abhaya Libre", serif;
+  font-size: 30px;
+  line-height: 40px;
+}

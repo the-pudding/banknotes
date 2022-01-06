@@ -1,3 +1,4 @@
+import { browser } from '$app/env';
 import { writable } from "svelte/store";
 
 let req;
@@ -14,15 +15,13 @@ const tick = (timestamp) => {
 
 const timer = {
 	start() {
-		if (typeof window === "undefined") return;
-		else if (!req) {
+		if (browser && !req) {
 			prev = null;
 			req = window.requestAnimationFrame(tick);
 		}
 	},
 	stop() {
-		if (typeof window === "undefined") return;
-		else if (req) {
+		if (browser && !req) {
 			window.cancelAnimationFrame(req);
 			req = null;
 		}

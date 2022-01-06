@@ -1,0 +1,13 @@
+{
+  "color": {
+    "background": {
+      "value": "#FDFEF0"
+    },
+    "gray-dark": {
+      "value": "#282828"
+    },
+    "green": {
+      "value": "#7F9252"
+    }
+  }
+}

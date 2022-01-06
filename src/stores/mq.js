@@ -1,3 +1,4 @@
+import { browser } from '$app/env';
 import { readable } from "svelte/store";
 
 const queries = {
@@ -20,11 +21,11 @@ function calculateMedia(mqls) {
 }
 
 export default readable({}, (set) => {
-	if (typeof window === "undefined") return;
+	if (!browser) return;
 	const mqls = {};
 	const onChange = () => set(calculateMedia(mqls));
-	
-	if (typeof window !== "undefined") {
+
+	if (browser) {
 		for (let q in queries) {
 			mqls[q] = window.matchMedia(queries[q]);
 			mqls[q].addListener(onChange);
@@ -32,7 +33,7 @@ export default readable({}, (set) => {
 
 		onChange();
 	}
-	
+
 	return () => {
 		for (let q in mqls) {
 			mqls[q].removeListener(onChange);
