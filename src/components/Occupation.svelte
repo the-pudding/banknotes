@@ -1,9 +1,11 @@
 <script>
   import { getContext } from "svelte";
   const { copy } = getContext("App");
+
+  const { occupation: occupationCopy } = copy.sections;
 </script>
 
-{#each copy.occupation as { type, value }}
+{#each occupationCopy as { type, value }}
   {#if type === "heading"}
     <h2>{@html value.title}</h2>
   {:else if type === "image"}
@@ -18,6 +20,3 @@
     </div>
   {/if}
 {/each}
-
-<style>
-</style>

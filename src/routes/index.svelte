@@ -3,9 +3,15 @@
 </script>
 
 <script>
-  import Meta from "$components/Meta.svelte";
   import App from "$components/App.svelte";
 </script>
 
-<Meta />
 <App />
+
+<style>
+  .test {
+    height: 500px;
+    width: 100vw;
+    background-color: red;
+  }
+</style>

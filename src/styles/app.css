@@ -32,10 +32,6 @@
   --color-highlight: var(--color-yellow);
 }
 
-/* * {
-  border: solid 1px red;
-} */
-
 main {
   width: 100%;
   background-color: var(--color-background);

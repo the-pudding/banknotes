@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "Who's in Your Wallet?",
+    "description": "site description",
+    "url": "https://www.pudding.cool"
+  },
+  "hero": {
+    "title": "Who's in Your Wallet?",
+    "prompt": "Analyzing more than 200 portraits on banknotes across the globe can give us a better picture of countries’ history and national identity",
+    "button": "Let's find out"
+  },
+  "sections": {
+    "intro": [
+      {
+        "type": "text",
+        "value": "While it seems that we’re moving toward a cashless society, the value of paper money can’t be underestimated. People without smartphones, without bank accounts or without reliable internet are some of the people who rely on cash to perform their daily transactions–and removing paper money from the streets would mean isolating them from the economic system. Even if you normally use digital payment methods, we bet you carry some cash in your wallet to buy food from your favorite street vendor, access a cash-only discount at a store, in case your phone dies or you’ve maxed out your credit card."
+      },
+      {
+        "type": "text",
+        "value": "In fact, if you open your wallet right now, who do you see there? (This is just a thought experiment, we don’t need your credit card information, don’t worry). You might see some of America’s founding fathers like George Washington, Benjamin Franklin, Abraham Lincoln or Alexander Hamilton. Maybe you see former heads of state Andrew Jackson or Ulysses S. Grant."
+      },
+      {
+        "type": "image",
+        "value": {
+          "id": "placeholder",
+          "caption": "Array of front sides of US banknotes depicting portraits of America's founding fathers."
+        }
+      }
+    ],
+    "occupation": [
+      {
+        "type": "heading",
+        "value": { "title": "Writing influential work can get you on a banknote" }
+      },
+      {
+        "type": "text",
+        "value": "Coming into this analysis, we suspected that the people on banknotes would mostly be heads of government and monarchs, since they hold so much power and oftentimes have the last word on economic matters. We were surprised to find that writers were the most popular choice. But of course, they aren’t just any writers. The writers on banknotes are influential thinkers who shaped their countries’ literature and whose work is known by heart and praised by many."
+      },
+      {
+        "type": "text",
+        "value": "Nineteen percent of the people featured on banknotes were Writers (45 people from 23 countries) which makes writing the most common profession among currency individuals. Many of those classified as writers have a diverse portfolio which spans from poetry and fiction to journalism and academic writing, so we opted for classifying them as writers at large. Writing is the most common profession among women (14 women) and the second most common for men (31 men)."
+      }
+    ],
+    "firsts": [
+      {
+        "type": "heading",
+        "value": { "title": "It helps to be known as the first person to do something" }
+      },
+      {
+        "type": "text",
+        "value": "Being the first to do something can immediately turn you into a memorable historical figure. The first one of your demographic to be a member of Congress, the first president of a nation, the first Indigenous person to graduate from a national university. These are just some of the “firsts” that some of our characters achieved during their lifetimes."
+      },
+      {
+        "type": "text",
+        "value": "Both New Zealand and Nigeria include the most trailblazers. Other than the countries above with only one portrait, New Zealand has the largest percentage of notable firsts and Nigeria has the most notable firsts in total. Four out of five people on the NZD were notable firsts. These people come from a diverse range of professions as well. Among them are politician Apirana Ngata, the first Maori person to graduate from a New Zealand university, and chemist Lord Rutherford of Nelson, the first person to win the Nobel prize from Oceania. Kate Shepard, a prominent suffragette, the founder and first president of the National Council of Women, is also pictured on the NZD bill."
+      },
+      {
+        "type": "text",
+        "value": "Six of the nine people on the Nigerian naira were notable firsts. Other than the economists Alhaji Aliyu Mai-Bornu and Dr. Clement Isong, whose portraits are on the N1000, the other trailblazers were heads of government and founding fathers. They include Dr. Nnamdi Azikiwe, the first President, and Alhaji Sir Abubarkar Tafawa Balewa, the first Prime Minister."
+      }
+    ],
+    "denominations": [
+      {
+        "type": "heading",
+        "value": { "title": "If your face does end up in a banknote, you might get any bill value" }
+      },
+      {
+        "type": "text",
+        "value": "We found that the median bill values for both male and female characters correspond to 100 monetary units (dollar, peso, krona, etc). This is notable because it shows that, on average, male and female portraits were not significantly different from each other in monetary value. Similar to gender, there is no apparent correlation between profession and bill value."
+      }
+    ],
+    "issueDate": [
+      {
+        "type": "heading",
+        "value": {
+          "title": "Unfortunately, you probably won’t see yourself on a banknote in your lifetime"
+        }
+      },
+      {
+        "type": "text",
+        "value": "Only ten people were alive to see themselves on banknotes. The remaining 96% of the portraits were issued after the person had died."
+      },
+      {
+        "type": "text",
+        "value": "Of all the people who died before they were issued, it normally took decades until their portrait appeared on a banknote. For exactly ⅓ of the people, it took centuries. Eighty-one people died more than 100 years before they were issued to a current legal-tender banknote. Hannibal, the famous Military Commander from ancient Carthage and face of the Tunisian dinar, died in 183 BCE, which makes him the oldest person in our dataset. South Korea had the oldest people on average: all four of them lived in the 13th and 14th centuries."
+      }
+    ],
+    "conclusion": [
+      { "type": "heading", "value": { "title": "Some final thoughts" } },
+      {
+        "type": "text",
+        "value": "Will the designs of paper money matter in the coming decades as we move towards more virtual transactions and less cash exchange? We can’t predict the future, but as a historical artifact, banknotes can tell us a lot about the values of the people in power and who they considered national symbols."
+      },
+      {
+        "type": "text",
+        "value": "In many cases, paper money still fails to represent the people it serves. People like us are unlikely to find ourselves on a banknote. We may be writers, but until we win the Nobel, our odds are slim. Right now, the average person would be better off being the first to achieve something remarkable, going into politics, leading a rebellion, or founding their own country. That said, the reward will likely come after you die."
+      }
+    ]
+  }
+}

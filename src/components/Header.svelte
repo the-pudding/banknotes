@@ -1,62 +1,60 @@
 <script>
-  import wordmark from "$svg/wordmark.svg";
   import { getContext } from "svelte";
+  import { fade } from "svelte/transition";
+  import { startCase } from "lodash";
+  import * as scroll from "svelte-scrollto";
+
+  import Navigation from "./Navigation.svelte";
+
   import { currentSection } from "$stores/misc";
+  import wordmark from "$svg/wordmark.svg";
 
   const { copy } = getContext("App");
-  const sections = Object.keys(copy)
-    .filter(d => d !== "meta")
-    .filter(d => d !== "hero");
+  const sectionLinks = Object.keys(copy.sections).map(d => {
+    return { label: startCase(d), id: d };
+  });
+  let headerHeight;
 
-  $: showNav = $currentSection !== 0;
+  $: showNav = $currentSection.name !== "hero";
+
+  const scrollTo = element => {
+    let offset = -(headerHeight + 15);
+    scroll.scrollTo({ element, offset: offset, duration: 1200 });
+  };
 </script>
 
-<header>
+<header bind:clientHeight={headerHeight}>
   {#if showNav}
-    <nav>
-      {#each sections as section}
-        <div class="nav-link">{section}</div>
-      {/each}
-    </nav>
+    <div in:fade class="nav-container">
+      <Navigation navLinks={sectionLinks} currentSection={$currentSection} />
+    </div>
   {:else}
-    <div class="wordmark">
+    <div in:fade class="wordmark">
       <a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
     </div>
   {/if}
 </header>
 
-<style>
+<style lang="scss">
   header {
     position: sticky;
     top: 0;
-    height: 85px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // min-height: 80px;
+    height: 100%;
     width: 100%;
     background-color: white;
     box-shadow: 0px 4px 10px rgba(40, 40, 40, 0.1);
   }
 
-  nav {
+  .nav-container {
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-  }
-
-  .nav-link {
-    margin: 0 1em;
-    font-family: "ABeeZee", sans-serif;
-    font-style: italic;
-    font-size: 30px;
-    line-height: 36px;
-    color: var(--color-green);
-    cursor: pointer;
-    text-transform: capitalize;
-  }
-
-  .nav-link:hover {
-    color: var(--color-gray-dark);
-    border-bottom: solid 5px var(--color-gray-dark);
-    transition: border-bottom 0.1s;
+    vertical-align: middle;
   }
 
   .wordmark {
