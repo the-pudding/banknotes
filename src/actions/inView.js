@@ -22,7 +22,6 @@ export default function inView(node, params = {}) {
   let prevRatio = 0;
 
   const handleIntersect = e => {
-    console.log(e);
     const intersecting = e[0].isIntersecting;
     const v = intersecting ? "enter" : "exit";
     node.dispatchEvent(new CustomEvent(v));

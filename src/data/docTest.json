@@ -22,7 +22,7 @@
       {
         "type": "image",
         "value": {
-          "id": "placeholder",
+          "id": "placeholder.png",
           "caption": "Array of front sides of US banknotes depicting portraits of America's founding fathers."
         }
       }
@@ -33,12 +33,56 @@
         "value": { "title": "Writing influential work can get you on a banknote" }
       },
       {
+        "type": "image",
+        "value": {
+          "id": "placeholder.png",
+          "caption": "Array of front sides of US banknotes depicting portraits of America's founding fathers."
+        }
+      },
+      {
         "type": "text",
         "value": "Coming into this analysis, we suspected that the people on banknotes would mostly be heads of government and monarchs, since they hold so much power and oftentimes have the last word on economic matters. We were surprised to find that writers were the most popular choice. But of course, they aren’t just any writers. The writers on banknotes are influential thinkers who shaped their countries’ literature and whose work is known by heart and praised by many."
       },
       {
         "type": "text",
         "value": "Nineteen percent of the people featured on banknotes were Writers (45 people from 23 countries) which makes writing the most common profession among currency individuals. Many of those classified as writers have a diverse portfolio which spans from poetry and fiction to journalism and academic writing, so we opted for classifying them as writers at large. Writing is the most common profession among women (14 women) and the second most common for men (31 men)."
+      },
+      { "type": "viz", "value": { "id": "occupationViz" } },
+      {
+        "type": "textAndImages",
+        "value": {
+          "text": "Some notable figures in this category include Colombia’s first Nobel Prize of Literature winner Gabriel García Márquez, the pioneer of Japanese modern literature Ichiyo Higuchi and Turkish writer Fatma Aliye Topuz who is known as the first female author in the Islamic world. Israel, Kyrgyzstan and Ukraine have the most writers among their banknotes with four writers each. In fact, Israel only features Hebrew poets in their current banknotes. According to the Bank of Israel, the New Shekel “carry portraits of outstanding Hebrew poets whose life stories, works, and activities are intertwined with the story of the rebirth of the Nation of Israel in its land.”",
+          "images": [
+            {
+              "id": "placeholder.png",
+              "caption": "caption text"
+            },
+            {
+              "id": "placeholder.png",
+              "caption": "caption text"
+            },
+            {
+              "id": "placeholder.png",
+              "caption": "caption text"
+            }
+          ]
+        }
+      },
+      {
+        "type": "textAndImages",
+        "value": {
+          "text": "This is just a test with some additional words that I included in order to test how different numbers of images line up with successive blocks of textAndImage sections. So, how does this work?",
+          "images": [
+            {
+              "id": "placeholder.png",
+              "caption": "caption text"
+            }
+          ]
+        }
+      },
+      {
+        "type": "text",
+        "value": "Beyond their utilitarian purpose, the banknotes in your wallet encapsulate the history, language and culture of the place you live in, including the larger social and institutional issues that countries battle with everyday. Many countries have an overwhelming representation of aristocratic men in banknotes, relegating to the sidelines the faces of women and people from racial and ethnic minorities that have been just as instrumental (if not more so) to their country’s development."
       }
     ],
     "firsts": [
@@ -50,6 +94,7 @@
         "type": "text",
         "value": "Being the first to do something can immediately turn you into a memorable historical figure. The first one of your demographic to be a member of Congress, the first president of a nation, the first Indigenous person to graduate from a national university. These are just some of the “firsts” that some of our characters achieved during their lifetimes."
       },
+      { "type": "viz", "value": { "id": "firstsViz" } },
       {
         "type": "text",
         "value": "Both New Zealand and Nigeria include the most trailblazers. Other than the countries above with only one portrait, New Zealand has the largest percentage of notable firsts and Nigeria has the most notable firsts in total. Four out of five people on the NZD were notable firsts. These people come from a diverse range of professions as well. Among them are politician Apirana Ngata, the first Maori person to graduate from a New Zealand university, and chemist Lord Rutherford of Nelson, the first person to win the Nobel prize from Oceania. Kate Shepard, a prominent suffragette, the founder and first president of the National Council of Women, is also pictured on the NZD bill."
@@ -64,6 +109,7 @@
         "type": "heading",
         "value": { "title": "If your face does end up in a banknote, you might get any bill value" }
       },
+      { "type": "viz", "value": { "id": "denominationsViz" } },
       {
         "type": "text",
         "value": "We found that the median bill values for both male and female characters correspond to 100 monetary units (dollar, peso, krona, etc). This is notable because it shows that, on average, male and female portraits were not significantly different from each other in monetary value. Similar to gender, there is no apparent correlation between profession and bill value."

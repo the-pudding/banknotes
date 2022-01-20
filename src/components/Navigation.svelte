@@ -21,8 +21,6 @@
   };
   $: mobileMenuIcon = showMobileMenu ? "x" : "menu";
 
-  $: console.log(currentSection);
-
   onMount(() => {
     // set up media listener to reset the mobile menu
     const mediaListener = window.matchMedia("(max-width: 767px");

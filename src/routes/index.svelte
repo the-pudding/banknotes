@@ -7,11 +7,3 @@
 </script>
 
 <App />
-
-<style>
-  .test {
-    height: 500px;
-    width: 100vw;
-    background-color: red;
-  }
-</style>

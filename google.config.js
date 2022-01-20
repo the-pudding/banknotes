@@ -4,8 +4,8 @@ export default [
     filepath: "src/data/doc.json",
   },
   {
-    id: "1te65h_nywgXVAzvV-9E5fmHGblcKvctf_cNZgeam9Tk",
+    id: "1IxXSYkP61o1W6dYIDL8YKQkC43e0hgvw2mLCfQcEuDw",
     gid: "0",
-    filepath: "src/data/sheet.csv",
+    filepath: "src/data/banknotesData.csv",
   },
 ];

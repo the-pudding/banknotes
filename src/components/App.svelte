@@ -1,17 +1,18 @@
 <script>
   import { setContext, onMount } from "svelte";
-  import { browser } from "$app/env";
-  import inView from "$actions/inView";
   import Scrolly from "./helpers/Scrolly.svelte";
   import { currentSection } from "$stores/misc";
 
   import Meta from "$components/Meta.svelte";
   import Header from "$components/Header.svelte";
-  import Hero from "./Hero.svelte";
-  import Intro from "$components/Intro.svelte";
-  import Occupation from "./Occupation.svelte";
+  import Hero from "$components/sections/Hero.svelte";
+  import Intro from "$components/sections/Intro.svelte";
+  import Occupation from "$components/sections/Occupation.svelte";
+  import Firsts from "$components/sections/Firsts.svelte";
+  import Denominations from "$components/sections/Denominations.svelte";
 
-  import copy from "$data/docTest.json";
+  import copy from "$data/doc.json";
+
   setContext("App", { copy });
   const { meta } = copy;
 
@@ -19,6 +20,8 @@
     { cmp: Hero, id: "hero" },
     { cmp: Intro, id: "intro" },
     { cmp: Occupation, id: "occupation" },
+    { cmp: Firsts, id: "firsts" },
+    { cmp: Denominations, id: "denominations" },
   ];
 
   let scrollStep = 0;

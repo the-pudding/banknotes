@@ -39,10 +39,7 @@
   header {
     position: sticky;
     top: 0;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // min-height: 80px;
+    z-index: 1;
     height: 100%;
     width: 100%;
     background-color: white;
