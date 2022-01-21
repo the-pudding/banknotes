@@ -1,13 +1,11 @@
 <script>
-  import { getContext } from "svelte";
-  const { copy } = getContext("App");
-  const { hero } = copy;
+  export let copy = {};
 </script>
 
 <div>
-  <h1 class="hed">{hero.title}</h1>
-  <p class="prompt">{hero.prompt}</p>
-  <p class="byline">By</p>
+  <h1 class="hed">{copy.title}</h1>
+  <p class="prompt">{copy.prompt}</p>
+  <!-- <p class="byline">By</p> -->
 </div>
 
 <style>

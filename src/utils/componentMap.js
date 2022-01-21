@@ -2,6 +2,9 @@ import Heading from "$components/common/Heading.svelte";
 import TextBasic from "$components/common/TextBasic.svelte";
 import TextAndImages from "$components/common/TextAndImages.svelte";
 import InlineFigure from "$components/common/InlineFigure.svelte";
+import List from "$components/common/List.svelte";
+import Comment from "$components/common/Comment.svelte";
+
 import VizOccupation from "$components/visualizations/VizOccupation.svelte";
 import VizFirsts from "$components/visualizations/Firsts/VizFirsts.svelte";
 import VizDenominations from "$components/visualizations/Denominations/VizDenominations.svelte";
@@ -46,6 +49,18 @@ export function getComponent(copyEntry) {
         name: "InlineFigure",
         cmp: InlineFigure,
         props: { img: value.id, alt: value.caption },
+      };
+    case "list":
+      return {
+        name: "List",
+        cmp: List,
+        props: { listItems: value },
+      };
+    case "comment":
+      return {
+        name: "Comment",
+        cmp: Comment,
+        props: { comment: value },
       };
     case "viz":
       return {

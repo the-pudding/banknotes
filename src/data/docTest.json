@@ -20,6 +20,10 @@
         "value": "In fact, if you open your wallet right now, who do you see there? (This is just a thought experiment, we don’t need your credit card information, don’t worry). You might see some of America’s founding fathers like George Washington, Benjamin Franklin, Abraham Lincoln or Alexander Hamilton. Maybe you see former heads of state Andrew Jackson or Ulysses S. Grant."
       },
       {
+        "type": "comment",
+        "value": "This is just a test comment, showing what kind of thing could be possible with this component"
+      },
+      {
         "type": "image",
         "value": {
           "id": "placeholder.png",
@@ -42,6 +46,13 @@
       {
         "type": "text",
         "value": "Coming into this analysis, we suspected that the people on banknotes would mostly be heads of government and monarchs, since they hold so much power and oftentimes have the last word on economic matters. We were surprised to find that writers were the most popular choice. But of course, they aren’t just any writers. The writers on banknotes are influential thinkers who shaped their countries’ literature and whose work is known by heart and praised by many."
+      },
+      {
+        "type": "list",
+        "value": [
+          "Rose Lomathinda Chibambo, the first female cabinet minister of Malawi",
+          "Agnes Macphail and Edith Cowan, the first elected women to the parliaments of Canada and Australia respectively."
+        ]
       },
       {
         "type": "text",
