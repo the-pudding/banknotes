@@ -138,6 +138,17 @@
         "value": "Only ten people were alive to see themselves on banknotes. The remaining 96% of the portraits were issued after the person had died."
       },
       {
+        "type": "viz",
+        "value": {
+          "id": "issueDateViz",
+          "steps": [
+            "this is the text for step 1 of the datavis",
+            "this is the text for step 2 of the datavis",
+            "this is the text for step 3 of the datavis"
+          ]
+        }
+      },
+      {
         "type": "text",
         "value": "Of all the people who died before they were issued, it normally took decades until their portrait appeared on a banknote. For exactly ⅓ of the people, it took centuries. Eighty-one people died more than 100 years before they were issued to a current legal-tender banknote. Hannibal, the famous Military Commander from ancient Carthage and face of the Tunisian dinar, died in 183 BCE, which makes him the oldest person in our dataset. South Korea had the oldest people on average: all four of them lived in the 13th and 14th centuries."
       }

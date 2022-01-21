@@ -5,9 +5,10 @@ import InlineFigure from "$components/common/InlineFigure.svelte";
 import List from "$components/common/List.svelte";
 import Comment from "$components/common/Comment.svelte";
 
-import VizOccupation from "$components/visualizations/VizOccupation.svelte";
+import VizOccupation from "$components/visualizations/Occupation/VizOccupation.svelte";
 import VizFirsts from "$components/visualizations/Firsts/VizFirsts.svelte";
 import VizDenominations from "$components/visualizations/Denominations/VizDenominations.svelte";
+import VizIssueDate from "$components/visualizations/IssueDate/VizIssueDate.svelte";
 
 import Null from "$components/common/Null.svelte";
 
@@ -16,6 +17,7 @@ const vizMap = {
   occupationViz: VizOccupation,
   firstsViz: VizFirsts,
   denominationsViz: VizDenominations,
+  issueDateViz: VizIssueDate,
 };
 
 export function getComponent(copyEntry) {
