@@ -62,7 +62,7 @@ export function getComponent(copyEntry) {
       return {
         name: "Comment",
         cmp: Comment,
-        props: { comment: value },
+        props: { comment: value.text },
       };
     case "viz":
       return {

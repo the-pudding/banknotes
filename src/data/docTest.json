@@ -21,7 +21,9 @@
       },
       {
         "type": "comment",
-        "value": "This is just a test comment, showing what kind of thing could be possible with this component"
+        "value": {
+          "text": "Any individual who is primarily known as the author of written word in any genre and was chosen to be on a banknote due to their literary contributions."
+        }
       },
       {
         "type": "image",
