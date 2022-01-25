@@ -10,9 +10,19 @@
     // tell parent this group was hovered
     dispatch("setGroup", key);
   };
+  const handleMouseout = () => {
+    // tell parent mouseout
+    dispatch("setGroup", "");
+  };
 </script>
 
-<div class="group-container" on:mouseover={handleGroupHover} on:focus={handleGroupHover}>
+<div
+  class="group-container"
+  on:mouseover={handleGroupHover}
+  on:focus={handleGroupHover}
+  on:mouseout={handleMouseout}
+  on:blur={handleMouseout}
+>
   <div class="label">{occupation}</div>
   <div class="members-container">
     {#each members as member}

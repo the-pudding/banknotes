@@ -22,10 +22,10 @@
     .map(d => ({ occupation: d[0], key: camelCase(d[0]), count: d[1].length, members: d[1] }))
     .sort((a, b) => d3.descending(a.count, b.count));
 
-  let currentDef = occupationDefs["writer"];
+  let currentDef = "";
   const handleGroupSelect = e => {
     let selectedOccupation = e.detail;
-    currentDef = occupationDefs[selectedOccupation];
+    currentDef = selectedOccupation === "" ? "" : occupationDefs[selectedOccupation];
   };
 </script>
 
