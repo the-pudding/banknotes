@@ -7,7 +7,8 @@
   import Header from "$components/Header.svelte";
   import Hero from "$components/Hero.svelte";
   import Section from "$components/Section.svelte";
-  import copy from "$data/doc.json";
+  // import copy from "$data/doc.json";
+  import copy from "$data/docTest.json";
 
   // set site copy as context in case any other components need it
   setContext("App", { copy });
@@ -23,7 +24,7 @@
     "issueDate",
     "conclusion",
   ];
-  //sections = ["hero", "intro", "issueDate"]; // <-- for testing specific sections
+  sections = ["hero", "intro", "occupation"]; // <-- for testing specific sections
 
   const outline = sections.map(sectionName => {
     let isHero = sectionName === "hero";
@@ -37,8 +38,11 @@
   // scrolly setting for nav
   let scrollStep = 0;
   $: scrollStep, handleSectionChange();
+  console.log("outline", scrollStep);
   const handleSectionChange = () => {
-    currentSection.set({ name: outline[scrollStep].id, idx: scrollStep });
+    if (outline) {
+      currentSection.set({ name: outline[scrollStep].id, idx: scrollStep });
+    }
   };
 </script>
 

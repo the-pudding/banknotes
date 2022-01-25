@@ -2,7 +2,6 @@
   import { getContext } from "svelte";
   import { fade } from "svelte/transition";
   import { startCase } from "lodash";
-  import * as scroll from "svelte-scrollto";
 
   import Navigation from "./Navigation.svelte";
 
@@ -16,11 +15,6 @@
   let headerHeight;
 
   $: showNav = $currentSection.name !== "hero";
-
-  const scrollTo = element => {
-    let offset = -(headerHeight + 15);
-    scroll.scrollTo({ element, offset: offset, duration: 1200 });
-  };
 </script>
 
 <header bind:clientHeight={headerHeight}>

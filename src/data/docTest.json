@@ -60,7 +60,29 @@
         "type": "text",
         "value": "Nineteen percent of the people featured on banknotes were Writers (45 people from 23 countries) which makes writing the most common profession among currency individuals. Many of those classified as writers have a diverse portfolio which spans from poetry and fiction to journalism and academic writing, so we opted for classifying them as writers at large. Writing is the most common profession among women (14 women) and the second most common for men (31 men)."
       },
-      { "type": "viz", "value": { "id": "occupationViz" } },
+      {
+        "type": "viz",
+        "value": {
+          "id": "occupationViz",
+          "occupationDefs": {
+            "writer": "A WRITER is defined as",
+            "headOfGovt": "A HEAD OF GOVERNMENT is defined as",
+            "politician": "A POLITICIAN is defined as",
+            "foundingFather": "A FOUNDING FATHER is defined as",
+            "revolutionary": "A REVOLUTIONARY is defined as",
+            "stem": "A STEM is defined as",
+            "military": "A MILITARY is defined as",
+            "visualArtist": "A VISUAL ARTIST is defined as",
+            "musician": "A MUSICIAN is defined as",
+            "monarch": "A MONARCH is defined as",
+            "other": "A OTHER is defined as",
+            "activist": "A ACTIVIST is defined as",
+            "educator": "A EDUCATOR is defined as",
+            "religiousFigure": "A RELIGIOUS FIGURE is defined as",
+            "performer": "A PERFORMER is defined as"
+          }
+        }
+      },
       {
         "type": "textAndImages",
         "value": {
