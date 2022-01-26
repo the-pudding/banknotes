@@ -24,7 +24,7 @@
     "issueDate",
     "conclusion",
   ];
-  sections = ["hero", "intro", "occupation"]; // <-- for testing specific sections
+  sections = ["hero", "intro", "denominations"]; // <-- for testing specific sections
 
   const outline = sections.map(sectionName => {
     let isHero = sectionName === "hero";
@@ -38,7 +38,6 @@
   // scrolly setting for nav
   let scrollStep = 0;
   $: scrollStep, handleSectionChange();
-  console.log("outline", scrollStep);
   const handleSectionChange = () => {
     if (outline) {
       currentSection.set({ name: outline[scrollStep].id, idx: scrollStep });
