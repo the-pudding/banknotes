@@ -28,10 +28,12 @@
   let currentSort = "gender";
   const setSort = opt => (currentSort = opt);
 
-  $: console.log(currentSort);
+  $: yDomain = Array.from(new Set(data.map(d => d[currentSort]))).sort((a, b) =>
+    d3.descending(a, b)
+  );
 </script>
 
-<div class="viz-container">
+<div class="container">
   <div class="controls">
     {#each sortOpts as opt}
       <div class="sort-option" class:active={currentSort === opt} on:click={() => setSort(opt)}>
@@ -39,26 +41,37 @@
       </div>
     {/each}
   </div>
-  <LayerCake padding={{ top: 20, bottom: 20, left: 50, right: 50 }} {data}>
-    <Svg>
-      <DenominationsChart />
-    </Svg>
-  </LayerCake>
+  <div class="viz-container">
+    <LayerCake
+      xDomain={[0, 1]}
+      yScale={d3.scalePoint().padding(0.9)}
+      padding={{ top: 50, bottom: 20, left: 200, right: 200 }}
+      {yDomain}
+      {data}
+    >
+      <Svg>
+        <DenominationsChart {currentSort} />
+      </Svg>
+    </LayerCake>
+  </div>
 </div>
 
 <style lang="scss">
-  * {
-    border: solid 1px red;
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
   }
 
   .viz-container {
     width: 100%;
-    max-width: 1800px;
-    height: 100vh;
-    margin: 0 auto;
+    height: 800px;
   }
 
   .controls {
+    position: relative;
+    z-index: 1;
     width: 100%;
     display: flex;
     justify-content: center;

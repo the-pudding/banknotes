@@ -39,7 +39,7 @@
   let scrollStep = 0;
   $: scrollStep, handleSectionChange();
   const handleSectionChange = () => {
-    if (outline) {
+    if (outline & scrollStep) {
       currentSection.set({ name: outline[scrollStep].id, idx: scrollStep });
     }
   };

@@ -5,6 +5,10 @@ export const normRankBills = bills => {
   given an array representing bill data from a particular country, rank the bills
   from smallest to largest, and then normalize the ranks to the range [0,1]. Add the 
   normalized rank value to the original bills array and return
+
+  Bill ranks are normalized to allow comparisons between countries. If not normalized, the 
+  rank would be dependent on the number of bills per country, which varies across the
+  countries in the dataset. 
   */
   // make ranked array of UNIQUE bill values
   const billRanks = Array.from(new Set(bills.map(d => d.billValue)))
