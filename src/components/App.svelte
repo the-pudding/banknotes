@@ -7,8 +7,8 @@
   import Header from "$components/Header.svelte";
   import Hero from "$components/Hero.svelte";
   import Section from "$components/Section.svelte";
-  import copy from "$data/doc.json";
-  //  import copy from "$data/docTest.json";
+  //  import copy from "$data/doc.json";
+  import copy from "$data/docTest.json";
 
   // set site copy as context in case any other components need it
   setContext("App", { copy });
@@ -24,7 +24,7 @@
     "issueDate",
     "conclusion",
   ];
-  // sections = ["hero", "intro", "denominations"]; // <-- for testing specific sections
+  sections = ["hero", "intro", "issueDate"]; // <-- for testing specific sections
 
   const outline = sections.map(sectionName => {
     let isHero = sectionName === "hero";
