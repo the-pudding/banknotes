@@ -19,7 +19,15 @@
       y={$yScale(country)}
       width={$xScale.bandwidth()}
       height={$yScale.bandwidth()}
-      fill="red"
+      fill="#ccc"
     />
   {/each}
 {/each}
+
+<style lang="scss">
+  rect {
+    &:hover {
+      fill: #aaa;
+    }
+  }
+</style>

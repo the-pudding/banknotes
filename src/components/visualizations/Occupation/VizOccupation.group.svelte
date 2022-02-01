@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { tooltip } from "$actions/tooltip";
 
   export let members = [];
   export let key = "";
@@ -26,7 +27,14 @@
   <div class="label">{occupation}</div>
   <div class="members-container">
     {#each members as member}
-      <div class="member" />
+      <div
+        use:tooltip={{
+          content: member.name,
+          placement: "top-end",
+          arrow: false,
+        }}
+        class="member"
+      />
     {/each}
   </div>
 </div>

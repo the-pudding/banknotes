@@ -78,6 +78,11 @@ img {
   display: block;
 }
 
+option,
+select {
+  color: white;
+}
+
 .body-content {
   width: 60vw;
   max-width: 760px;

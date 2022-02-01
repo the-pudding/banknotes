@@ -1,17 +1,30 @@
 <script>
   export let copy = {};
+  import WalletViz from "$components/visualizations/Hero/VizHero.svelte";
+
+  let visWidth;
+  let visHeight;
 </script>
 
 <div>
   <h1 class="hed">{copy.title}</h1>
   <p class="prompt">{copy.prompt}</p>
   <!-- <p class="byline">By</p> -->
+
+  <div class="hero-vis" bind:clientHeight={visHeight} bind:clientWidth={visWidth}>
+    <WalletViz width={visWidth} height={visHeight} />
+  </div>
 </div>
 
 <style>
   div {
     /* border: solid 1px red; */
     margin: 10px;
+  }
+
+  img {
+    margin: 100px auto;
+    width: 800px;
   }
 
   .hed {
@@ -29,5 +42,12 @@
 
   .byline {
     font-family: "ABeeZee", sans-serif;
+  }
+
+  .hero-vis {
+    width: 100%;
+    max-width: 900px;
+    height: 450px;
+    margin: 100px auto;
   }
 </style>

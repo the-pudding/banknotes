@@ -31,7 +31,7 @@
 
 <div class="container">
   <div class="annotation-container">
-    <div class="annotation">{currentDef}</div>
+    <div class="annotation">{@html currentDef}</div>
   </div>
 
   <div class="viz-container">

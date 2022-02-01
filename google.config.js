@@ -8,4 +8,9 @@ export default [
     gid: "0",
     filepath: "src/data/banknotesData.csv",
   },
+  {
+    id: "1IxXSYkP61o1W6dYIDL8YKQkC43e0hgvw2mLCfQcEuDw",
+    gid: "222033591",
+    filepath: "src/data/nameIDs.csv",
+  },
 ];
