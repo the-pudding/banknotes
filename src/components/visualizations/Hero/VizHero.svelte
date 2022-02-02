@@ -1,9 +1,27 @@
 <script>
+  import { rawData } from "$data/data.js";
+  import { shuffle } from "$utils/utils.js";
   import Portrait from "./VizHero.portrait.svelte";
+  import { uniq } from "lodash";
 
   export let width;
   export let height;
 
+  // set up portraits for each bill position
+  let portraitIDs = uniq(rawData.filter(d => d.hasPortrait).map(d => d.id));
+
+  const totalPortraits = portraitIDs.length;
+  const nPopUps = 4;
+  let popUps = new Array(nPopUps)
+    .fill()
+    .map(_ => {
+      const thesePortraitIds = portraitIDs.splice(0, Math.floor(totalPortraits / nPopUps))
+      return {
+        portraits: shuffle(thesePortraitIds)
+      }
+    });
+
+  console.log(popUps)
 </script>
 
 <div class='container' style:width style:height="500px" >
@@ -12,8 +30,8 @@
 
   <!-- portraits -->
   <div class="portraits-container">
-    {#each [1,2,3,4] as portrait}
-       <Portrait width={width/6} />
+    {#each popUps as { portraits }}
+       <Portrait width={width/5} portraitIDs={portraits} />
     {/each}
   </div>
 

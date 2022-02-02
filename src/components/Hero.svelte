@@ -1,6 +1,7 @@
 <script>
-  export let copy = {};
   import WalletViz from "$components/visualizations/Hero/VizHero.svelte";
+
+  export let copy = {};
 
   let visWidth;
   let visHeight;
@@ -24,7 +25,7 @@
 
   img {
     margin: 100px auto;
-    width: 800px;
+    width: 300px;
   }
 
   .hed {
