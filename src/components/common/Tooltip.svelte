@@ -6,13 +6,9 @@
 
   export let x;
   export let y;
-
-  $: top = `${y + 5}px`;
-  $: left = `${x + 5}px`;
 </script>
 
-
-<div class="tooltip-container" style:top style:left>
+<div id="tooltip" class="tooltip-container">
   <div class="portrait-container">
     <img src={`assets/images/portraits/${imgBase}_300.png`} alt={`${name} portrait`} />
   </div>
@@ -23,13 +19,10 @@
   </div>
 </div>
 
-
 <style lang="scss">
   .tooltip-container {
-    position: absolute;
+    position: relative;
     width: 400px;
-    box-shadow: 1px 1px 1px #ddd;
-
   }
 
   .portrait-container {

@@ -9,7 +9,16 @@
 
   let data = d3
     .flatGroup(
-      uniqWith(rawData, isEqual).filter(d => d.knownForBeingFirst),
+      uniqWith(
+        rawData.map(d => ({
+          profession: d.profession,
+          name: d.name,
+          country: d.country,
+          imgBase: d.hasPortrait ? d.id : "A_Unknown",
+          knownForBeingFirst: d.knownForBeingFirst,
+        })),
+        isEqual
+      ).filter(d => d.knownForBeingFirst),
       d => d.country
     )
     .map(d => ({ country: d[0], firsts: d[1] }));

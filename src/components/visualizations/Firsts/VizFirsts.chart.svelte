@@ -24,7 +24,7 @@
           name: first.name,
           country: first.country,
           text: first.hoverText,
-          imgBase: first.hasPortrait ? first.id : "A_Unknown",
+          imgBase: first.imgBase,
         },
       }}
       title="test"
@@ -43,12 +43,6 @@
 
     &:hover {
       fill: var(--color-green);
-    }
-  }
-
-  :global(.test) {
-    h1 {
-      color: hotpink;
     }
   }
 </style>

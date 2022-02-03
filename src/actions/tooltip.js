@@ -13,8 +13,8 @@ Usage:
   }}
 > Hover me </div>
 
-The action will pass in the x,y coords of the mouse to the component, which can use that
-to set the tooltip position. 
+The action will handle the positioning of the tooltip using Popper.js. Set the popper 
+options in here to change where and how the tooltip gets positioned. 
 
 At minimum, the custom tooltip component should have the following features:
 
@@ -23,7 +23,7 @@ At minimum, the custom tooltip component should have the following features:
   export let y;
 </script>
 
-<div class="tooltip" style="top: {y}px; left: {x}px;">
+<div id="tooltip" style="top: {y}px; left: {x}px;">
 TOOL TIP CONTENT
 </div>
 
@@ -35,8 +35,11 @@ TOOL TIP CONTENT
 
 */
 
+import { createPopper } from "@popperjs/core";
+
 export function tooltip(element, params = {}) {
   let tooltipRef;
+  let popperRef;
   let tooltipComponent = params.component;
   let tooltipProps = params.props;
 
@@ -49,16 +52,37 @@ export function tooltip(element, params = {}) {
       },
       target: document.body,
     });
-  }
 
-  function mouseMove(event) {
-    tooltipRef.$set({
-      x: event.pageX,
-      y: event.pageY,
+    let tooltip = document.querySelector("#tooltip");
+    tooltip.setAttribute("data-show", "");
+    popperRef = createPopper(element, tooltip, {
+      modifiers: [
+        {
+          name: "offset",
+          options: {
+            offset: [0, 8],
+          },
+        },
+      ],
     });
   }
 
+  function mouseMove(event) {
+    // tooltipRef.$set({
+    //   x: event.pageX,
+    //   y: event.pageY,
+    // });
+  }
+
   function mouseLeave() {
+    let tooltip = document.querySelector("#tooltip");
+    tooltip.removeAttribute("data-show");
+
+    if (popperRef) {
+      popperRef.destroy();
+      popperRef = null;
+    }
+
     tooltipRef.$destroy();
   }
 

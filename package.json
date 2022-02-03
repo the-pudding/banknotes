@@ -11,6 +11,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@popperjs/core": "^2.11.2",
     "@rollup/plugin-dsv": "^2.0.3",
     "@sveltejs/adapter-static": "^1.0.0-next.24",
     "@sveltejs/kit": "^1.0.0-next.212",
