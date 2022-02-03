@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import { tooltip } from "$actions/tooltip";
+  import tooltip from "svelte-ktippy";
+  import Tooltip from "$components/common/Tooltip.svelte";
 
   export let members = [];
   export let key = "";
@@ -26,29 +27,24 @@
 >
   <div class="label">{occupation}</div>
   <div class="members-container">
-    {#each members as member}
+    {#each members as { name, country, imgBase }}
       <div
-        use:tooltip={{
-          content: member.name,
-          placement: "top-end",
-          arrow: false,
-        }}
         class="member"
+        use:tooltip={{
+          component: Tooltip,
+          props: { name, country, imgBase },
+        }}
       />
     {/each}
   </div>
 </div>
 
 <style lang="scss">
-  // * {
-  //   border: solid 1px red;
-  // }
-
   .group-container {
     padding: 10px;
 
     &:hover {
-      background-color: #efefef;
+      border: solid 2px var(--color-green);
     }
   }
 
@@ -71,5 +67,10 @@
     background-color: #ddd;
     border: solid 2px var(--color-green);
     border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      border-width: 5px;
+    }
   }
 </style>

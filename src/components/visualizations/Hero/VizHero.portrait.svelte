@@ -1,7 +1,11 @@
 <script>
   import {onMount} from "svelte";
-  import gsap from "gsap";
   import { randBw } from "$utils/utils";
+  import gsap from "gsap";
+  gsap.config({  // <-- turn off irritating warnings that are specific to staging
+    nullTargetWarn: false,
+    trialWarn: false,
+});
   
   export let width = 100;
   export let portraitIDs = [];
@@ -12,13 +16,6 @@
   $: imgSrc = `${portraitsDir}/${portraitIDs[portraitIdx]}_300.png`;
 
   let rotate = -5 + Math.random() * 10;
-  const handleRepeat = () => {
-    rotate = -5 + Math.random() * 10;
-    portraitIdx++;
-    if (portraitIdx >= portraitIDs.length){
-      portraitIdx = 0;
-    }
-  }
 
   const generateTL = () => {
     // generate a timeline that calls itself on completion in order to 
@@ -29,7 +26,7 @@
       portraitIdx = 0;
     }
 
-    const tl = gsap.timeline({onComplete: generateTL});
+    const tl = gsap.timeline({onComplete: generateTL});  
 
     // pop-up, pop-dow
     tl.to(ref, {delay: randBw(0,2), duration: .5, y: -180, rotate: rotate, ease: "back.out"})

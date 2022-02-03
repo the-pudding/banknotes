@@ -14,7 +14,12 @@
     .flatGroup(
       uniqWith(
         // get unique names-profession combo from raw Data
-        rawData.map(d => ({ name: d.name, profession: d.profession })),
+        rawData.map(d => ({
+          profession: d.profession,
+          name: d.name,
+          country: d.country,
+          imgBase: d.hasPortrait ? d.id : "A_Unknown",
+        })),
         isEqual
       ),
       d => d.profession
@@ -62,6 +67,13 @@
     .annotation {
       position: sticky;
       top: 50%;
+      width: 80%;
+      margin: 0 auto;
+      font-size: 24px;
+
+      :global b {
+        color: var(--color-green);
+      }
     }
   }
 

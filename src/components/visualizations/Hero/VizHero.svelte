@@ -20,8 +20,6 @@
         portraits: shuffle(thesePortraitIds)
       }
     });
-
-  console.log(popUps)
 </script>
 
 <div class='container' style:width style:height="500px" >

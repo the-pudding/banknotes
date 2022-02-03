@@ -46,6 +46,7 @@
     "subdirectory": "svelte-starter"
   },
   "dependencies": {
-    "gsap": "^3.9.1"
+    "gsap": "^3.9.1",
+    "svelte-ktippy": "^1.2.1"
   }
 }

@@ -1,6 +1,7 @@
 import tippy from "tippy.js/dist/tippy-bundle.umd.min.js";
 
 export function tooltip(node, params = {}) {
+  console.log(node);
   // Determine the title to show. We want to prefer
   // 	the custom content passed in first, then the
   // HTML title attribute then the aria-label
@@ -30,4 +31,10 @@ export function tooltip(node, params = {}) {
     // Clean up the Tippy instance on unmount:
     destroy: () => tip.destroy(),
   };
+}
+
+
+export function generateTooltip = (props) => {
+  const {name, country, imgBase, text} = props;
+  return `<h1 class="tooltip-test">TEST</h1>`
 }
