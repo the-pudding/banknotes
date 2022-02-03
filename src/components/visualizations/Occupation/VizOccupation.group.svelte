@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import tooltip from "svelte-ktippy";
+  import { tooltip } from "$actions/tooltip";
   import Tooltip from "$components/common/Tooltip.svelte";
 
   export let members = [];

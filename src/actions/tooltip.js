@@ -1,40 +1,76 @@
-import tippy from "tippy.js/dist/tippy-bundle.umd.min.js";
+/*
+This action triggers a custom tooltip component to appear when a given element is hovered. You supply
+the component (and any number of props) as input parameters to the action. 
 
-export function tooltip(node, params = {}) {
-  console.log(node);
-  // Determine the title to show. We want to prefer
-  // 	the custom content passed in first, then the
-  // HTML title attribute then the aria-label
-  // in that order.
-  const custom = params.content;
-  const title = node.title;
-  const label = node.getAttribute("aria-label");
-  const content = custom || title || label;
+Usage:
 
-  // Let's make sure the "aria-label" attribute
-  // is set so our element is accessible:
-  // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute
-  if (!label) node.setAttribute("aria-label", content);
+<div
+  use=tooltip={{
+    component: MyTooltip,
+    props: {
+      title: 'My Custom Tooltip'
+    }
+  }}
+> Hover me </div>
 
-  // Clear out the HTML title attribute since
-  // we don't want the default behavior of it
-  // showing up on hover.
-  node.title = "";
+The action will pass in the x,y coords of the mouse to the component, which can use that
+to set the tooltip position. 
 
-  // Support any of the Tippy props by forwarding all "params":
-  // https://atomiks.github.io/tippyjs/v6/all-props/
-  const tip = tippy(node, { content, ...params });
+At minimum, the custom tooltip component should have the following features:
+
+<script>
+  export let x;
+  export let y;
+</script>
+
+<div class="tooltip" style="top: {y}px; left: {x}px;">
+TOOL TIP CONTENT
+</div>
+
+<style>
+  .tooltip {
+    position: absolute;
+  }
+</style>
+
+*/
+
+export function tooltip(element, params = {}) {
+  let tooltipRef;
+  let tooltipComponent = params.component;
+  let tooltipProps = params.props;
+
+  function mouseOver(event) {
+    tooltipRef = new tooltipComponent({
+      props: {
+        ...tooltipProps,
+        x: event.pageX,
+        y: event.pageY,
+      },
+      target: document.body,
+    });
+  }
+
+  function mouseMove(event) {
+    tooltipRef.$set({
+      x: event.pageX,
+      y: event.pageY,
+    });
+  }
+
+  function mouseLeave() {
+    tooltipRef.$destroy();
+  }
+
+  element.addEventListener("mouseover", mouseOver);
+  element.addEventListener("mouseleave", mouseLeave);
+  element.addEventListener("mousemove", mouseMove);
 
   return {
-    // If the props change, let's update the Tippy instance:
-    update: newParams => tip.setProps({ content, ...params }),
-    // Clean up the Tippy instance on unmount:
-    destroy: () => tip.destroy(),
+    destroy() {
+      element.removeEventListener("mouseover", mouseOver);
+      element.removeEventListener("mouseleave", mouseLeave);
+      element.removeEventListener("mousemove", mouseMove);
+    },
   };
-}
-
-
-export function generateTooltip = (props) => {
-  const {name, country, imgBase, text} = props;
-  return `<h1 class="tooltip-test">TEST</h1>`
 }

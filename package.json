@@ -34,7 +34,6 @@
     "svelte": "^3.46.2",
     "svelte-preprocess": "^4.10.1",
     "svelte-scrollto": "^0.2.0",
-    "tippy.js": "^6.3.7",
     "vite-plugin-svgstring": "^1.0.0"
   },
   "type": "module",
@@ -46,7 +45,6 @@
     "subdirectory": "svelte-starter"
   },
   "dependencies": {
-    "gsap": "^3.9.1",
-    "svelte-ktippy": "^1.2.1"
+    "gsap": "^3.9.1"
   }
 }

@@ -2,11 +2,17 @@
   export let name = "";
   export let country = "";
   export let text = "";
-  export let imgBase = "";
-  export let anchorNode;
+  export let imgBase = "A_Unknown";
+
+  export let x;
+  export let y;
+
+  $: top = `${y + 5}px`;
+  $: left = `${x + 5}px`;
 </script>
 
-<div class="tooltip-container">
+
+<div class="tooltip-container" style:top style:left>
   <div class="portrait-container">
     <img src={`assets/images/portraits/${imgBase}_300.png`} alt={`${name} portrait`} />
   </div>
@@ -17,11 +23,13 @@
   </div>
 </div>
 
+
 <style lang="scss">
   .tooltip-container {
-    position: relative;
+    position: absolute;
     width: 400px;
-    height: 100%;
+    box-shadow: 1px 1px 1px #ddd;
+
   }
 
   .portrait-container {

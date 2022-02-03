@@ -1,16 +1,9 @@
 <script>
   import { getContext } from "svelte";
-  // import tooltip from "svelte-ktippy";
-  import Tooltip from "$components/common/Tooltip.svelte";
   import { tooltip } from "$actions/tooltip";
+  import Tooltip from "$components/common/Tooltip.svelte";
 
   const { data, width, height, xScale, yScale } = getContext("LayerCake");
-
-  console.log("data", $data);
-
-  const genTooltip = () => {
-    return `<h1 class="test">Test</h1>`;
-  };
 </script>
 
 {#each $data as { country, firsts }}
@@ -26,10 +19,15 @@
   {#each firsts as first, i}
     <rect
       use:tooltip={{
-        content: genTooltip(),
-        allowHTML: true,
-        arrow: true,
+        component: Tooltip,
+        props: {
+          name: first.name,
+          country: first.country,
+          text: first.hoverText,
+          imgBase: first.hasPortrait ? first.id : "A_Unknown",
+        },
       }}
+      title="test"
       x={$xScale(i)}
       y={$yScale(country)}
       width={$xScale.bandwidth()}
