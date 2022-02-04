@@ -29,6 +29,11 @@
   console.log("copy", steps);
 
   const yearRange = d3.extent([...data.map(d => d.issueDate), ...data.map(d => d.deathDate)]);
+  const issueRange = d3.extent([...data.map(d => d.issueDate)]);
+  const deathRange = d3.extent([...data.map(d => d.deathDate)]);
+
+  console.log("issue", issueRange);
+  console.log("death", deathRange);
 
   // scrolly
   let scrollStep = 0;
@@ -38,9 +43,9 @@
   <div class="background">
     <div class="viz-container">
       <LayerCake
+        xDomain={yearRange}
         yScale={d3.scalePoint().padding(0.1)}
         yDomain={["Issued", "Death"]}
-        xDomain={yearRange}
         padding={{ top: 20, bottom: 20, left: 100, right: 100 }}
         {data}
       >

@@ -24,7 +24,7 @@
     "issueDate",
     "conclusion",
   ];
-  sections = ["hero", "intro", "issueDate"]; // <-- for testing specific sections
+  //sections = ["hero", "intro", "issueDate"]; // <-- for testing specific sections
 
   const outline = sections.map(sectionName => {
     let isHero = sectionName === "hero";
