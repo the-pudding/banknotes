@@ -20,10 +20,15 @@
     .scaleLinear()
     .domain(d3.extent($data, d => d.deathDate))
     .range([0, 1]);
+
+  let deathLength = 0;
+  $: if (deathRef) {
+    deathLength = deathRef.getTotalLength();
+  }
+
   $: getDeathPt = year => {
     // return the x,y of the death path at a given year
     if (deathRef) {
-      let deathLength = deathRef.getTotalLength();
       return deathRef.getPointAtLength((1 - deathScale(year)) * deathLength);
     } else {
       return { x: 0, y: 0 };
@@ -31,22 +36,21 @@
   };
   $: deathTest = getDeathPt(1869);
 
-  $: deathPts = () => {
-    return [
-      [$xRange[1], $height * 0.25],
-      [$xRange[0], $height * 0.25],
-      [$xRange[0], $height * 0.4],
-      [$xRange[1] * 0.45, $height * 0.4],
-      [$xRange[1] * 0.45, $height * 0.55],
-      [$xRange[0], $height * 0.55],
-      [$xRange[0], $height * 0.7],
-      [$xRange[1] * 0.45, $height * 0.7],
-      [$xRange[1] * 0.45, $height * 0.85],
-      [$xRange[0], $height * 0.85],
-      [$xRange[0], $height * 1],
-      [$xRange[1] * 0.45, $height * 1],
-    ];
-  };
+  $: deathPts = [
+    [$xRange[1], $height * 0.25],
+    [$xRange[0], $height * 0.25],
+    [$xRange[0], $height * 0.4],
+    [$xRange[1] * 0.45, $height * 0.4],
+    [$xRange[1] * 0.45, $height * 0.55],
+    [$xRange[0], $height * 0.55],
+    [$xRange[0], $height * 0.7],
+    [$xRange[1] * 0.45, $height * 0.7],
+    [$xRange[1] * 0.45, $height * 0.85],
+    [$xRange[0], $height * 0.85],
+    [$xRange[0], $height * 1],
+    [$xRange[1] * 0.45, $height * 1],
+  ];
+
   $: pathFn = d3 // <-- make pathFn reactive to changes in width,height (which affect $xScale,$yScale)
     .line()
     .curve(d3.curveBasis)
@@ -54,21 +58,16 @@
     .y(d => d[1]);
 
   // --- Add x,y for positions along both issue and death axes for each data item
-  $: ptData = $data.map(d => {
-    if (deathRef) {
-      return {
-        ...d,
-        deathPt: getDeathPt(d.deathDate),
-        issuePt: { x: issueScale(d.issueDate), y: issueY },
-      };
-    } else {
-      return {
-        ...d,
-        deathPt: { x: 0, y: 0 },
-        issuePt: { x: 0, y: issueY },
-      };
-    }
-  });
+  let ptData = [];
+  $: if (deathRef) {
+    console.log("test", getDeathPt(2021));
+
+    ptData = $data.map(d => ({
+      ...d,
+      deathPt: getDeathPt(d.deathDate),
+      issuePt: { x: issueScale(d.issueDate), y: issueY },
+    }));
+  }
 
   $: issueYPts = dodge(
     ptData.map(d => d.issuePt.x),
@@ -92,7 +91,7 @@
   <g class="death-axis">
     <path
       bind:this={deathRef}
-      d={pathFn(deathPts())}
+      d={pathFn(deathPts)}
       stroke="#000"
       stroke-width={1}
       fill="none"
