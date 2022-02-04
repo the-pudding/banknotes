@@ -23,7 +23,7 @@
       imgBase: d.hasPortrait ? d.id : "A_Unknown",
     })),
     isEqual
-  ).filter(d => d.deathDate >= 1900);
+  ).filter(d => d.deathDate >= 1200);
 
   console.log(data);
   console.log("copy", steps);
