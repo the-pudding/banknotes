@@ -6,7 +6,7 @@
   import { uniqWith, isEqual } from "lodash";
   import { LayerCake, Svg } from "layercake";
 
-  import IssueDateChart from "./VisIssueDate.chart.svelte";
+  import IssueDateChart from "./VisIssueDate.chart2.svelte";
 
   // get steps array from copy
   const { copy } = getContext("App");
