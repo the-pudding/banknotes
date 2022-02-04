@@ -6,7 +6,7 @@
   import { uniqWith, isEqual } from "lodash";
   import { LayerCake, Svg } from "layercake";
 
-  import IssueDateChart from "./VisIssueDate.chart.svelte";
+  import IssueDateChart from "./VisIssueDate.chart2.svelte";
 
   // get steps array from copy
   const { copy } = getContext("App");
@@ -23,12 +23,14 @@
       imgBase: d.hasPortrait ? d.id : "A_Unknown",
     })),
     isEqual
-  ).filter(d => d.deathDate >= 1900);
-
-  console.log(data);
-  console.log("copy", steps);
+  ).filter(d => d.deathDate >= 1200);
 
   const yearRange = d3.extent([...data.map(d => d.issueDate), ...data.map(d => d.deathDate)]);
+  const issueRange = d3.extent([...data.map(d => d.issueDate)]);
+  const deathRange = d3.extent([...data.map(d => d.deathDate)]);
+
+  console.log("issue", issueRange);
+  console.log("death", deathRange);
 
   // scrolly
   let scrollStep = 0;
@@ -38,8 +40,6 @@
   <div class="background">
     <div class="viz-container">
       <LayerCake
-        yScale={d3.scalePoint().padding(0.1)}
-        yDomain={["Issued", "Death"]}
         xDomain={yearRange}
         padding={{ top: 20, bottom: 20, left: 100, right: 100 }}
         {data}
