@@ -15,9 +15,19 @@
   // prep data
   let data = uniqWith(
     // get unique names from rawData
-    rawData.map(d => ({ name: d.name, issueDate: d.firstAppearanceDate, deathDate: d.deathDate })),
+    rawData.map(d => ({
+      name: d.name,
+      issueDate: d.firstAppearanceDate,
+      deathDate: d.deathDate,
+      country: d.country,
+      imgBase: d.hasPortrait ? d.id : "A_Unknown",
+    })),
     isEqual
-  );
+  ).filter(d => d.deathDate >= 1900);
+
+  console.log(data);
+  console.log("copy", steps);
+
   const yearRange = d3.extent([...data.map(d => d.issueDate), ...data.map(d => d.deathDate)]);
 
   // scrolly
@@ -29,7 +39,7 @@
     <div class="viz-container">
       <LayerCake
         yScale={d3.scalePoint().padding(0.1)}
-        yDomain={["Death", "Issued"]}
+        yDomain={["Issued", "Death"]}
         xDomain={yearRange}
         padding={{ top: 20, bottom: 20, left: 100, right: 100 }}
         {data}
