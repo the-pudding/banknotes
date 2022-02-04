@@ -60,7 +60,7 @@
   // --- Add x,y for positions along both issue and death axes for each data item
   let ptData = [];
   $: if (deathRef) {
-    console.log("test", getDeathPt(2021));
+    console.log("te3st", getDeathPt(2021));
 
     ptData = $data.map(d => ({
       ...d,

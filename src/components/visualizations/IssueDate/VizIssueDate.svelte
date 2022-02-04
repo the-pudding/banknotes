@@ -6,7 +6,7 @@
   import { uniqWith, isEqual } from "lodash";
   import { LayerCake, Svg } from "layercake";
 
-  import IssueDateChart from "./VisIssueDate.chart2.svelte";
+  import IssueDateChart from "./VisIssueDate.chart.svelte";
 
   // get steps array from copy
   const { copy } = getContext("App");
@@ -41,6 +41,8 @@
     <div class="viz-container">
       <LayerCake
         xDomain={yearRange}
+        yScale={d3.scalePoint().padding(0.1)}
+        yDomain={["Issued", "Death"]}
         padding={{ top: 20, bottom: 20, left: 100, right: 100 }}
         {data}
       >
