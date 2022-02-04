@@ -13,9 +13,12 @@
       rawData.map(d => {
         return {
           billValue: d.currentBillValue,
+          currency: d.currencyName,
           country: d.country,
           gender: d.gender,
           occupation: d.profession,
+          imgBase: d.hasPortrait ? d.id : "A_Unknown",
+          name: d.name,
         };
       }),
       d => d.country
@@ -71,7 +74,7 @@
 
   .controls {
     position: relative;
-    z-index: 1;
+    // z-index: 1;
     width: 100%;
     display: flex;
     justify-content: center;

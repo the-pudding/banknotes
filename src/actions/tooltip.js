@@ -56,6 +56,7 @@ export function tooltip(element, params = {}) {
     let tooltip = document.querySelector("#tooltip");
     tooltip.setAttribute("data-show", "");
     popperRef = createPopper(element, tooltip, {
+      placement: "top",
       modifiers: [
         {
           name: "offset",

@@ -1,6 +1,10 @@
 <script>
   import { getContext } from "svelte";
+  import { tooltip } from "$actions/tooltip";
   import { forceSimulation, forceX, forceY, forceCollide } from "d3-force";
+  import { startCase } from "lodash";
+
+  import Tooltip from "$components/common/Tooltip.svelte";
 
   export let currentSort = "gender";
 
@@ -50,6 +54,8 @@
     F: "#ccc",
     M: "#aaa",
   };
+
+  console.log(nodes);
 </script>
 
 <g class="x-axis">
@@ -66,15 +72,38 @@
 
 <g class="data-container">
   {#each nodes as node}
-    <circle fill={colors[node.gender]} cx={node.x} cy={node.y} {r} />
+    <circle
+      use:tooltip={{
+        component: Tooltip,
+        props: {
+          name: node.name,
+          country: node.country,
+          text: `<h2>${node.billValue} (${startCase(node.currency)})</h2>`,
+          imgBase: node.imgBase,
+        },
+      }}
+      fill={colors[node.gender]}
+      cx={node.x}
+      cy={node.y}
+      {r}
+    />
   {/each}
 </g>
 
-<style>
+<style lang="scss">
   .x-axis {
     font-size: 24px;
     font-style: italic;
     text-transform: capitalize;
     fill: var(--color-green);
+  }
+
+  circle {
+    cursor: pointer;
+
+    &:hover {
+      stroke-width: 3px;
+      stroke: var(--color-green);
+    }
   }
 </style>

@@ -35,7 +35,7 @@
   header {
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 100;
     height: 100%;
     width: 100%;
     background-color: white;

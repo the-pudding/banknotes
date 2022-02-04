@@ -83,6 +83,23 @@ select {
   color: white;
 }
 
+a {
+  color: var(--color-green);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+mark {
+  background-color: var(--color-green);
+  color: white;
+}
+
+mark a {
+  color: white;
+}
+
 .body-content {
   width: 60vw;
   max-width: 760px;

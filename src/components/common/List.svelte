@@ -2,18 +2,23 @@
   export let listItems = [];
 </script>
 
-<ul class="list-container body-content">
-  {#each listItems as item}
-    <li class="prose">{@html item}</li>
-  {/each}
-</ul>
+<div class="body-content">
+  <ul class="list-container">
+    {#each listItems as item}
+      <li class="prose">{@html item}</li>
+    {/each}
+  </ul>
+</div>
 
 <style>
   li {
     list-style: disc;
+    font-size: 26px;
   }
 
   .list-container {
-    text-align: center;
+    width: 70%;
+    text-align: left;
+    margin: 0 auto;
   }
 </style>

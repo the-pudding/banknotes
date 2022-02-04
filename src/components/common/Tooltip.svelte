@@ -15,7 +15,7 @@
   <div class="text-container">
     <div class="name">{name}</div>
     <div class="country">{country}</div>
-    <div class="text">{text}</div>
+    <div class="text">{@html text}</div>
   </div>
 </div>
 
@@ -60,6 +60,13 @@
     .text {
       font-size: 14px;
       margin-top: 10px;
+    }
+
+    :global(h2) {
+      font-size: 18px;
+      line-height: 1.33;
+      margin: 0;
+      padding: 0;
     }
   }
 </style>
