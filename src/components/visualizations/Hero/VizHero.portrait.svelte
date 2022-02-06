@@ -11,9 +11,9 @@
   export let portraitIDs = [];
 
   let ref;
-  const portraitsDir = 'assets/images/portraits';
+  const portraitsDir = 'assets/images/portraits_webp';
   let portraitIdx = 0;
-  $: imgSrc = `${portraitsDir}/${portraitIDs[portraitIdx]}_300.png`;
+  $: imgSrc = `${portraitsDir}/${portraitIDs[portraitIdx]}_300.webp`;
 
   let rotate = -5 + Math.random() * 10;
 

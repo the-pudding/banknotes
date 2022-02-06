@@ -49,7 +49,7 @@ const processData = async () => {
 
   // any additional data processing steps you want to run anytime the data is pulled
   // Figure out which rows from data have have corresponding portraits
-  const portraitsFolder = "static/assets/images/portraits";
+  const portraitsFolder = "static/assets/images/portraits_webp";
   let data = await csv().fromFile("src/data/banknotesData.csv");
   let nameIDs = await csv().fromFile("src/data/nameIDs.csv");
 

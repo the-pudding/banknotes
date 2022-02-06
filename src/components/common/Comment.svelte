@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import gsap from "gsap/dist/gsap.js";
   import { TextPlugin } from "gsap/dist/TextPlugin.js";
-  import { CustomEase } from "gsap/CustomEase";
+  import { CustomEase } from "gsap/dist/CustomEase";
 
   gsap.registerPlugin(CustomEase);
   gsap.registerPlugin(TextPlugin);
@@ -53,8 +53,8 @@
   on:exit={handleExit}
 >
   <div class="guide">
-    <img src="assets/images/guide_bottom.png" alt="Frida, your guide, says" />
-    <img bind:this={guideTopRef} src="assets/images/guide_top.png" alt="Frida, your guide, says" />
+    <img src="assets/images/guide_bottom.webp" alt="Frida, your guide, says" />
+    <img bind:this={guideTopRef} src="assets/images/guide_top.webp" alt="Frida, your guide, says" />
   </div>
 
   <div bind:this={commentRef} class="comment-text" />

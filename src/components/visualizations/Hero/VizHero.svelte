@@ -24,7 +24,7 @@
 
 <div class='container' style:width style:height="500px" >
   <!--background wallet -->
-  <img class="wallet" src="assets/images/wallet_bg.png" alt="wallet"/>
+  <img class="wallet" src="assets/images/wallet_bg.webp" alt="wallet"/>
 
   <!-- portraits -->
   <div class="portraits-container">
@@ -35,7 +35,7 @@
 
 
   <!-- foreground wallet -->
-  <img class="wallet" src="assets/images/wallet_fg.png" alt="wallet"/>
+  <img class="wallet" src="assets/images/wallet_fg.webp" alt="wallet"/>
 
 </div> 
 
