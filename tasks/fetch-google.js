@@ -49,14 +49,14 @@ const processData = async () => {
 
   // any additional data processing steps you want to run anytime the data is pulled
   // Figure out which rows from data have have corresponding portraits
-  const portraitsFolder = "static/assets/images/portraits";
+  const portraitsFolder = "static/assets/images/portraits_webp";
   let data = await csv().fromFile("src/data/banknotesData.csv");
   let nameIDs = await csv().fromFile("src/data/nameIDs.csv");
 
   // get a list of portraits
   let portraits = [];
   fs.readdirSync(portraitsFolder).forEach(file => {
-    if (/\.png/.test(file)) {
+    if (/\.webp/.test(file)) {
       portraits.push(file);
     }
   });
@@ -64,7 +64,7 @@ const processData = async () => {
   // add hasPortrait prop to data
   data = data.map(d => {
     const id = nameIDs.find(dd => dd.name === d.name).country_nameID;
-    const portraitName = `${id}_300.png`;
+    const portraitName = `${id}_300.webp`;
     let portraitFile = portraits.find(dd => dd === portraitName);
     const hasPortrait = portraitFile !== undefined;
     return {

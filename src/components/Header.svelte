@@ -16,7 +16,7 @@
 
   $: showNav = $currentSection.name !== "hero";
 
-  $: console.log($currentSection);
+  // $: console.log($currentSection);
 </script>
 
 <header bind:clientHeight={headerHeight}>

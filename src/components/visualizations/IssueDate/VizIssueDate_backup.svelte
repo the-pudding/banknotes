@@ -1,14 +1,17 @@
 <script>
+  import * as d3 from "d3";
   import { getContext } from "svelte";
   import Scrolly from "$components/helpers/Scrolly.svelte";
   import { rawData } from "$data/data.js";
   import { uniqWith, isEqual } from "lodash";
+  import { LayerCake, Svg } from "layercake";
 
-  import IssueDateChart from "./VizIssueDate.chart4.svelte";
+  import IssueDateChart from "./VizIssueDate.chart3.svelte";
 
   // get steps array from copy
   const { copy } = getContext("App");
   const steps = copy.sections.issueDate.find(d => d.type === "viz").value.steps;
+  console.log("steps", steps);
 
   // prep data
   let data = uniqWith(
@@ -20,33 +23,43 @@
       country: d.country,
       id: d.id,
       imgBase: d.hasPortrait ? d.id : "A_Unknown",
-      hovered: false,
     })),
     isEqual
   ).filter(d => d.deathDate >= 1200);
 
+  const yearRange = d3.extent([...data.map(d => d.issueDate), ...data.map(d => d.deathDate)]);
+  const issueRange = d3.extent([...data.map(d => d.issueDate)]);
+  const deathRange = d3.extent([...data.map(d => d.deathDate)]);
+
   // scrolly
   let scrollStep = 0;
   $: highlightedIDs =
-    scrollStep !== undefined ? steps[scrollStep].nameIDs.split(",").map(d => d.trim()) : [];
-
-  let vizWidth;
-  let vizHeight;
+    scrollStep !== undefined
+      ? (highlightedIDs = steps[scrollStep].nameIDs.split(",").map(d => d.trim()))
+      : (highlightedIDs = []);
 </script>
 
 <div class="container">
   <div class="background">
-    <div class="viz-container" bind:clientHeight={vizHeight} bind:clientWidth={vizWidth}>
-      <IssueDateChart width={vizWidth} height={vizHeight} {data} {highlightedIDs} />
+    <div class="viz-container">
+      <LayerCake
+        xDomain={yearRange}
+        yScale={d3.scalePoint().padding(0.1)}
+        yDomain={["Issued", "Death"]}
+        padding={{ top: 20, bottom: 20, left: 100, right: 100 }}
+        {data}
+      >
+        <Svg>
+          <IssueDateChart {highlightedIDs} />
+        </Svg>
+      </LayerCake>
     </div>
   </div>
 
   <div class="spacer" />
   <Scrolly bind:value={scrollStep}>
     {#each steps as step, i}
-      <div class="step-container">
-        <div class="step" class:active={scrollStep === i}>{@html step.text}</div>
-      </div>
+      <div class="step" class:active={scrollStep === i}>{@html step}</div>
     {/each}
   </Scrolly>
   <div class="spacer" />
@@ -73,36 +86,28 @@
   }
 
   .viz-container {
-    height: 960px;
+    height: 800px;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .step-container {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: flex-end;
     margin: 0 auto;
   }
 
   .step {
     position: relative;
-    padding: 30px;
-    width: 30vw;
-    height: 100%;
-    margin: 80vh 0;
+    width: 50vw;
+    height: 40vh;
+    margin: 80vh auto;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 22px;
     background: var(--color-green);
     color: white;
+    opacity: 0.7;
   }
 
   .spacer {
-    height: 5vh;
+    height: 25vh;
     /* background-color: hotpink; */
   }
 </style>

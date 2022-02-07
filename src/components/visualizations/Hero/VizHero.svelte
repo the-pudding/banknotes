@@ -10,6 +10,8 @@
   // set up portraits for each bill position
   let portraitIDs = uniq(rawData.filter(d => d.hasPortrait).map(d => d.id));
 
+  console.log('portraitIDs', portraitIDs);
+
   const totalPortraits = portraitIDs.length;
   const nPopUps = 4;
   let popUps = new Array(nPopUps)
@@ -24,7 +26,7 @@
 
 <div class='container' style:width style:height="500px" >
   <!--background wallet -->
-  <img class="wallet" src="assets/images/wallet_bg.png" alt="wallet"/>
+  <img class="wallet" src="assets/images/wallet_bg.webp" alt="wallet"/>
 
   <!-- portraits -->
   <div class="portraits-container">
@@ -35,7 +37,7 @@
 
 
   <!-- foreground wallet -->
-  <img class="wallet" src="assets/images/wallet_fg.png" alt="wallet"/>
+  <img class="wallet" src="assets/images/wallet_fg.webp" alt="wallet"/>
 
 </div> 
 

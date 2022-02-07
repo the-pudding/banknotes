@@ -13,37 +13,34 @@ const prefix = dir.startsWith("/") ? "" : "/";
 const base = dev || !dir ? "" : `${prefix}${dir}`;
 
 const preprocess = sveltePreprocess({
-	postcss: {
-		plugins: [autoprefixer]
-	}
+  postcss: {
+    plugins: [autoprefixer],
+  },
 });
 
 const config = {
-	preprocess,
-	kit: {
-		adapter: adapterStatic(),
-		target: "#svelte",
-		vite: {
-			resolve: {
-				alias: {
-					"$actions": path.resolve("./src/actions"),
-					"$components": path.resolve("./src/components"),
-					"$data": path.resolve("./src/data"),
-					"$stores": path.resolve("./src/stores"),
-					"$styles": path.resolve("./src/styles"),
-					"$svg": path.resolve("./src/svg"),
-					"$utils": path.resolve("./src/utils")
-				}
-			},
-			plugins: [
-				dsv(),
-				svg()
-			]
-		},
-		paths: {
-			base
-		},
-	}
+  preprocess,
+  kit: {
+    adapter: adapterStatic(),
+    target: "#svelte",
+    vite: {
+      resolve: {
+        alias: {
+          $actions: path.resolve("./src/actions"),
+          $components: path.resolve("./src/components"),
+          $data: path.resolve("./src/data"),
+          $stores: path.resolve("./src/stores"),
+          $styles: path.resolve("./src/styles"),
+          $svg: path.resolve("./src/svg"),
+          $utils: path.resolve("./src/utils"),
+        },
+      },
+      plugins: [dsv(), svg()],
+    },
+    paths: {
+      base,
+    },
+  },
 };
 
 export default config;
