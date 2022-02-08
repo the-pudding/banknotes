@@ -3,7 +3,8 @@
   import { getContext } from "svelte";
   import * as d3 from "d3";
   import { rawData } from "$data/data.js";
-  import { uniqWith, isEqual, camelCase } from "lodash";
+  import { uniqWith, isEqual } from "lodash";
+  import camelCase from "lodash/camelCase.js"; // <-- get around sveltekit build bug
 
   import Group from "./VizOccupation.group.svelte";
 

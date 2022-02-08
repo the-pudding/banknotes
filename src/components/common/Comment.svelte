@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import gsap from "gsap/dist/gsap.js";
   import { TextPlugin } from "gsap/dist/TextPlugin.js";
-  import { CustomEase } from "gsap/dist/CustomEase";
+  import { CustomEase } from "gsap/dist/CustomEase.js";
 
   gsap.registerPlugin(CustomEase);
   gsap.registerPlugin(TextPlugin);
