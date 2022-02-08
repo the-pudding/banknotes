@@ -26,7 +26,6 @@
   ];
   // sections = ["hero", "conclusion"]; // <-- for testing specific sections
 
-  console.log(copy);
   const outline = sections.map(sectionName => {
     let isHero = sectionName === "hero";
     return {

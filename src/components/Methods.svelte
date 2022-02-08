@@ -1,6 +1,5 @@
 <script>
   export let copy = "";
-  console.log(copy);
 </script>
 
 <section class="methods body-content">
