@@ -65,7 +65,7 @@
   }
 
   .sidebar-image {
-    width: 100px;
+    width: 150px;
     margin: 20px;
     transform: scale(0);
     transition: transform 1s;

@@ -10,7 +10,7 @@
 
 <div id="tooltip" class="tooltip-container">
   <div class="portrait-container">
-    <img src={`assets/images/portraits_webp/${imgBase}_300.webp`} alt={`${name} portrait`} />
+    <img src={`assets/images/portraits/${imgBase}_300.webp`} alt={`${name} portrait`} />
   </div>
   <div class="text-container">
     <div class="name">{name}</div>

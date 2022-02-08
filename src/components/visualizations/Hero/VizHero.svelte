@@ -10,8 +10,6 @@
   // set up portraits for each bill position
   let portraitIDs = uniq(rawData.filter(d => d.hasPortrait).map(d => d.id));
 
-  console.log('portraitIDs', portraitIDs);
-
   const totalPortraits = portraitIDs.length;
   const nPopUps = 4;
   let popUps = new Array(nPopUps)

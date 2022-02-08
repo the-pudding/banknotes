@@ -30,7 +30,7 @@
     const nLevels = 5;
     const startingH = 0.35 * h; // <-- start position, as % of height
     const switchW = 0.36 * w; // <-- point where curves switch back, as % of width
-    let step = (h - startingH) / nLevels;
+    let step = (h - 20 - startingH) / nLevels;
 
     let pts = [
       [w, startingH],

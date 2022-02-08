@@ -54,8 +54,6 @@
     F: "#ccc",
     M: "#aaa",
   };
-
-  console.log(nodes);
 </script>
 
 <g class="x-axis">
@@ -67,6 +65,7 @@
 <g class="y-axis">
   {#each yLabels as { label, y }}
     <text {y} x="-65" dominant-baseline="middle" text-anchor="end">{label}</text>
+    <line x1={$xScale(0)} y1={y} x2={$xScale(1)} y2={y} stroke="#ccc" opacity={1} />
   {/each}
 </g>
 
