@@ -82,7 +82,7 @@
     display: flex;
     justify-content: center;
     font-family: "ABeeZee", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
 
     .role {
