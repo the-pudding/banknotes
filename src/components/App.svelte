@@ -24,7 +24,7 @@
     "issueDate",
     "conclusion",
   ];
-  sections = ["hero", "conclusion"]; // <-- for testing specific sections
+  // sections = ["hero", "conclusion"]; // <-- for testing specific sections
 
   console.log(copy);
   const outline = sections.map(sectionName => {
