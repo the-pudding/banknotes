@@ -2,6 +2,7 @@ import Heading from "$components/common/Heading.svelte";
 import TextBasic from "$components/common/TextBasic.svelte";
 import TextAndImages from "$components/common/TextAndImages.svelte";
 import InlineFigure from "$components/common/InlineFigure.svelte";
+import ImageSet from "$components/common/ImageSet.svelte";
 import List from "$components/common/List.svelte";
 import Comment from "$components/common/Comment.svelte";
 
@@ -51,6 +52,12 @@ export function getComponent(copyEntry) {
         name: "InlineFigure",
         cmp: InlineFigure,
         props: { img: value.id, alt: value.caption },
+      };
+    case "imageSet":
+      return {
+        name: "ImageSet",
+        cmp: ImageSet,
+        props: { images: value },
       };
     case "list":
       return {

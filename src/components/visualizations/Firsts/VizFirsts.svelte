@@ -45,7 +45,7 @@
   .viz-container {
     width: 100%;
     max-width: 1800px;
-    height: 100vh;
+    height: 80vh;
     margin: 0 auto;
     /* background-color: coral; */
   }

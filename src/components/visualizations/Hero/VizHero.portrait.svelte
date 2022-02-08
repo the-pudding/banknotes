@@ -11,7 +11,7 @@
   export let portraitIDs = [];
 
   let ref;
-  const portraitsDir = 'assets/images/portraits_webp';
+  const portraitsDir = 'assets/images/portraits';
   let portraitIdx = 0;
   $: imgSrc = `${portraitsDir}/${portraitIDs[portraitIdx]}_300.webp`;
 

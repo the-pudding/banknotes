@@ -27,7 +27,7 @@
     .flat();
 
   // set up sort controls
-  let sortOpts = ["gender", "occupation", "country"];
+  let sortOpts = ["gender", "occupation"];
   let currentSort = "gender";
   const setSort = opt => (currentSort = opt);
 

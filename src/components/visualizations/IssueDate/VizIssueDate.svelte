@@ -4,7 +4,7 @@
   import { rawData } from "$data/data.js";
   import { uniqWith, isEqual } from "lodash";
 
-  import IssueDateChart from "./VizIssueDate.chart4.svelte";
+  import IssueDateChart from "./VizIssueDate.chart.svelte";
 
   // get steps array from copy
   const { copy } = getContext("App");
@@ -90,9 +90,10 @@
   .step {
     position: relative;
     padding: 30px;
-    width: 30vw;
+    width: 45vw;
     height: 100%;
-    margin: 80vh 0;
+    margin: 80vh 20px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
