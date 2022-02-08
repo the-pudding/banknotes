@@ -73,7 +73,7 @@
   }
 
   .viz-container {
-    height: 960px;
+    height: 85vh;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;

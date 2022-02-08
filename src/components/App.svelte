@@ -7,11 +7,12 @@
   import Header from "$components/Header.svelte";
   import Hero from "$components/Hero.svelte";
   import Section from "$components/Section.svelte";
+  import Methods from "$components/Methods.svelte";
   import copy from "$data/doc.json";
 
   // set site copy as context in case any other components need it
   setContext("App", { copy });
-  const { meta } = copy;
+  const { meta, methods } = copy;
 
   // outline site structure, assign copy and components to each section
   let sections = [
@@ -23,8 +24,9 @@
     "issueDate",
     "conclusion",
   ];
-  //sections = ["hero", "intro", "issueDate"]; // <-- for testing specific sections
+  sections = ["hero", "conclusion"]; // <-- for testing specific sections
 
+  console.log(copy);
   const outline = sections.map(sectionName => {
     let isHero = sectionName === "hero";
     return {
@@ -55,6 +57,7 @@
     </section>
   {/each}
 </Scrolly>
+<Methods copy={methods} />
 
 <style>
 </style>

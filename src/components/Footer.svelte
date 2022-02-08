@@ -14,19 +14,19 @@
     { name: "twitter", url: "https://twitter.com/puddingviz/" },
     {
       name: "instagram",
-      url: "https://www.instagram.com/the.pudding"
+      url: "https://www.instagram.com/the.pudding",
     },
     { name: "patreon", url: "https://patreon.com/thepudding/" },
     { name: "privacy", url: "https://pudding.cool/privacy/" },
     { name: "newsletter", url: "http://eepurl.com/czym6f" },
-    { name: "rss", url: "https://pudding.cool/feed/index.xml" }
+    { name: "rss", url: "https://pudding.cool/feed/index.xml" },
   ];
 
   onMount(async () => {
     localURL = window.location.href;
     const response = await fetch(url);
     const data = await response.json();
-    stories = data.filter((d) => !localURL.includes(d.url)).slice(0, 4);
+    stories = data.filter(d => !localURL.includes(d.url)).slice(0, 4);
   });
 </script>
 
