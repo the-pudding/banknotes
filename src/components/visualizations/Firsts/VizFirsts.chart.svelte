@@ -4,6 +4,8 @@
   import Tooltip from "$components/common/Tooltip.svelte";
 
   const { data, width, height, xScale, yScale } = getContext("LayerCake");
+
+  $: console.log($data);
 </script>
 
 {#each $data as { country, firsts }}

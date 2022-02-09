@@ -16,6 +16,7 @@
           country: d.country,
           imgBase: d.hasPortrait ? d.id : "A_Unknown",
           knownForBeingFirst: d.knownForBeingFirst,
+          hoverText: d.hoverText,
         })),
         isEqual
       ).filter(d => d.knownForBeingFirst),

@@ -3,6 +3,7 @@
   import { tooltip } from "$actions/tooltip";
   import { forceSimulation, forceX, forceY, forceCollide } from "d3-force";
   import { startCase } from "lodash";
+  import { color } from "$data/variables.json";
 
   import Tooltip from "$components/common/Tooltip.svelte";
 
@@ -52,7 +53,7 @@
   // color mapping
   const colors = {
     F: "#ccc",
-    M: "#aaa",
+    M: "#777",
   };
 </script>
 

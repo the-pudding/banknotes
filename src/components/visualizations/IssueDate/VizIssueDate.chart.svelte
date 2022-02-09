@@ -2,6 +2,7 @@
   import * as d3 from "d3";
   import { dodge } from "$utils/utils";
   import { tooltip } from "$actions/tooltip";
+  import { color } from "$data/variables.json";
 
   import Tooltip from "$components/common/Tooltip.svelte";
   import IssueAxis from "./VizIssueDate.issueAxis.svelte";
@@ -17,7 +18,7 @@
 
   // --- ISSUE DATE AXIS
   let issueTicks = [1875, 1900, 1925, 1950, 1975, 2000, 2021];
-  $: issueY = height * 0.22;
+  $: issueY = height * 0.25;
   $: issueScale = d3
     .scaleLinear()
     .domain(d3.extent(data, d => d.issueDate))
@@ -62,7 +63,7 @@
     // position all of the circles;
     people = data.map((d, i) => ({
       ...d,
-      issuePt: { x: issueScale(d.issueDate), y: issueY - issueYs[i] - 10 },
+      issuePt: { x: issueScale(d.issueDate), y: issueY - issueYs[i] - 5 },
       deathPt: deathAxisRef.getDeathPt(d.deathDate),
     }));
   }
@@ -125,13 +126,13 @@
       y1={d.issuePt.y}
       x2={d.deathPt.x}
       y2={d.deathPt.y}
-      stroke="#ccc"
-      stroke-width={d.hovered ? 3 : 1}
-      opacity={d.hovered ? 1 : 0.5}
+      stroke={d.hovered ? color.green : "#ccc"}
+      stroke-width={d.hovered ? 3 : 2}
+      opacity={d.hovered ? 1 : 0.7}
     />
   {/each}
 
-  {#each highlightedData as d, i}
+  {#each highlightedData as d, i (d.id)}
     <!-- issued circle -->
     <circle
       use:tooltip={{

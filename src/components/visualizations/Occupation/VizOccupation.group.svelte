@@ -71,6 +71,7 @@
 
     &:hover {
       border-width: 5px;
+      background: var(--color-green);
     }
   }
 </style>

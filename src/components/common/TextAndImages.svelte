@@ -33,6 +33,7 @@
       >
         <figure class:show={image.show} class="sidebar-image">
           <img src="assets/images/{image.fname}" alt={image.alt} />
+          <figcaption>{image.alt}</figcaption>
         </figure>
       </div>
     {/each}
@@ -74,6 +75,12 @@
       transform: scale(1);
       transition: transform 1s;
     }
+  }
+
+  figcaption {
+    font-size: 12px;
+    text-align: left;
+    margin-top: 5px;
   }
 
   @media screen and (max-width: 1024px) {

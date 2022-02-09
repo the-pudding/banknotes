@@ -8,6 +8,9 @@
     },
     "green": {
       "value": "#7F9252"
+    },
+    "yellow": {
+      "value": "#F6D251"
     }
   }
 }

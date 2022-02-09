@@ -4,7 +4,10 @@
 
 <div class="body-content image-set">
   {#each images as { id, caption }}
-    <img class="image" src={`assets/images/${id}`} alt={caption} />
+    <figure class="image">
+      <img src={`assets/images/${id}`} alt={caption} />
+      <figcaption>{caption}</figcaption>
+    </figure>
   {/each}
 </div>
 

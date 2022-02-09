@@ -38,4 +38,13 @@
     text-anchor="end"
     >Issue Date
   </text>
+  <!-- PUT DEATH DATE LABEL HERE TOO TO LINE UP W/ ISSUED LABEL -->
+  <text
+    class="issue-axis-label"
+    x={scale(1860)}
+    y={yPos + 50}
+    dominant-baseline="middle"
+    text-anchor="end"
+    >Death Date
+  </text>
 </g>

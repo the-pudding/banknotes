@@ -17,7 +17,7 @@
   <!-- By Lines -->
   <div class="bylines-container">
     <div class="byline">
-      <div class="role">Story & Data</div>
+      <div class="role">By</div>
       <div class="authors">
         <a href="https://www.pudding.cool/author/alejandra-arevalo"
           ><nobr>Alejandra Arevalo</nobr></a
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="byline">
-      <div class="role">Code</div>
+      <div class="role">With</div>
       <div class="authors">
         <a href="https://www.pudding.cool/author/jeff-macinnes">Jeff MacInnes</a>
       </div>

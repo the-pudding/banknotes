@@ -73,7 +73,7 @@
   }
 
   .viz-container {
-    height: 85vh;
+    height: 80vh;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -84,7 +84,8 @@
     max-width: 1200px;
     display: flex;
     justify-content: flex-end;
-    margin: 0 auto;
+    margin: 0 auto 100vh;
+    /* border: solid 1px hotpink; */
   }
 
   .step {
@@ -92,7 +93,7 @@
     padding: 30px;
     width: 45vw;
     height: 100%;
-    margin: 80vh 20px;
+    margin: 0 20px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -103,7 +104,8 @@
   }
 
   .spacer {
-    height: 5vh;
+    height: 50vh;
     /* background-color: hotpink; */
+    /* border: solid 1px red; */
   }
 </style>
