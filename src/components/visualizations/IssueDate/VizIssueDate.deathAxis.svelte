@@ -100,4 +100,13 @@
       {tick.year}
     </text>
   {/each}
+
+  <text
+    class="issue-axis-label"
+    x={xRange[1] * 0.45}
+    y={yRange[1] - 20}
+    dominant-baseline="middle"
+    text-anchor="end"
+    >Death Date
+  </text>
 </g>

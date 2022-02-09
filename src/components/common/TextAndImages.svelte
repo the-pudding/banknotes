@@ -77,11 +77,6 @@
     }
   }
 
-  figcaption {
-    font-size: 12px;
-    text-align: left;
-    margin-top: 5px;
-  }
 
   @media screen and (max-width: 1024px) {
     .images-container {

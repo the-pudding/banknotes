@@ -37,7 +37,7 @@ const config = {
       },
       plugins: [dsv(), svg()],
       ssr: {
-        noExternal: ["lodash", "gsap"],
+        noExternal: dev ? [] : ["lodash", "gsap"],
       },
     },
     paths: {
