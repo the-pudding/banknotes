@@ -1,6 +1,10 @@
 <!-- NULL COMPONENT FOR DEBUGGING -->
+<script>
+  export let name;
+</script>
+
 <div class="null">
-  <h1>No Content Yet</h1>
+  <h1>{name} - No Content Yet</h1>
 </div>
 
 <style>

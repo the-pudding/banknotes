@@ -1,23 +1,29 @@
 <script>
+  import wordmark from "$svg/wordmark.svg";
   import WalletViz from "$components/visualizations/Hero/VizHero.svelte";
 
-  export let copy = {};
+  export let title = "";
+  export let subtitle = "";
 
   let visWidth;
   let visHeight;
 </script>
 
 <div>
-  <h1 class="hed">{copy.title}</h1>
-  <p class="prompt">{copy.prompt}</p>
+  <div class="wordmark">
+    <a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
+  </div>
+
+  <h1 class="hed">{title}</h1>
+  <p class="prompt">{subtitle}</p>
 
   <!-- Date -->
-  <time datetime="2022-03-01">March XX, 2022</time>
+  <!-- <time datetime="2022-03-01">March XX, 2022</time> -->
 
   <!-- By Lines -->
   <div class="bylines-container">
     <div class="byline">
-      <div class="role">By</div>
+      <div class="role">Story & Data</div>
       <div class="authors">
         <a href="https://www.pudding.cool/author/alejandra-arevalo"
           ><nobr>Alejandra Arevalo</nobr></a
@@ -27,7 +33,7 @@
       </div>
     </div>
     <div class="byline">
-      <div class="role">With</div>
+      <div class="role">Code</div>
       <div class="authors">
         <a href="https://www.pudding.cool/author/jeff-macinnes">Jeff MacInnes</a>
       </div>
@@ -41,8 +47,7 @@
 
 <style lang="scss">
   div {
-    /* border: solid 1px red; */
-    margin: 10px;
+    // border: solid 1px red;
   }
 
   img {
@@ -50,12 +55,31 @@
     width: 300px;
   }
 
+  .wordmark {
+    max-width: 10em;
+    margin: 0 auto;
+    padding: 1em 0;
+  }
+
+  .wordmark a {
+    border: none;
+    color: var(--color-fg);
+  }
+
+  .wordmark a:hover {
+    background-color: transparent;
+  }
+
+  :global(.wordmark svg path) {
+    fill: currentColor;
+  }
+
   .hed {
-    margin-top: 1em;
+    padding-top: 1em;
   }
 
   .prompt {
-    max-width: 600px;
+    max-width: 510px;
     font-family: "Abhaya Libre", serif;
     font-weight: 500;
     font-size: 30px;
@@ -64,7 +88,7 @@
   }
 
   .bylines-container {
-    max-width: 400px;
+    max-width: 500px;
     // display: flex;
     margin: 20px auto;
     // border: solid 1px red;
@@ -78,16 +102,17 @@
   }
 
   .byline {
-    // border: solid 1px red;
     display: flex;
     justify-content: center;
     font-family: "ABeeZee", sans-serif;
     font-size: 18px;
-    margin: 0;
+    margin: 15px;
+    gap: 20px;
 
     .role {
       flex: 1;
       text-align: right;
+      color: #424242;
     }
 
     .authors {

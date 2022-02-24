@@ -11,6 +11,9 @@
     },
     "yellow": {
       "value": "#F6D251"
+    },
+    "brown": {
+      "value": "#A55719"
     }
   }
 }

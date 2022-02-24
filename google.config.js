@@ -1,6 +1,11 @@
 export default [
+  // copy for V1
+  // {
+  //   id: "1Jsvdtq2u-ybpQ_Ix4thFfk6zbGkGZsR6ph3DozF4vqs",
+  //   filepath: "src/data/doc.json",
+  // },
   {
-    id: "1Jsvdtq2u-ybpQ_Ix4thFfk6zbGkGZsR6ph3DozF4vqs",
+    id: "1hyig-iI4ICcg65GYSzFVvTKDoedZWATuUZbF48-y0-U",
     filepath: "src/data/doc.json",
   },
   {
