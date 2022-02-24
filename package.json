@@ -33,6 +33,7 @@
     "sass": "^1.47.0",
     "style-dictionary": "^3.1.1",
     "svelte": "^3.46.2",
+    "svelte-collapsible": "^0.2.1",
     "svelte-preprocess": "^4.10.1",
     "svelte-scrollto": "^0.2.0",
     "vite-plugin-svgstring": "^1.0.0"

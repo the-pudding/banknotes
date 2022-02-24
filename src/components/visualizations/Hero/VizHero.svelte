@@ -5,7 +5,6 @@
   import { uniq } from "lodash";
 
   export let width;
-  export let height;
 
   // set up portraits for each bill position
   let portraitIDs = uniq(rawData.filter(d => d.hasPortrait).map(d => d.id));

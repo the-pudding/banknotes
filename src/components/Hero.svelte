@@ -76,6 +76,7 @@
 
   .hed {
     padding-top: 1em;
+    text-align: center;
   }
 
   .prompt {
@@ -85,6 +86,7 @@
     font-size: 30px;
     line-height: 1.33;
     margin: 30px auto;
+    text-align: center;
   }
 
   .bylines-container {
