@@ -56,8 +56,8 @@ h1 {
   max-width: 760px;
   margin: 0 auto;
   font-family: "Baloo Bhai 2", cursive;
-  font-size: 100px;
-  line-height: 100px;
+  font-size: 80px;
+  line-height: 80px;
 }
 
 p {
@@ -104,6 +104,6 @@ mark a {
 
 .prose {
   font-family: "Abhaya Libre", serif;
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 24px;
+  line-height: 1.5;
 }

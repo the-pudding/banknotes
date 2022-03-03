@@ -10,8 +10,8 @@
     max-width: 1200px;
     margin: 1em auto;
     font-family: "Baloo Bhai 2", cursive;
-    font-size: 60px;
-    line-height: 80px;
+    font-size: 50px;
+    line-height: 1.33;
     text-align: center;
     color: var(--color-brown);
   }

@@ -1,18 +1,14 @@
 {
   "category": {
-    "blue": "#4477AA",
-    "red": "#EE6677",
-    "green": "#228833",
-    "yellow": "#CCBB44",
-    "cyan": "#66CCEE",
-    "purple": "#AA3377",
-    "gray": "#BBBBBB"
+    "male": "#81170E",
+    "female": "#F6D251"
   },
   "color": {
     "background": "#FDFEF0",
     "gray-dark": "#282828",
     "green": "#7F9252",
     "yellow": "#F6D251",
-    "brown": "#A55719"
+    "brown": "#A55719",
+    "brown-transparent": "#A5571980"
   }
 }

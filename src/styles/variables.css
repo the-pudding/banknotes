@@ -1,19 +1,15 @@
 /**
  * Do not edit directly
- * Generated on Thu, 24 Feb 2022 00:08:32 GMT
+ * Generated on Thu, 03 Mar 2022 03:33:28 GMT
  */
 
 :root {
-  --category-blue: #4477AA;
-  --category-red: #EE6677;
-  --category-green: #228833;
-  --category-yellow: #CCBB44;
-  --category-cyan: #66CCEE;
-  --category-purple: #AA3377;
-  --category-gray: #BBBBBB;
+  --category-male: #81170E;
+  --category-female: #F6D251;
   --color-background: #fdfef0;
   --color-gray-dark: #282828;
   --color-green: #7f9252;
   --color-yellow: #f6d251;
   --color-brown: #a55719;
+  --color-brown-transparent: rgba(165, 87, 25, 0.5);
 }

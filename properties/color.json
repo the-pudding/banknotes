@@ -14,6 +14,9 @@
     },
     "brown": {
       "value": "#A55719"
+    },
+    "brown-transparent": {
+      "value": "#A5571980"
     }
   }
 }

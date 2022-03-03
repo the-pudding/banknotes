@@ -19,6 +19,10 @@
 </div>
 
 <style lang="scss">
+  .learn-more-container {
+    margin: 30px auto;
+  }
+
   .header {
     display: flex;
     align-items: flex-start;

@@ -1,6 +1,9 @@
 import Heading from "$components/common/Heading.svelte";
 import Hero from "$components/Hero.svelte";
 import LearnMore from "$components/common/LearnMore.svelte";
+import Methods from "$components/common/Methods.svelte";
+import PortraitBox from "$components/common/PortraitBox.svelte";
+import TextBasic from "$components/common/TextBasic.svelte";
 
 import VizBanknotes from "$components/visualizations/Banknotes/VizBanknotes.svelte";
 
@@ -39,6 +42,24 @@ export function getComponent(copyEntry) {
         name: "LearnMore",
         cmp: LearnMore,
         props: { title: value.title, text: value.text },
+      };
+    case "methods":
+      return {
+        name: "Methods",
+        cmp: Methods,
+        props: { text: value.map(d => d.value) },
+      };
+    case "portraitBox":
+      return {
+        name: "PortraitBox",
+        cmp: PortraitBox,
+        props: { portraitID: value.portraitID, text: value.text },
+      };
+    case "textBasic":
+      return {
+        name: "TextBasic",
+        cmp: TextBasic,
+        props: { text: value.map(d => d.value) },
       };
     case "viz":
       return {

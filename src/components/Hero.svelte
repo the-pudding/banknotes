@@ -75,15 +75,16 @@
   }
 
   .hed {
-    padding-top: 1em;
+    max-width: 600px;
+    padding-top: 0em;
     text-align: center;
   }
 
   .prompt {
-    max-width: 510px;
+    max-width: 600px;
     font-family: "Abhaya Libre", serif;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 1.33;
     margin: 30px auto;
     text-align: center;
@@ -107,7 +108,7 @@
     display: flex;
     justify-content: center;
     font-family: "ABeeZee", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     margin: 15px;
     gap: 20px;
 
