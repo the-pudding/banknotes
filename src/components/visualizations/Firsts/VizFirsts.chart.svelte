@@ -2,11 +2,26 @@
   import { getContext } from "svelte";
   import { tooltip } from "$actions/tooltip";
   import Tooltip from "$components/common/Tooltip.svelte";
+  import { color } from "$data/variables.json";
+  import { shuffle } from "$utils/utils";
+
+  let { green, yellow, orange, brown, red } = color;
+  let colors = [green, yellow, orange, brown, red];
 
   const { data, width, height, xScale, yScale } = getContext("LayerCake");
+
+  let rowColors;
+  $: if ($data) {
+    rowColors = $data.map(d => {
+      let colorArr = shuffle(colors);
+      return [...colorArr, ...colorArr];
+    });
+  }
+
+  console.log($data === undefined);
 </script>
 
-{#each $data as { country, firsts }}
+{#each $data as { country, firsts }, i}
   <!-- Add the country label -->
   <text
     x={$xScale(0) - 5}
@@ -16,7 +31,7 @@
   >
 
   <!-- Add the rects for each first for this country -->
-  {#each firsts as first, i}
+  {#each firsts as first, ii}
     <rect
       use:tooltip={{
         component: Tooltip,
@@ -25,14 +40,15 @@
           country: first.country,
           text: first.hoverText,
           imgBase: first.imgBase,
+          color: rowColors[i][ii],
         },
       }}
       title="test"
-      x={$xScale(i)}
+      x={$xScale(ii)}
       y={$yScale(country)}
       width={$xScale.bandwidth()}
       height={$yScale.bandwidth()}
-      fill="#ccc"
+      fill={rowColors[i][ii]}
     />
   {/each}
 {/each}
@@ -40,9 +56,10 @@
 <style lang="scss">
   rect {
     cursor: pointer;
+    fill-opacity: 0.4;
 
     &:hover {
-      fill: var(--color-green);
+      fill-opacity: 1;
     }
   }
 </style>

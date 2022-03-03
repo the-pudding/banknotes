@@ -28,6 +28,7 @@
 </script>
 
 <div class="viz-container">
+  <h3 class="body-content viz-title">Notable "Firsts" Honored on Bankotes</h3>
   <LayerCake
     xScale={d3.scaleBand().paddingInner(0.01)}
     xDomain={[...Array(max).keys()]}
@@ -47,7 +48,7 @@
     width: 100%;
     max-width: 1800px;
     height: 80vh;
-    margin: 0 auto;
+    margin: 25vh auto;
     /* background-color: coral; */
   }
 </style>

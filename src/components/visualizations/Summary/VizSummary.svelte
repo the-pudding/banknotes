@@ -26,7 +26,7 @@
 
   <div bind:clientWidth={w} class="body-content gender-proportions">
     <div class="gender-container">
-      <div class="females gender-rect" style:width="{parseFloat(propFemale) * w}px" />
+      <div class="females gender-rect" style:width="{femaleW}px" />
       <div class="gender-label">Female ({femalePercent}%)</div>
     </div>
 
@@ -106,6 +106,7 @@
 
     .gender-rect {
       height: 50%;
+      outline: solid 2px white;
     }
 
     .females {

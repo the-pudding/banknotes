@@ -8,7 +8,9 @@
     "gray-dark": "#282828",
     "green": "#7F9252",
     "yellow": "#F6D251",
+    "orange": "#E1873D",
     "brown": "#A55719",
-    "brown-transparent": "#A5571980"
+    "brown-transparent": "#A5571980",
+    "red": "#81170E"
   }
 }

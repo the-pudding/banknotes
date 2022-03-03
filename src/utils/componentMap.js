@@ -7,6 +7,8 @@ import TextBasic from "$components/common/TextBasic.svelte";
 
 import VizBanknotes from "$components/visualizations/Banknotes/VizBanknotes.svelte";
 import VizSummary from "$components/visualizations/Summary/VizSummary.svelte";
+import VizFirsts from "$components/visualizations/Firsts/VizFirsts.svelte";
+import VizOccupation from "$components/visualizations/Occupation/VizOccupation.svelte";
 
 import Null from "$components/common/Null.svelte";
 
@@ -14,7 +16,7 @@ const vizMap = {
   // <id from copy doc>: <component>
   banknotesViz: VizBanknotes,
   summaryViz: VizSummary,
-  // firstsViz: VizFirsts,
+  firstsViz: VizFirsts,
   // denominationsViz: VizDenominations,
   // issueDateViz: VizIssueDate,
 };

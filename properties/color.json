@@ -12,11 +12,17 @@
     "yellow": {
       "value": "#F6D251"
     },
+    "orange": {
+      "value": "#E1873D"
+    },
     "brown": {
       "value": "#A55719"
     },
     "brown-transparent": {
       "value": "#A5571980"
+    },
+    "red": {
+      "value": "#81170E"
     }
   }
 }

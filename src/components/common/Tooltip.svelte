@@ -3,16 +3,18 @@
   export let country = "";
   export let text = "";
   export let imgBase = "A_Unknown";
+  export let color = "#ccc";
+
 
   export let x;
   export let y;
 </script>
 
 <div id="tooltip" class="tooltip-container">
-  <div class="portrait-container">
+  <div class="portrait-container" style:border-color={color}>
     <img src={`assets/images/portraits/${imgBase}_300.webp`} alt={`${name} portrait`} />
   </div>
-  <div class="text-container">
+  <div class="text-container" style:background-color={color}>
     <div class="name">{name}</div>
     <div class="country">{country}</div>
     <div class="text">{@html text}</div>
@@ -35,9 +37,7 @@
     transform: translate(6%, -25%);
     overflow: hidden;
     background-color: var(--color-background);
-    // outline: solid 5px var(--color-background);
-    // outline-offset: -5px;
-    border: solid 3px var(--color-green);
+    border: solid 3px;
   }
 
   .text-container {
@@ -45,8 +45,8 @@
     width: 80%;
     height: 100%;
     min-height: 90px;
-    padding: 20px 60px;
-    color: white;
+    padding: 20px 10px 20px 60px;
+    color: var(--color-background);
     background-color: var(--color-green);
     outline: solid 1px var(--color-background);
     outline-offset: -3px;
