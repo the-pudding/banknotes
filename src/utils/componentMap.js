@@ -3,9 +3,11 @@ import Hero from "$components/Hero.svelte";
 import LearnMore from "$components/common/LearnMore.svelte";
 import Methods from "$components/common/Methods.svelte";
 import PortraitBox from "$components/common/PortraitBox.svelte";
+import SlideShow from "$components/common/SlideShow.svelte";
 import TextBasic from "$components/common/TextBasic.svelte";
 
 import VizBanknotes from "$components/visualizations/Banknotes/VizBanknotes.svelte";
+import VizDenominations from "$components/visualizations/Denominations/VizDenominations.svelte";
 import VizSummary from "$components/visualizations/Summary/VizSummary.svelte";
 import VizFirsts from "$components/visualizations/Firsts/VizFirsts.svelte";
 import VizOccupation from "$components/visualizations/Occupation/VizOccupation.svelte";
@@ -15,9 +17,9 @@ import Null from "$components/common/Null.svelte";
 const vizMap = {
   // <id from copy doc>: <component>
   banknotesViz: VizBanknotes,
-  summaryViz: VizSummary,
+  denominationsViz: VizDenominations,
   firstsViz: VizFirsts,
-  // denominationsViz: VizDenominations,
+  summaryViz: VizSummary,
   // issueDateViz: VizIssueDate,
 };
 
@@ -64,6 +66,12 @@ export function getComponent(copyEntry) {
         name: "TextBasic",
         cmp: TextBasic,
         props: { text: value.map(d => d.value) },
+      };
+    case "slideShow":
+      return {
+        name: "SlideShow",
+        cmp: SlideShow,
+        props: { images: value.images },
       };
     case "viz":
       return {

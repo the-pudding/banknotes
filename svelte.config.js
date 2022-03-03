@@ -24,6 +24,7 @@ const config = {
     adapter: adapterStatic(),
     target: "#svelte",
     vite: {
+      optimizeDeps: { include: ["lodash.get", "lodash.isequal", "lodash.clonedeep"] },
       resolve: {
         alias: {
           $actions: path.resolve("./src/actions"),

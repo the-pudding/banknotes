@@ -3,7 +3,7 @@
   import { tooltip } from "$actions/tooltip";
   import { forceSimulation, forceX, forceY, forceCollide } from "d3-force";
   import { startCase } from "lodash";
-  import { color } from "$data/variables.json";
+  import { category } from "$data/variables.json";
 
   import Tooltip from "$components/common/Tooltip.svelte";
 
@@ -52,8 +52,8 @@
 
   // color mapping
   const colors = {
-    F: "#ccc",
-    M: "#777",
+    F: category.female,
+    M: category.male,
   };
 </script>
 
@@ -80,6 +80,7 @@
           country: node.country,
           text: `<h2>${node.billValue} (${startCase(node.currency)})</h2>`,
           imgBase: node.imgBase,
+          color: colors[node.gender],
         },
       }}
       fill={colors[node.gender]}
