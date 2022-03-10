@@ -1,14 +1,15 @@
 <script>
-  import { getContext } from "svelte";
+  import { tweened } from "svelte/motion";
+
   import Scrolly from "$components/helpers/Scrolly.svelte";
   import { rawData } from "$data/data.js";
+  import { chartSteps, defaultChart } from "./chartSteps.js";
   import { uniqWith, isEqual } from "lodash";
 
-  import IssueDateChart from "./VizIssueDate.chart.svelte";
+  import Chart from "./VizIssueDate.chart.svelte";
 
   // get steps array from copy
-  const { copy } = getContext("App");
-  const steps = copy.sections.issueDate.find(d => d.type === "viz").value.steps;
+  export let props = {};
 
   // prep data
   let data = uniqWith(
@@ -16,19 +17,48 @@
     rawData.map(d => ({
       name: d.name,
       issueDate: d.firstAppearanceDate,
-      deathDate: d.deathDate,
+      deathDate: d.deathDate === 0 ? undefined : d.deathDate,
+      elapsed: d.firstAppearanceDate - d.deathDate,
       country: d.country,
       id: d.id,
       imgBase: d.hasPortrait ? d.id : "A_Unknown",
-      hovered: false,
     })),
     isEqual
-  ).filter(d => d.deathDate >= 1200);
+  )
+    .filter(d => d.deathDate !== undefined)
+    .filter(d => !isNaN(d.deathDate));
 
   // scrolly
+  const steps = props.steps.map((d, i) => {
+    // make array of text blocks
+    let text = Object.keys(d)
+      .filter(dd => dd.indexOf("text") === 0)
+      .map(key => d[key]);
+    return {
+      text,
+    };
+  });
+
+  // chart settings based on scroll
   let scrollStep = 0;
+  $: scrollStep, updateChartSettings(scrollStep);
+  let chartSettings = defaultChart;
+  let chartZoom = tweened(
+    { xRange: defaultChart.xRange, yRange: defaultChart.yRange },
+    { duration: 750 }
+  );
+  const updateChartSettings = scrollStep => {
+    let newSettings = scrollStep > 0 ? chartSteps[scrollStep] : defaultChart;
+    let newZoom = {
+      xRange: newSettings.xRange,
+      yRange: newSettings.yRange,
+    };
+    chartZoom.set(newZoom);
+    chartSettings = newSettings;
+  };
+
   $: highlightedIDs =
-    scrollStep !== undefined ? steps[scrollStep].nameIDs.split(",").map(d => d.trim()) : [];
+    scrollStep >= 0 ? props.steps[scrollStep].nameIDs.split(",").map(d => d.replace(" ", "")) : [];
 
   let vizWidth;
   let vizHeight;
@@ -37,7 +67,14 @@
 <div class="container">
   <div class="background">
     <div class="viz-container" bind:clientHeight={vizHeight} bind:clientWidth={vizWidth}>
-      <IssueDateChart width={vizWidth} height={vizHeight} {data} {highlightedIDs} />
+      <Chart
+        w={vizWidth}
+        h={vizHeight}
+        zoom={$chartZoom}
+        settings={chartSettings}
+        {data}
+        {highlightedIDs}
+      />
     </div>
   </div>
 
@@ -45,7 +82,11 @@
   <Scrolly bind:value={scrollStep}>
     {#each steps as step, i}
       <div class="step-container">
-        <div class="step" class:active={scrollStep === i}>{@html step.text}</div>
+        <div class="narrative-step">
+          {#each step.text as paragraph}
+            <p class="prose">{@html paragraph}</p>
+          {/each}
+        </div>
       </div>
     {/each}
   </Scrolly>
@@ -60,6 +101,8 @@
   .container {
     position: relative;
     width: 100%;
+    max-width: 1200px;
+    margin: 150px auto;
   }
 
   .background {
@@ -82,25 +125,11 @@
   .step-container {
     width: 100%;
     max-width: 1200px;
+    min-height: 100vh;
     display: flex;
-    justify-content: flex-end;
-    margin: 0 auto 100vh;
-    /* border: solid 1px hotpink; */
-  }
-
-  .step {
-    position: relative;
-    padding: 30px;
-    width: 45vw;
-    height: 100%;
-    margin: 0 20px;
-    border-radius: 10px;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    background: var(--color-green);
-    color: white;
+    align-items: flex-start;
   }
 
   .spacer {

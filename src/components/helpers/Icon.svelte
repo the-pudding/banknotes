@@ -6,6 +6,8 @@
   export let direction = "n";
   export let width = "1em";
   export let height = "1em";
+  export let xOffset = "0px";
+  export let yOffset = "0px";
   export let stroke = undefined;
   export let strokeWidth = undefined;
 
@@ -20,7 +22,7 @@
 {#if icon}
   <svg
     {...icon.attrs}
-    style="width: {width}; height: {height}; transform: rotate({rotation}deg);"
+    style="width: {width}; height: {height}; transform: rotate({rotation}deg) translate({xOffset}, {yOffset});"
   >
     <g>
       {@html icon.contents}

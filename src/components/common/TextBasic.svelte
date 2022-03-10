@@ -1,6 +1,5 @@
 <script>
   export let text = [];
-  console.log(text);
 </script>
 
 <div class="body-content prose">

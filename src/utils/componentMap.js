@@ -11,6 +11,7 @@ import VizDenominations from "$components/visualizations/Denominations/VizDenomi
 import VizSummary from "$components/visualizations/Summary/VizSummary.svelte";
 import VizFirsts from "$components/visualizations/Firsts/VizFirsts.svelte";
 import VizOccupation from "$components/visualizations/Occupation/VizOccupation.svelte";
+import VizIssueDate from "$components/visualizations/IssueDate/VizIssueDate.svelte";
 
 import Null from "$components/common/Null.svelte";
 
@@ -19,8 +20,9 @@ const vizMap = {
   banknotesViz: VizBanknotes,
   denominationsViz: VizDenominations,
   firstsViz: VizFirsts,
+  occupationViz: VizOccupation,
   summaryViz: VizSummary,
-  // issueDateViz: VizIssueDate,
+  issueDateViz: VizIssueDate,
 };
 
 export function getComponent(copyEntry) {

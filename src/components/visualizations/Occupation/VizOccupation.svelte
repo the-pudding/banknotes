@@ -1,50 +1,90 @@
 <!-- Occupation Section Visualization -->
 <script>
-  import { getContext } from "svelte";
+  import Scrolly from "$components/helpers/Scrolly.svelte";
   import * as d3 from "d3";
   import { rawData } from "$data/data.js";
   import { uniqWith, isEqual } from "lodash";
   import camelCase from "lodash/camelCase.js"; // <-- get around sveltekit build bug
 
   import Group from "./VizOccupation.group.svelte";
+  export let props = {};
 
-  const { copy } = getContext("App");
-  const occupationDefs = copy.sections.occupation.find(d => d.type === "viz").value.occupationDefs;
-
+  // prep data
   let data = d3
     .flatGroup(
       uniqWith(
         // get unique names-profession combo from raw Data
         rawData.map(d => ({
+          id: d.id,
+          gender: d.gender,
           profession: d.profession,
           name: d.name,
-          country: d.country,
           imgBase: d.hasPortrait ? d.id : "A_Unknown",
         })),
         isEqual
       ),
       d => d.profession
     )
-    .map(d => ({ occupation: d[0], key: camelCase(d[0]), count: d[1].length, members: d[1] }))
+    .map(d => ({
+      occupation: d[0],
+      key: camelCase(d[0]),
+      count: d[1].length,
+      members: d[1].sort((a, b) => d3.descending(a.gender, b.gender)),
+    }))
     .sort((a, b) => d3.descending(a.count, b.count));
 
-  let currentDef = "";
-  const handleGroupSelect = e => {
-    let selectedOccupation = e.detail;
-    currentDef = selectedOccupation === "" ? "" : occupationDefs[selectedOccupation];
-  };
+  // scroll steps
+  const steps = props.steps.map((d, i) => {
+    // make array of text blocks
+    let text = Object.keys(d)
+      .filter(dd => dd.indexOf("text") === 0)
+      .map(key => d[key]);
+
+    // get the ids of individuals to highlight on this step
+    let highlightedIDs;
+    if (i === 0) {
+      // writers
+      highlightedIDs = (data.find(dd => dd.key === "writer") || {}).members.map(dd => dd.id);
+    } else {
+      highlightedIDs = d.nameIDs.replace(" ", "").split(",");
+    }
+    return {
+      showNames: i === 0,
+      highlightedIDs,
+      text,
+    };
+  });
+
+  // Scrolly
+  let scrollStep = 0;
+  let highlightedIDs;
+  $: if (scrollStep !== undefined) {
+    highlightedIDs = steps[scrollStep].highlightedIDs;
+  } else {
+    highlightedIDs = [];
+  }
 </script>
 
 <div class="container">
-  <div class="annotation-container">
-    <div class="annotation">{@html currentDef}</div>
+  <div class="background">
+    <div class="viz-container">
+      {#each data as { occupation, key, members }}
+        <Group {occupation} {key} {members} {highlightedIDs} />
+      {/each}
+    </div>
   </div>
 
-  <div class="viz-container">
-    {#each data as { occupation, key, members }}
-      <Group on:setGroup={handleGroupSelect} {occupation} {key} {members} />
+  <Scrolly bind:value={scrollStep}>
+    {#each steps as step, i}
+      <div class="step-container">
+        <div class="narrative-step">
+          {#each step.text as paragraph}
+            <p class="prose">{@html paragraph}</p>
+          {/each}
+        </div>
+      </div>
     {/each}
-  </div>
+  </Scrolly>
 </div>
 
 <style lang="scss">
@@ -53,32 +93,25 @@
     width: 100%;
     max-width: 1200px;
     margin: 150px auto;
-    display: flex;
   }
 
-  .annotation-container {
-    flex: 1;
+  .background {
     position: sticky;
     top: 0;
     height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-
-    .annotation {
-      position: sticky;
-      top: 50%;
-      width: 80%;
-      margin: 0 auto;
-      font-size: 24px;
-
-      :global b {
-        color: var(--color-green);
-      }
-    }
+    justify-content: center;
+    align-items: center;
   }
 
-  .viz-container {
-    flex: 2;
+  .step-container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
   }
 </style>

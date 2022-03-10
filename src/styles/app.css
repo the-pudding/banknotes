@@ -88,6 +88,10 @@ a:hover {
   opacity: 0.8;
 }
 
+b {
+  color: var(--color-brown);
+}
+
 mark {
   background-color: var(--color-green);
   color: white;
@@ -102,6 +106,21 @@ mark a {
   max-width: 760px;
   margin: 0 auto;
 }
+
+.narrative-step {
+  position: relative;
+  padding: 0 2em;
+  width: 45vw;
+  color: var(--color-gray-dark);
+  background: var(--color-yellow);
+  border: solid 2px var(--color-background);
+  border-radius: 10px;
+  box-shadow: -10px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* .narrative-step b {
+  color: var(--color-background);
+} */
 
 .viz-title {
   font-family: "Baloo Bhai 2", cursive;

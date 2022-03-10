@@ -17,8 +17,6 @@
       return [...colorArr, ...colorArr];
     });
   }
-
-  console.log($data === undefined);
 </script>
 
 {#each $data as { country, firsts }, i}

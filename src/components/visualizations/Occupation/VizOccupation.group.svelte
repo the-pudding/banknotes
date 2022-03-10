@@ -6,30 +6,17 @@
   export let members = [];
   export let key = "";
   export let occupation = "";
-
-  const dispatch = createEventDispatcher();
-  const handleGroupHover = () => {
-    // tell parent this group was hovered
-    dispatch("setGroup", key);
-  };
-  const handleMouseout = () => {
-    // tell parent mouseout
-    dispatch("setGroup", "");
-  };
+  export let highlightedIDs = [];
 </script>
 
-<div
-  class="group-container"
-  on:mouseover={handleGroupHover}
-  on:focus={handleGroupHover}
-  on:mouseout={handleMouseout}
-  on:blur={handleMouseout}
->
+<div class="group-container">
   <div class="label">{occupation}</div>
   <div class="members-container">
-    {#each members as { name, country, imgBase }}
+    {#each members as { name, id, gender, country, imgBase }}
       <div
         class="member"
+        class:highlighted={highlightedIDs.includes(id)}
+        class:male={gender === "M"}
         use:tooltip={{
           component: Tooltip,
           props: { name, country, imgBase },
@@ -41,11 +28,7 @@
 
 <style lang="scss">
   .group-container {
-    padding: 10px;
-
-    &:hover {
-      border: solid 2px var(--color-green);
-    }
+    padding: 5px;
   }
 
   .label {
@@ -61,13 +44,21 @@
 
   .member {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     margin: 1px;
-    background-color: #ddd;
-    border: solid 2px var(--color-green);
+    background-color: #eee;
+    border: solid 1px var(--color-green);
     border-radius: 50%;
     cursor: pointer;
+
+    &.highlighted {
+      background: var(--category-female);
+
+      &.male {
+        background: var(--category-male);
+      }
+    }
 
     &:hover {
       border-width: 5px;
