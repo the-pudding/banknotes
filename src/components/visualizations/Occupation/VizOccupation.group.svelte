@@ -1,5 +1,4 @@
 <script>
-  import { createEventDispatcher } from "svelte";
   import { tooltip } from "$actions/tooltip";
   import Tooltip from "$components/common/Tooltip.svelte";
 

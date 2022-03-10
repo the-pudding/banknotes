@@ -74,10 +74,13 @@
   {/each}
 
   <!-- HIGHLIGHTED DATA -->
-  {#each highlightedData as d (d.id)}
+  {#each highlightedData as d (`${d.id}_${d.country}`)}
     {@const name = d.name}
     {@const imgBase = d.imgBase}
-    <g class="highlighted-person" opacity="1">
+    <g class="highlighted-person" opacity="1" use:tooltip={{
+      component: Tooltip,
+      props: { name, imgBase },
+    }}>
       <line
         x1={xScale(d.issueDate)}
         y1={yScale(d.elapsed)}
@@ -87,10 +90,6 @@
         stroke-width={4}
       />
       <circle
-        use:tooltip={{
-          component: Tooltip,
-          props: { name, imgBase },
-        }}
         cx={xScale(d.issueDate)}
         cy={yScale(d.elapsed)}
         r={8}
@@ -99,10 +98,6 @@
         stroke-width={4}
       />
       <circle
-        use:tooltip={{
-          component: Tooltip,
-          props: { name, imgBase },
-        }}
         cx={xScale(d.deathDate)}
         cy={yScale(d.elapsed)}
         r={8}

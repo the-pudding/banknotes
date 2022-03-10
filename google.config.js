@@ -18,4 +18,9 @@ export default [
     gid: "222033591",
     filepath: "src/data/nameIDs.csv",
   },
+  {
+    id: "1IxXSYkP61o1W6dYIDL8YKQkC43e0hgvw2mLCfQcEuDw",
+    gid: "1039260671",
+    filepath: "src/data/currencyImages.csv",
+  },
 ];
