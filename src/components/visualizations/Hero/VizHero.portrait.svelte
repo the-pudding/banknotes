@@ -11,6 +11,7 @@
   export let portraitIDs = [];
 
   let color = randFromArr(['red', 'yellow', 'green', 'brown']); 
+  color = 'green';
 
   let ref;
   const portraitsDir = 'assets/images/portraits';

@@ -11,8 +11,6 @@
 
   // construct array of components based on the "type" of each item in content array
   const outline = content.map(item => getComponent(item));
-
-  // $: console.log(outline);
 </script>
 
 <Meta title={meta.title} description={meta.description} url={meta.url} />

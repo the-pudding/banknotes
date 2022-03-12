@@ -113,5 +113,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+
+    // &:last-of-type {
+    //   min-height: 80vh;
+    // }
   }
 </style>

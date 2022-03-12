@@ -65,13 +65,9 @@
 
 <style lang="scss">
   .container {
-    margin: 25vh auto;
+    margin: 100px auto;
     width: 650px;
   }
-
-  // * {
-  //   border: solid 1px red;
-  // }
 
   figure {
     margin: 0 auto;

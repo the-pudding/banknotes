@@ -44,7 +44,7 @@
 <style lang="scss">
   .container {
     position: relative;
-    margin: 25vh auto;
+    margin: 15vh auto;
   }
 
   .bg-image {

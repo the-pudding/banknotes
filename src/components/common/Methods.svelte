@@ -2,15 +2,22 @@
   export let text = [];
 </script>
 
-<div class="container body-content prose">
-  <b>Methodology</b>
-  {#each text as paragraph}
-    <p class="body">{@html paragraph}</p>
-  {/each}
+<div class="container">
+  <div class="box body-content prose">
+    <b>Methodology</b>
+    {#each text as paragraph}
+      <p class="body">{@html paragraph}</p>
+    {/each}
+  </div>
 </div>
 
 <style lang="scss">
   .container {
+    padding-bottom: 5vh;
+    background-color: var(--color-background);
+  }
+
+  .box {
     background-color: var(--color-brown-transparent);
     padding: 30px 50px;
     margin: 100px auto;

@@ -6,19 +6,30 @@
   export let key = "";
   export let occupation = "";
   export let highlightedIDs = [];
+
+  import { color, category } from "$data/variables.json";
+
+  const getColor = (id, gender) => {
+    if (highlightedIDs.includes(id)) {
+      console.log(id, gender);
+      return gender === "M" ? category["male"] : category["female"];
+    } else {
+      return color["gray"];
+    }
+  };
 </script>
 
 <div class="group-container">
   <div class="label">{occupation}</div>
   <div class="members-container">
-    {#each members as { name, id, gender, country, imgBase }}
+    {#each members as { name, id, gender, country, imgBase } (`${highlightedIDs.length}_${id}`)}
       <div
         class="member"
         class:highlighted={highlightedIDs.includes(id)}
         class:male={gender === "M"}
         use:tooltip={{
           component: Tooltip,
-          props: { name, country, imgBase },
+          props: { name, country, imgBase, color: getColor(id, gender) },
         }}
       />
     {/each}
@@ -60,8 +71,7 @@
     }
 
     &:hover {
-      border-width: 5px;
-      background: var(--color-green);
+      opacity: 0.7;
     }
   }
 </style>

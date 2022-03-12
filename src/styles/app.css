@@ -80,6 +80,26 @@ select {
   color: white;
 }
 
+select:after {
+  content: "<>";
+  font: 17px "Consolas", monospace;
+  color: #fff;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 11px;
+  /*Adjust for position however you want*/
+
+  top: 18px;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #999;
+  /*left line */
+
+  position: absolute;
+  pointer-events: none;
+}
+
 a {
   color: var(--color-green);
 }
@@ -112,8 +132,8 @@ mark a {
   padding: 0 2em;
   width: 45vw;
   color: var(--color-gray-dark);
-  background: var(--color-yellow);
-  border: solid 2px var(--color-background);
+  background: var(--color-background);
+  border: solid 2px var(--color-brown);
   border-radius: 10px;
   box-shadow: -10px 15px 20px rgba(0, 0, 0, 0.1);
 }

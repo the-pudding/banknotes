@@ -26,7 +26,7 @@
   .header {
     display: flex;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     cursor: pointer;
   }
 
@@ -56,6 +56,7 @@
   }
 
   .body {
+    padding: 0 35px;
     margin: 20px auto;
     font-family: "Abhaya Libre", serif;
     font-weight: 400;
