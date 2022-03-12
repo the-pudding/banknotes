@@ -1,10 +1,11 @@
 {
   ".svelte-kit/build/runtime/internal/start.js": {
-    "file": "start-87e05aa2.js",
+    "file": "start-c5f92ee4.js",
     "src": ".svelte-kit/build/runtime/internal/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-90ff3097.js"
+      "_vendor-4642fb37.js",
+      "_preload-helper-2f605d29.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
@@ -16,47 +17,65 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-6f0dec84.js",
+    "file": "pages/__layout.svelte-7d126c68.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-90ff3097.js",
+      "_vendor-4642fb37.js",
       "_wordmark-0849a013.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-b4512fe1.css"
+      "assets/pages/__layout.svelte-6291f95d.css"
     ]
   },
   ".svelte-kit/build/components/error.svelte": {
-    "file": "error.svelte-97ced0bd.js",
+    "file": "error.svelte-e57234d9.js",
     "src": ".svelte-kit/build/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-90ff3097.js"
+      "_vendor-4642fb37.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-733c46e0.js",
+    "file": "pages/index.svelte-0b776509.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-90ff3097.js",
-      "_wordmark-0849a013.js"
+      "_vendor-4642fb37.js",
+      "_wordmark-0849a013.js",
+      "_preload-helper-2f605d29.js"
+    ],
+    "dynamicImports": [
+      "node_modules/svelte-carousel/src/main.js"
     ],
     "css": [
-      "assets/pages/index.svelte-e3fd7915.css"
+      "assets/pages/index.svelte-7af1c29c.css"
     ]
   },
-  "_vendor-90ff3097.js": {
-    "file": "chunks/vendor-90ff3097.js",
+  "_vendor-4642fb37.js": {
+    "file": "chunks/vendor-4642fb37.js",
     "css": [
-      "assets/vendor-4f457570.css"
+      "assets/vendor-84c84b4d.css"
     ]
+  },
+  "_preload-helper-2f605d29.js": {
+    "file": "chunks/preload-helper-2f605d29.js"
   },
   "_wordmark-0849a013.js": {
     "file": "chunks/wordmark-0849a013.js"
+  },
+  "node_modules/svelte-carousel/src/main.js": {
+    "file": "chunks/main-8ed8dc6f.js",
+    "src": "node_modules/svelte-carousel/src/main.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-4642fb37.js"
+    ],
+    "css": [
+      "assets/main-59c19fa3.css"
+    ]
   }
 }
