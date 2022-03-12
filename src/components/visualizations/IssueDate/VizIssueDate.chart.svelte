@@ -74,7 +74,7 @@
   {/each}
 
   <!-- HIGHLIGHTED DATA -->
-  {#each highlightedData as d (`${d.id}_${d.country}`)}
+  {#each highlightedData as d (`${d.id}_${d.country}_${highlightedData.length}`)}
     {@const name = d.name}
     {@const imgBase = d.imgBase}
     <g class="highlighted-person" opacity="1" use:tooltip={{
