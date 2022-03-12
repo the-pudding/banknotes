@@ -12,7 +12,8 @@
   d3.flatGroup(
     rawData.map(d => ({
       country: d.countryName,
-      image: `assets/images/currency/${d.usableImage}.jpg`,
+      imgPath: `assets/images/currency/${d.usableImage}.jpg`,
+      caption: d.caption,
     })),
     d => d.country
   ).forEach(d => (data[d[0]] = d[1]));
@@ -23,12 +24,12 @@
   const updateCountry = e => {
     let countrySelector = document.getElementById("country-selector");
     let currentCountry = countrySelector.value;
-    images = data[currentCountry].map(d => d.image);
+    images = data[currentCountry].map(d => ({ imgPath: d.imgPath, caption: d.caption }));
   };
 
   let imgSetHeight = 0;
   let imgSetMinHeight = 0;
-  $: if (imgSetHeight > 400){
+  $: if (imgSetHeight > 400) {
     imgSetMinHeight = imgSetHeight;
   }
 
@@ -54,11 +55,11 @@
   <p class="prose">{@html text}</p>
 </div>
 
-<div class="body-content image-set" bind:clientHeight={imgSetHeight} style:min-height={`${imgSetMinHeight}px`}>
-  {#each images as image, i (image)}
-    <figure in:fade={{ delay: i + 1 * 100 }} class="image">
-      <img src={`${image}`} alt="" />
-      <figcaption>''</figcaption>
+<div class="body-content image-set" bind:clientHeight={imgSetHeight}>
+  {#each images as image, i (image.imgPath)}
+    <figure in:fade={{ delay: (i + 1) * 100, duration: 1000 }} class="image">
+      <img src={`${image.imgPath}`} alt={image.caption} />
+      <figcaption>{image.caption}</figcaption>
     </figure>
   {/each}
 </div>
@@ -66,7 +67,7 @@
 <style>
   .image-set {
     width: 100%;
-    /* min-height: 400px; */
+    min-height: 400px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;

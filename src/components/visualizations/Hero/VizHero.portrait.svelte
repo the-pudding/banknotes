@@ -1,6 +1,6 @@
 <script>
   import {onMount} from "svelte";
-  import { randBw } from "$utils/utils";
+  import { randBw, randFromArr } from "$utils/utils";
   import gsap from "gsap";
   gsap.config({  // <-- turn off irritating warnings that are specific to staging
     nullTargetWarn: false,
@@ -9,6 +9,8 @@
   
   export let width = 100;
   export let portraitIDs = [];
+
+  let color = randFromArr(['red', 'yellow', 'green', 'brown']); 
 
   let ref;
   const portraitsDir = 'assets/images/portraits';
@@ -41,7 +43,7 @@
 </script>
 
 
-<div bind:this={ref} style:width="{width}px" class="portrait">
+<div bind:this={ref} style:width="{width}px" class={`portrait ${color}`}>
   <img src={imgSrc} alt="portrait popup" />
 </div>
 
@@ -53,8 +55,24 @@
     outline: solid 10px var(--color-green);
     outline-offset: -13px;
     border: solid 2px var(--color-gray-dark);
+    border-radius: 7px;
     height: 200px;
     box-shadow: 5px 5px 5px rgba(#000, .5);
+  }
+
+  .red {
+    background: radial-gradient(var(--color-background) 30%,  var(--color-red));
+    outline: solid 10px var(--color-red);
+  }
+
+  .yellow {
+    background: radial-gradient(var(--color-background) 30%,  var(--color-yellow));
+    outline: solid 10px var(--color-yellow);
+  }
+
+  .brown {
+    background: radial-gradient(var(--color-background) 30%,  var(--color-brown));
+    outline: solid 10px var(--color-brown);
   }
 
 
