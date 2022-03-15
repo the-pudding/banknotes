@@ -226,7 +226,7 @@ South Korea,KRW,Won,Shin Saimdang,F,1,Visual Artist,No,50000,,2009,1551,458,,,fa
 South Korea,KRW,Won,King Sejong the Great,M,1,Monarch,No,10000,,1973,1450,523,,,false,KRW_Sejong
 Sweden,SEK,Swedish krona,Ingmar Bergman,M,1,Visual Artist,No,200,0.08,2015,2007,8,,,false,SEK_Ingmar
 Sweden,SEK,Swedish krona,Birgit Nilsson,F,1,Musician,No,500,0.75,2016,2005,11,,,false,SEK_Nilsson
-Sweden,SEK,Swedish krona,Astrid Lindgren,F,1,Writer,No,20,0.03,2015,2002,13,,,false,SEK_Lindgren
+Sweden,SEK,Swedish krona,Astrid Lindgren,F,1,Writer,No,20,0.03,2015,2002,13,,,true,SEK_Lindgren
 Sweden,SEK,Swedish krona,Greta Garbo,F,1,Performer,No,100,0.06,2015,1990,25,,,true,SEK_Greta
 Sweden,SEK,Swedish krona,Evert Taube,M,1,Musician,No,50,0.02,2015,1976,39,,,false,SEK_Evert
 Sweden,SEK,Swedish krona,Dag Hammarskiöld,M,1,Politician,No,1000,0.06,2015,1961,54,Won the Nobel peace prize,,false,SEK_Dag

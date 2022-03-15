@@ -24,13 +24,16 @@
 
   img {
     position: absolute;
+    max-height: 400px;
+    max-width: 400px;
     left: 66%;
     top: 50%;
     transform: translate(0, -50%);
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   p {
+    position: relative;
     color: var(--color-background);
     padding: 1em;
   }
