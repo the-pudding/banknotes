@@ -13,6 +13,7 @@
         rawData.map(d => ({
           profession: d.profession,
           name: d.name,
+          gender: d.gender,
           country: d.country,
           imgBase: d.hasPortrait ? d.id : "A_Unknown",
           knownForBeingFirst: d.knownForBeingFirst,
@@ -46,7 +47,7 @@
 <style>
   .viz-container {
     width: 100%;
-    max-width: 1800px;
+    max-width: 1200px;
     height: 80vh;
     margin: 25vh auto;
     /* background-color: coral; */

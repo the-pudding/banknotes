@@ -2,21 +2,18 @@
   import { getContext } from "svelte";
   import { tooltip } from "$actions/tooltip";
   import Tooltip from "$components/common/Tooltip.svelte";
-  import { color } from "$data/variables.json";
+  import { color, category } from "$data/variables.json";
   import { shuffle } from "$utils/utils";
-
-  let { green, yellow, orange, brown, red } = color;
-  let colors = [green, yellow, orange, brown, red];
 
   const { data, width, height, xScale, yScale } = getContext("LayerCake");
 
-  let rowColors;
-  $: if ($data) {
-    rowColors = $data.map(d => {
-      let colorArr = shuffle(colors);
-      return [...colorArr, ...colorArr];
-    });
-  }
+  // let rowColors;
+  // $: if ($data) {
+  //   rowColors = $data.map(d => {
+  //     let colorArr = shuffle(colors);
+  //     return [...colorArr, ...colorArr];
+  //   });
+  // }
 </script>
 
 {#each $data as { country, firsts }, i}
@@ -38,7 +35,7 @@
           country: first.country,
           text: first.hoverText,
           imgBase: first.imgBase,
-          color: rowColors[i][ii],
+          color: first.gender === "M" ? category.male : category.female,
         },
       }}
       title="test"
@@ -46,7 +43,7 @@
       y={$yScale(country)}
       width={$xScale.bandwidth()}
       height={$yScale.bandwidth()}
-      fill={rowColors[i][ii]}
+      fill={first.gender === "M" ? category.male : category.female}
     />
   {/each}
 {/each}
@@ -54,10 +51,10 @@
 <style lang="scss">
   rect {
     cursor: pointer;
-    fill-opacity: 0.4;
+    fill-opacity: 1;
 
     &:hover {
-      fill-opacity: 1;
+      fill-opacity: 0.4;
     }
   }
 </style>

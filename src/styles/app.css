@@ -131,6 +131,7 @@ mark a {
   position: relative;
   padding: 0 2em;
   width: 45vw;
+  max-width: 600px;
   color: var(--color-gray-dark);
   background: var(--color-background);
   border: solid 2px var(--color-brown);
