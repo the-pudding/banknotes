@@ -1,5 +1,6 @@
 <!-- Occupation Section Visualization -->
 <script>
+  import { onMount } from "svelte";
   import Scrolly from "$components/helpers/Scrolly.svelte";
   import * as d3 from "d3";
   import { rawData } from "$data/data.js";
@@ -56,6 +57,21 @@
   });
 
   // Scrolly
+  const clearTooltips = () => {
+    if (isMounted) {
+      let tooltips = document.querySelectorAll(".tooltip-container");
+      if (tooltips.length > 0) {
+        for (var t of tooltips) {
+          t.remove();
+        }
+      }
+    }
+  };
+  let isMounted = false;
+  onMount(() => {
+    isMounted = true;
+  });
+
   let scrollStep = 0;
   let highlightedIDs;
   $: if (scrollStep !== undefined) {
@@ -63,6 +79,8 @@
   } else {
     highlightedIDs = [];
   }
+
+  $: scrollStep, clearTooltips();
 </script>
 
 <div class="container">

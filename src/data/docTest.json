@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Who's in Your Wallet?",
+    "description": "site description",
+    "url": "https://www.pudding.cool"
+  },
+  "content": [
+    {
+      "type": "viz",
+      "value": {
+        "id": "issueDateViz",
+        "steps": [
+          {
+            "id": "step1",
+            "text1": "Hannibal, the famous Military Commander from ancient Carthage and face of the Tunisian dinar, died in 183 BCE, which makes him the oldest person in our dataset.",
+            "nameIDs": "TND_Hannibal"
+          },
+          {
+            "id": "step2",
+            "text1": "South Korea had the oldest people on average: all four of them lived in the 13th and 14th centuries.",
+            "nameIDs": "KRW_Sejong, KRW_Shin, KRW_Hwang, KRW_I"
+          },
+          {
+            "id": "step3",
+            "text1": "For exactly ⅓ of the people, it took centuries. Eighty-one people died more than 100 years before they were issued to a current legal-tender banknote.",
+            "nameIDs": "ARS_Domingo,ARS_Rosas,ARS_Belgrano,AUD_Reibey,BOB_Zarate,BOB_Tupa,BOB_Sucre,BOB_Bolivar,BOB_Azurduy,BOB_Canoto,BOB_Santos,BOB_Eustaquino,BOB_Ignacio,BOB_Bartolina,BOB_Katari,BOB_Tupac,BOB_Alejo,CAD_Cartier,CLP_Chacon,CLP_Andres,CLP_Erdoyza,COP_Isaacs,COP_Santander,COP_Policarpa,CRC_Acuna,CRC_Carrillo,CZK_Frantisek,CZK_Bozena,CZK_Amos,CZK_Charles,DOP_Rosario,DOP_Luperon,DOP_Salome,GBP_Turner,GBP_Austen,GEL_Tamar,GEL_Shota,GEL_David,ISK_Sigurdsson,ISK_Hallgrimsson,ISK_Ragnheiour,ISK_Sveinsson,IDR_Prince,IDR_Sultan,JMD_Sharpe,JMD_Nanny,JPY_Ichiyo,KGS_Balasagyn,MXN_Benito,MXN_Hidalgo,MXN_Morelos,MXN_Juana,MXN_Neza,PEN_Santa,STD_Rei,RSD_Vuk,RSD_Njegos,KRW_I,KRW_Hwang,KRW_Shin,KRW_Sejong,TND_Hannibal,TRY_Itri,TRY_Yunus,UAH_Taras,UAH_Skovoroda,UAH_Mazepa,UAH_Bogdon,UAH_Yaroslav,UAH_Great,USD_Franklin,USD_Hamilton,UYU_Varela,UYU_Larranaga,BOB_Bolivar,BOB_Sucre,VES​_Camejo,VES​_Miranda,VES​_Rodrigues,VES​_Ezequiel,VES​_Rajael,VES​_Ribas"
+          },
+          {
+            "id": "step4",
+            "text1": "The shortest waiting time for someone to be put on a banknote after their death was one year, and this was only the case for four people: Gabriel García Márquez of Colombia, General Murtala Mohammed of Nigeria, Corazon C. Aquino and Manuel A. Roxas of the Philippines.",
+            "text2": "All four of these people were notable firsts as well. We found that people who were known for a first were issued on a banknote sooner than those that were not notable firsts.",
+            "nameIDs": "COP_Gabriel, NGN_Murtala, PHP_Corazon, PHP_Roxas"
+          },
+          {
+            "id": "step5",
+            "text1": "Among the 10 people who were alive to see themself on a banknote, only Queen Elizabeth is still alive.",
+            "nameIDs": "BDT_Rahman,IDR_Soekarno,JMD_Norman,MWK_Hastings,MWK_Rose,NZD_Edmund,PGK_Somare,ZAR_Mandela,TRY_Ataturk"
+          }
+        ]
+      }
+    }
+  ]
+}

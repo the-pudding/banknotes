@@ -16,6 +16,7 @@
   $: xRange = zoom.xRange;
   $: highlightedData = data.filter(d => highlightedIDs.includes(d.id));
 
+
   const margin = { left: 50, right: 100, top: 100, bottom: 100 };
 
   // scales
@@ -74,7 +75,7 @@
   {/each}
 
   <!-- HIGHLIGHTED DATA -->
-  {#each highlightedData as d (`${d.id}_${d.country}_${highlightedData.length}`)}
+  {#each highlightedData as d (`${d.id}_${d.country}`)}
     {@const name = d.name}
     {@const imgBase = d.imgBase}
     <g class="highlighted-person" opacity="1" use:tooltip={{

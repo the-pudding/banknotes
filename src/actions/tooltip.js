@@ -85,6 +85,14 @@ export function tooltip(element, params = {}) {
     }
 
     tooltipRef.$destroy();
+
+    // HACKY FIX: remove old tooltips
+    let tooltips = document.querySelectorAll(".tooltip-container");
+    if (tooltips.length > 0) {
+      for (var t of tooltips) {
+        t.remove();
+      }
+    }
   }
 
   element.addEventListener("mouseover", mouseOver);

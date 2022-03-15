@@ -11,7 +11,6 @@
 
   const getColor = (id, gender) => {
     if (highlightedIDs.includes(id)) {
-      console.log(id, gender);
       return gender === "M" ? category["male"] : category["female"];
     } else {
       return color["gray"];

@@ -3,6 +3,7 @@
   import { getComponent } from "$utils/componentMap";
 
   import Meta from "$components/Meta.svelte";
+  //import copy from "$data/docTest.json";
   import copy from "$data/doc.json";
 
   // set site copy as context in case any other components need it

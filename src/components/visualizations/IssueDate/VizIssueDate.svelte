@@ -1,6 +1,6 @@
 <script>
+  import { onMount } from "svelte";
   import { tweened } from "svelte/motion";
-
   import Scrolly from "$components/helpers/Scrolly.svelte";
   import { rawData } from "$data/data.js";
   import { chartSteps, defaultChart } from "./chartSteps.js";
@@ -40,7 +40,23 @@
   });
 
   // chart settings based on scroll
+  const clearTooltips = () => {
+    if (isMounted) {
+      let tooltips = document.querySelectorAll(".tooltip-container");
+      if (tooltips.length > 0) {
+        for (var t of tooltips) {
+          t.remove();
+        }
+      }
+    }
+  };
+  let isMounted = false;
+  onMount(() => {
+    isMounted = true;
+  });
+
   let scrollStep = 0;
+  $: scrollStep, clearTooltips();
   $: scrollStep, updateChartSettings(scrollStep);
   let chartSettings = defaultChart;
   let chartZoom = tweened(
