@@ -136,6 +136,9 @@
   </g>
 
   <!-- ANNOTATIONS -->
+  <text class="annotation" x={xScale.range()[1]/2} dy="-10" y={yScale(0)} text-anchor="middle">died before appearing ↑</text>
+  <text class="annotation" x={xScale.range()[1]/2} dy="10" y={yScale(0)} dominant-baseline="hanging" text-anchor="middle">alive while appearing ↓</text>
+
   <line
     class="zero-line"
     x1={xScale.range()[0]}
@@ -149,6 +152,21 @@
 <style lang=scss>
   .axis {
     stroke: var(--color-gray-dark);
+  }
+
+  .annotation {
+    text-transform: uppercase;
+    opacity: .5;
+    font-family: "ABeeZee";
+    font-weight: 500;
+  }
+
+  .axis-label {
+    text-transform: uppercase;
+    opacity: .5;
+    font-size: 18px;
+    font-family: "ABeeZee";
+    font-weight: 500;
   }
 
   .highlighted-person {
