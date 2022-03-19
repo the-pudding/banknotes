@@ -272,9 +272,9 @@ Uruguay,UYU,Peso uruguayo,José Pedro Varela,M,1,Educator,Yes,50,0.15,1994,1879,
 Uruguay,UYU,Peso uruguayo,Dámaso Antonio Larrañaga,M,1,STEM,Yes,2000,0.10,2003,1848,155,Founded Uruguay's first public library,Founded Uruguay's first public library,false,UYU_Larranaga
 Venezuela,VES​,Venezuelan bolivar,Simón Bolívar,M,1,Founder,Yes,500,,1940,1830,110,First president of Colombia and Bolivia,First President of Colombia and Bolivia,true,BOB_Bolivar
 Venezuela,VES​,Venezuelan bolivar,Antonio José de Sucre,M,1,Founder,Yes,50,,1945,1830,115,Frst constitutionally elected leader of Bolivia,First constitutionally elected leader of Bolivia,true,BOB_Sucre
-Venezuela,VES​,Venezuelan bolivar,Josefa Camejo,F,1,Revolutionary,No,2,,2018,1870,148,,,false,VES​_Camejo
-Venezuela,VES​,Venezuelan bolivar,Francisco de Miranda,M,1,Military,No,200,,1968,1816,152,,,false,VES​_Miranda
-Venezuela,VES​,Venezuelan bolivar,Simón Rodrigues,M,1,Educator,No,20,,2007,1854,153,,,false,VES​_Rodrigues
-Venezuela,VES​,Venezuelan bolivar,Ezequiel Zamora,M,1,Military,No,100,,2018,1860,158,,,false,VES​_Ezequiel
-Venezuela,VES​,Venezuelan bolivar,Rafael Urdaneta,M,1,Head of Gov't,No,10,,2018,1845,173,,,false,VES​_Rajael
-Venezuela,VES​,Venezuelan bolivar,José Félix Ribas,M,1,Military,No,5,,2018,1815,203,,,false,VES​_Ribas
+Venezuela,VES,Venezuelan bolivar,Josefa Camejo,F,1,Revolutionary,No,2,,2018,1870,148,,,false,VES_Camejo
+Venezuela,VES,Venezuelan bolivar,Francisco de Miranda,M,1,Military,No,200,,1968,1816,152,,,false,VES_Miranda
+Venezuela,VES,Venezuelan bolivar,Simón Rodrigues,M,1,Educator,No,20,,2007,1854,153,,,false,VES_Rodrigues
+Venezuela,VES,Venezuelan bolivar,Ezequiel Zamora,M,1,Military,No,100,,2018,1860,158,,,false,VES_Ezequiel
+Venezuela,VES,Venezuelan bolivar,Rafael Urdaneta,M,1,Head of Gov't,No,10,,2018,1845,173,,,false,VES_Rajael
+Venezuela,VES,Venezuelan bolivar,José Félix Ribas,M,1,Military,No,5,,2018,1815,203,,,false,VES_Ribas

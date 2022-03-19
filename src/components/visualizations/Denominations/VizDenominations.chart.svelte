@@ -59,7 +59,7 @@
 
 <g class="x-axis">
   {#each xLabels as { label, x }}
-    <text {x} y="0" text-anchor="middle">{label}</text>
+    <text {x} y={$yScale.range()[0] + 50} text-anchor="middle">{label}</text>
   {/each}
 </g>
 
@@ -96,7 +96,7 @@
     font-size: 24px;
     font-style: italic;
     text-transform: capitalize;
-    fill: var(--color-green);
+    fill: var(--color-gray-dark);
   }
 
   circle {

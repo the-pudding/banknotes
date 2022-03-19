@@ -82,12 +82,14 @@
 
 <div class="container">
   <div class="background">
+    <h3 class="body-content viz-title">Interval between death and appearance on banknote</h3>
     <div class="viz-container" bind:clientHeight={vizHeight} bind:clientWidth={vizWidth}>
       <Chart
         w={vizWidth}
         h={vizHeight}
         zoom={$chartZoom}
         settings={chartSettings}
+        showLabels={scrollStep === 0}
         {data}
         {highlightedIDs}
       />
@@ -127,6 +129,7 @@
     height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

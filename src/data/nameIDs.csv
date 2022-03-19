@@ -65,10 +65,10 @@ Emilio Prud'Homme,,Emilio,DOP_Emilio,2000,DOP,Dominican Republic
 Eustaquio Méndez,,Eustaquino,BOB_Eustaquino,10,BOB,Bolivia
 Eva Perón,,Evita,ARS_Evita,100,ARS,Argentina
 Evert Taube,,Evert,SEK_Evert,50,SEK,Sweden
-Ezequiel Zamora,,Ezequiel,VES​_Ezequiel,100,VES​,Venezuela
+Ezequiel Zamora,,Ezequiel,VES_Ezequiel,100,VES,Venezuela
 Farhat Hached,,Farhat,TND_Farhat,20,TND,Tunisia
 Fatma Aliye Topuz,,Fatma,TRY_Fatma,50,TRY,Turkey
-Francisco de Miranda,,Miranda,VES​_Miranda,200,VES​,Venezuela
+Francisco de Miranda,,Miranda,VES_Miranda,200,VES,Venezuela
 Francisco de Paula Santander,,Santander,COP_Santander,2000,COP,Colombia
 Francisco del Rosario Sánchez,,Rosario,DOP_Rosario,100,DOP,Dominican Republic
 Francisco I. Madero,,Madero,MXN_Madero,1000,MXN,Mexico
@@ -118,14 +118,14 @@ Jorge Isaacs,,Isaacs,COP_Isaacs,50000,COP,Colombia
 José Abad Santos,,Abad,PHP_Abad,1000,PHP,Philippines
 José Abelardo Quiñones Gonzales,,Abelardo,PEN_Abelardo,10,PEN,Peru
 José Asunción Silva,,Asuncion,COP_Asuncion,5000,COP,Colombia
-José Félix Ribas,,Ribas,VES​_Ribas,5,VES​,Venezuela
+José Félix Ribas,,Ribas,VES_Ribas,5,VES,Venezuela
 José Figueres,,Figueres,CRC_Figueres,10000,CRC,Costa Rica
 "José Manuel Baca ""Cañoto""",,Canoto,BOB_Canoto,50,BOB,Bolivia
 José María Morelos,,Morelos,MXN_Morelos,200,MXN,Mexico
 José Pedro Varela,,Varela,UYU_Varela,50,UYU,Uruguay
 José Rufino Reyes y Siancas,,Rufino,DOP_Rufino,2000,DOP,Dominican Republic
 José Santos Vargas,,Santos,BOB_Santos,10,BOB,Bolivia
-Josefa Camejo,,Camejo,VES​_Camejo,2,VES​,Venezuela
+Josefa Camejo,,Camejo,VES_Camejo,2,VES,Venezuela
 Josefa Llanes Escoda,,Llanes,PHP_Llanes,1000,PHP,Philippines
 Jovan Cvijic,,Cvijic,RSD_Cvijic,500,RSD,Serbia
 Juan Manuel de Rosas ,,Rosas,ARS_Rosas,20,ARS,Argentina
@@ -187,7 +187,7 @@ Prince Antasari,,Prince,IDR_Prince,2000,IDR,Indonesia
 Queen Elizabeth II,,Elizabeth,AUD_Elizabeth,5,AUD,Australia
 Queen Tamar,,Tamar,GEL_Tamar,50,GEL,Georgia
 Rachel Bluwstein,,Rachel,ILS_Rachel,20,ILS,Israel
-Rafael Urdaneta,,Rajael,VES​_Rajael,10,VES​,Venezuela
+Rafael Urdaneta,,Rajael,VES_Rajael,10,VES,Venezuela
 Ragnheiður Jónsdóttir,,Ragnheiour,ISK_Ragnheiour,5000,ISK,Iceland
 Raúl Porras Barrenechea,,Raul,PEN_Raul,20,PEN,Peru
 Rei Amador,,Rei,STD_Rei,200,STD,São Tomé and Príncipe 
@@ -205,7 +205,7 @@ Shaul Tchernichovsky,,Shaul,ILS_Shaul,50,ILS,Israel
 Shin Saimdang,,Shin,KRW_Shin,50000,KRW,South Korea
 Shota Rustaveli,,Shota,GEL_Shota,100,GEL,Georgia
 Simón Bolívar,,Bolivar,BOB_Bolivar,200,BOB,Bolivia
-Simón Rodrigues,,Rodrigues,VES​_Rodrigues,20,VES​,Venezuela
+Simón Rodrigues,,Rodrigues,VES_Rodrigues,20,VES,Venezuela
 Sir Donald Sangster,,Sangster,JMD_Sangster,100,JMD,Jamaica
 Sir George-Étienne Cartier,,Cartier,CAD_Cartier,10,CAD,Canada
 Sir John Monash,,Monash,AUD_Monash,100,AUD,Australia

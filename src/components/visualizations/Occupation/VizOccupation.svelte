@@ -85,6 +85,7 @@
 
 <div class="container">
   <div class="background">
+    <div class="hover-tip">(Hover over the circles to see the names of each individual)</div>
     <div class="viz-container">
       {#each data as { occupation, key, members }}
         <Group {occupation} {key} {members} {highlightedIDs} />
@@ -119,8 +120,26 @@
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+  }
+
+  .viz-container {
+    height: 100%;
+    max-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hover-tip {
+    background: var(--color-brown);
+    color: var(--color-background);
+    margin: 30px;
+    padding: 5px 10px;
+    border-radius: 20px;
   }
 
   .step-container {

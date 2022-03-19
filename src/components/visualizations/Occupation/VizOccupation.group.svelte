@@ -37,18 +37,32 @@
 
 <style lang="scss">
   .group-container {
-    padding: 5px;
+    text-align: left;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   .label {
-    margin: 0 auto 0.2em;
+    width: 18%;
+    text-align: right;
+    margin: 0 auto;
+    padding-right: 5px;
     font-size: 16px;
     font-family: "ABeeZee", sans-serif;
-    text-align: left;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .members-container {
-    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
   }
 
   .member {

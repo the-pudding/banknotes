@@ -34,9 +34,14 @@
   $: yDomain = Array.from(new Set(data.map(d => d[currentSort]))).sort((a, b) =>
     d3.descending(a, b)
   );
+
+  let visContainerHeight = '800px'
+  $: visContainerHeight = currentSort === 'gender' ? '500px' : '800px';
+
 </script>
 
 <div class="container">
+  <h3 class="body-content viz-title">Distribution of bill values by {currentSort} (normalized within country)</h3>
   <div class="controls">
     {#each sortOpts as opt}
       <div class="sort-option" class:active={currentSort === opt} on:click={() => setSort(opt)}>
@@ -44,11 +49,12 @@
       </div>
     {/each}
   </div>
-  <div class="viz-container">
+
+  <div class="viz-container" style:height={visContainerHeight}>
     <LayerCake
       xDomain={[0, 1]}
-      yScale={d3.scalePoint().padding(0.9)}
-      padding={{ top: 50, bottom: 20, left: 200, right: 200 }}
+      yScale={d3.scalePoint().padding(0.3)}
+      padding={{ top: 10, bottom: 60, left: 200, right: 200 }}
       {yDomain}
       {data}
     >
@@ -69,7 +75,8 @@
 
   .viz-container {
     width: 100%;
-    height: 800px;
+    margin-bottom: 50px;
+    transition: height .5s;
   }
 
   .controls {

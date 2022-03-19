@@ -11,11 +11,12 @@
   export let settings = defaultChart;
   export let data = [];
   export let highlightedIDs = [];
+  export let showLabels = false;
 
   $: yRange = zoom.yRange;
   $: xRange = zoom.xRange;
   $: highlightedData = data.filter(d => highlightedIDs.includes(d.id));
-
+  // $: showLabels = highlightedIDs.includes('TND_Hannibal');
 
   const margin = { left: 50, right: 100, top: 100, bottom: 100 };
 
@@ -107,6 +108,21 @@
         stroke-width={4}
       />
     </g>
+
+    {#if showLabels}
+      <text
+        class="annotation" 
+        x={xScale(d.deathDate)}
+        y={yScale(d.elapsed)-16}
+        text-anchor="start"
+      >Died</text>
+      <text 
+        class="annotation" 
+        x={xScale(d.issueDate)}
+        y={yScale(d.elapsed)-16}
+        text-anchor="end"
+      >Appeared on banknote</text>
+    {/if}
   {/each}
 
   <!-- GRADIENTS -->
@@ -128,9 +144,9 @@
   <g class="axis x-axis" transform="translate(0, {margin.top})">
     <text class="axis-label" text-anchor="middle" transform="translate({xMidpt}, -60)">Year</text>
     {#each xTicks as xTick}
+      {@const label = xTick < 0 ? `${xTick * -1} BCE` : xTick}
       <g class="tick" transform="translate({xScale(xTick)},0)">
-        <!-- <line y2="-5" /> -->
-        <text text-anchor="middle" dominant-baseline="bottom" y="-7">{xTick}</text>
+        <text text-anchor="middle" dominant-baseline="bottom" y="-7">{label}</text>
       </g>
     {/each}
   </g>
