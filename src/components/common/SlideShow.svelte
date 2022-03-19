@@ -78,6 +78,11 @@
     padding: 15px;
   }
 
+  figcaption {
+    margin: 10px;
+    font-size: 14px;
+  }
+
   img {
     width: 100%;
     box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.1);

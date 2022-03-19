@@ -70,11 +70,11 @@
 
 <style>
   footer {
-    background-color: var(--color-fg);
-    color: var(--color-bg);
+    background-color: var(--color-brown);
+    color: var(--color-background);
     font-family: var(--sans);
     padding: 3em 1em;
-    margin-top: 3em;
+    /* margin-top: 3em; */
   }
 
   a,
