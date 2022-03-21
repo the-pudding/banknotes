@@ -3,10 +3,10 @@ Chile,CLP_1000,CLP_1000.png,Ignacio Carrera Pinto
 Chile,CLP_10000,CLP_10000.png,Arturo Prat Chacón
 Chile,CLP_20000,CLP_20000.png,Andrés Bello
 Chile,CLP_5000,CLP_5000.png,Gabriela Mistral
-Dominican Republic,DOP_100,DOP_100.png,Francisco del Rosario Sánchez
-Dominican Republic,DOP_200,DOP_200.png,María Teresa Mirabal
-Dominican Republic,DOP_2000,DOP_2000.png,Emilio Prud'Homme
-Dominican Republic,DOP_500,DOP_500.png,Pedro Henriquez Ureña
+Dominican Republic,DOP_100,DOP_100.png,"Francisco del Rosario Sánchez, Juan Pablo Duarte, Matías Ramón Mella "
+Dominican Republic,DOP_200,DOP_200.png,Mirabal sisters
+Dominican Republic,DOP_2000,DOP_2000.png,"Emilio Prud'Homme, José Rufino Reyes Siancas"
+Dominican Republic,DOP_500,DOP_500.png,"Pedro Henriquez Ureña, Salomé Ureña"
 England,GBP_10,GBP_10.png,Jane Austen
 England,GBP_20,GBP_20.png,J.M.W. Turner
 England,GBP_5,GBP_5.png,Winston Churchill
@@ -17,7 +17,7 @@ Georgia,GEL_5,GEL_5.png,Ivane Javakhishvili
 Georgia,GEL_50,GEL_50.png,Queen Tamar
 Indonesia,IDR_1000,IDR_1000.png,Tjut Meutia
 Indonesia,IDR_10000,IDR_10000.png,Frans Kaisiepo
-Indonesia,IDR_100000,IDR_100000.png,Mohammad Hatta
+Indonesia,IDR_100000,IDR_100000.png,"Mohammad Hatta, Soekarno"
 Indonesia,IDR_5000,IDR_5000.png,Idham Chalid
 Israel,ILS_100,ILS_100.png,Leah Goldberg
 Israel,ILS_20,ILS_20.png,Rachel Bluwstein
@@ -35,9 +35,9 @@ South Korea,KRW_10000,KRW_10000.png,King Sejong the Great
 South Korea,KRW_5000,KRW_5000.png,Yi I
 South Korea,KRW_50000,KRW_50000.png,Shin Saimdang
 Nigeria,NGN_100,NGN_100.png,Chief Obafemi Awolowo
-Nigeria,NGN_1000,NGN_1000.png,Alhaji Aliyu Mai-Bornu
+Nigeria,NGN_1000,NGN_1000.png,"Alhaji Aliyu Mai-Bornu, Dr. Clement Isong"
 Nigeria,NGN_200,NGN_200.png,Alhaji Sir Ahmadu Bello
-Nigeria,NGN_500,NGN_500.png,Dr. Nnamdi Azikiwe
+Nigeria,NGN_5,NGN_5.png,Alhaji Sir Abubarkar Tafawa Balewa
 New Zealand,NZD_10,NZD_10.png,Kate Sheppard
 New Zealand,NZD_100,NZD_100.png,Rutherford of Nelson
 New Zealand,NZD_5,NZD_5.png,Edmund Hillary
@@ -47,9 +47,9 @@ Serbia,RSD_100,RSD_100.png,Nikola Tesla
 Serbia,RSD_50,RSD_50.png,Stevan Stevanovic Mokranjac
 Serbia,RSD_500,RSD_500.png,Jovan Cvijic
 Turkey,TRY_10,TRY_10.png,Cahit Arf
-Turkey,TRY_100,TRY_100.png,Itri (Buhurizade Mustafa Efendi)
+Turkey,TRY_100,TRY_100.png,Kemal Atatürk
 Turkey,TRY_20,TRY_20.png,Kemaleddin
-Turkey,TRY_100_1,TRY_100_1.png,Kemal Atatürk
+Turkey,TRY_100_1,TRY_100_1.png,Itri (Buhurizade Mustafa Efendi)
 United States,USD_1,USD_1.png,George Washington
 United States,USD_10,USD_10.png,Alexander Hamilton
 United States,USD_100,USD_100.png,Benjamin Franklin

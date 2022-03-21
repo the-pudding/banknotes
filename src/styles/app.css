@@ -143,6 +143,14 @@ mark a {
   color: var(--color-background);
 } */
 
+.hover-tip {
+  background: var(--color-brown);
+  color: var(--color-background);
+  margin: 30px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
 .viz-title {
   font-family: "Baloo Bhai 2", cursive;
   font-weight: 600;

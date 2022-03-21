@@ -15,6 +15,10 @@
     padding: 5vh 0 10vh;
   }
 
+  :global(.methods a) {
+    color: var(--color-background);
+  }
+
   .title {
     width: 100%;
     text-align: left;

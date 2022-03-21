@@ -85,7 +85,8 @@
 
 <div class="container">
   <div class="background">
-    <div class="hover-tip">(Hover over the circles to see the names of each individual)</div>
+    <div class="hover-tip">Hover over the circles to see the names of each individual</div>
+    <h3 class="body-content viz-title">Occupations of individuals portrayed on banknotes</h3>
     <div class="viz-container">
       {#each data as { occupation, key, members }}
         <Group {occupation} {key} {members} {highlightedIDs} />
@@ -132,14 +133,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .hover-tip {
-    background: var(--color-brown);
-    color: var(--color-background);
-    margin: 30px;
-    padding: 5px 10px;
-    border-radius: 20px;
   }
 
   .step-container {

@@ -15,6 +15,10 @@
   .container {
     padding-bottom: 5vh;
     background-color: var(--color-background);
+
+    :global a {
+      color: var(--color-brown);
+    }
   }
 
   .box {

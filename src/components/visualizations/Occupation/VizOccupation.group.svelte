@@ -1,6 +1,8 @@
 <script>
   import { tooltip } from "$actions/tooltip";
   import Tooltip from "$components/common/Tooltip.svelte";
+  import { rawData } from "$data/data.js";
+  import * as d3 from "d3";
 
   export let members = [];
   export let key = "";
@@ -8,6 +10,18 @@
   export let highlightedIDs = [];
 
   import { color, category } from "$data/variables.json";
+
+  /* absurd way to get country for each member, but necessary since the same individuals existing 
+  in two countries banknotes has been dealt with by the parent component
+  */
+  members = members.map(d => {
+    let matches = rawData.filter(dd => dd.id === d.id);
+    let country = Array.from(new Set(matches.map(dd => dd.country))).join(", "); // get all the countries that feature this individual
+    return {
+      ...d,
+      country,
+    };
+  });
 
   const getColor = (id, gender) => {
     if (highlightedIDs.includes(id)) {
@@ -84,7 +98,7 @@
     }
 
     &:hover {
-      opacity: 0.7;
+      opacity: 0.5;
     }
   }
 </style>

@@ -16,9 +16,8 @@
   $: yRange = zoom.yRange;
   $: xRange = zoom.xRange;
   $: highlightedData = data.filter(d => highlightedIDs.includes(d.id));
-  // $: showLabels = highlightedIDs.includes('TND_Hannibal');
 
-  const margin = { left: 50, right: 100, top: 100, bottom: 100 };
+  const margin = { left: 50, right: 100, top: 60, bottom: 100 };
 
   // scales
   $: yScale = d3
@@ -81,7 +80,7 @@
     {@const imgBase = d.imgBase}
     <g class="highlighted-person" opacity="1" use:tooltip={{
       component: Tooltip,
-      props: { name, imgBase },
+      props: { name, imgBase, country: d.country, color: color['green']},
     }}>
       <line
         x1={xScale(d.issueDate)}
@@ -142,7 +141,7 @@
   </g>
 
   <g class="axis x-axis" transform="translate(0, {margin.top})">
-    <text class="axis-label" text-anchor="middle" transform="translate({xMidpt}, -60)">Year</text>
+    <text class="axis-label" text-anchor="middle" transform="translate({xMidpt}, -35)">Year</text>
     {#each xTicks as xTick}
       {@const label = xTick < 0 ? `${xTick * -1} BCE` : xTick}
       <g class="tick" transform="translate({xScale(xTick)},0)">

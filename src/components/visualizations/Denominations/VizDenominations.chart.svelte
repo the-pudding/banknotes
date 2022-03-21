@@ -78,7 +78,7 @@
         props: {
           name: node.name,
           country: node.country,
-          text: `<h2>${node.billValue} (${startCase(node.currency)})</h2>`,
+          text: `${node.billValue} (${startCase(node.currency)})`,
           imgBase: node.imgBase,
           color: colors[node.gender],
         },

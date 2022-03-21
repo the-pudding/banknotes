@@ -29,6 +29,7 @@
 </script>
 
 <div class="viz-container">
+  <div class="hover-tip">Hover over the rectangles to to see why each person was a "first"</div>
   <h3 class="body-content viz-title">Notable "Firsts" Honored on Bankotes</h3>
   <LayerCake
     xScale={d3.scaleBand().paddingInner(0.01)}
@@ -49,7 +50,11 @@
     width: 100%;
     max-width: 1200px;
     height: 80vh;
-    margin: 25vh auto;
-    /* background-color: coral; */
+    min-height: 800px;
+    margin: 120px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 </style>
