@@ -63,4 +63,16 @@
     font-size: 20px;
     line-height: 30px;
   }
+
+  @media screen and (max-width: 600px) {
+    .title {
+      font-size: 16px;
+      line-height: 1.333;
+    }
+
+    .body {
+      font-size: 14px;
+      line-height: 1.333;
+    }
+  }
 </style>

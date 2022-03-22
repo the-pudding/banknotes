@@ -79,4 +79,10 @@
     display: inline-block;
     padding: 10px;
   }
+
+  @media screen and (max-width: 600px) {
+    .image-set {
+      min-height: 0px;
+    }
+  }
 </style>

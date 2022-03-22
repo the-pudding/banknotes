@@ -15,4 +15,11 @@
     text-align: center;
     color: var(--color-brown);
   }
+
+  @media screen and (max-width: 600px) {
+    h2 {
+      width: 90vw;
+      font-size: 32px;
+    }
+  }
 </style>

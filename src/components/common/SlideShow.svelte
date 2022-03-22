@@ -66,7 +66,8 @@
 <style lang="scss">
   .container {
     margin: 100px auto;
-    width: 650px;
+    width: 60vw;
+    max-width: 650px;
   }
 
   figure {
@@ -110,5 +111,20 @@
     &:hover {
       opacity: 0.8;
     }
+  }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      width: 90vw;
+    }
+
+    .arrow-container {
+      height: 200px;
+      margin: 0;
+    }
+
+    // * {
+    //   border: solid 1px red;
+    // }
   }
 </style>

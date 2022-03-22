@@ -101,4 +101,16 @@
       opacity: 0.5;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    .label {
+      width: 25%;
+      font-size: 13px;
+    }
+
+    .member {
+      width: 12px;
+      height: 12px;
+    }
+  }
 </style>

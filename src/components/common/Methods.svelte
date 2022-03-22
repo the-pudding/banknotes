@@ -17,7 +17,7 @@
     background-color: var(--color-background);
 
     :global a {
-      color: var(--color-brown);
+      color: var(--color-black);
     }
   }
 

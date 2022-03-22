@@ -47,6 +47,11 @@
     margin: 15vh auto;
   }
 
+
+  // * {
+  //     border: solid 1px red;
+  //   }
+
   .bg-image {
     width: 100%;
     max-width: 1000px;
@@ -95,10 +100,6 @@
     font-size: 24px;
     z-index: 1;
 
-    * {
-      // border: solid 1px red;
-    }
-
     .gender-container {
       display: flex;
       flex-direction: column;
@@ -122,4 +123,33 @@
       padding: 5px 10px;
     }
   }
+  
+  @media screen and (max-width: 600px) {
+    .container {
+      margin: 1vh auto;
+    }
+
+    .stats {
+      margin: 40px auto;
+    }
+
+    .stat-container{
+      .big-number {
+        font-size: 48px;
+        line-height: 36px;
+      }
+
+      .label {
+        font-size: 16px;
+      }
+    }
+
+    .gender-proportions {
+      font-size: 14px;
+    }
+
+  }
+
 </style>
+
+

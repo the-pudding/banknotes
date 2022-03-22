@@ -57,4 +57,14 @@
     justify-content: center;
     align-items: center;
   }
+
+  @media screen and (max-width: 600px) {
+    .viz-container {
+      margin: 15px auto;
+    }
+
+    * {
+      border: solid 1px red;
+    }
+  }
 </style>

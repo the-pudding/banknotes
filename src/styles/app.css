@@ -130,6 +130,7 @@ mark a {
 .narrative-step {
   position: relative;
   padding: 0 2em;
+  margin: 0 20px;
   width: 45vw;
   max-width: 600px;
   color: var(--color-gray-dark);
@@ -138,10 +139,6 @@ mark a {
   border-radius: 10px;
   box-shadow: -10px 15px 20px rgba(0, 0, 0, 0.1);
 }
-
-/* .narrative-step b {
-  color: var(--color-background);
-} */
 
 .hover-tip {
   background: var(--color-brown);
@@ -165,4 +162,55 @@ mark a {
   font-family: "Abhaya Libre", serif;
   font-size: 24px;
   line-height: 1.5;
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .narrative-step {
+    width: 80vw;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  main {
+    font-size: 12px;
+  }
+
+  h1 {
+    width: 90vw;
+    margin-top: 30px;
+    font-size: 56px;
+    line-height: 56px;
+  }
+
+  .body-content {
+    width: 80vw;
+  }
+
+  .prose {
+    font-size: 22px;
+  }
+
+  select {
+    font-size: 18px;
+  }
+
+  .narrative-step {
+    width: 90vw;
+    margin: 50vh 20px;
+    padding: 0 1em;
+  }
+
+  .narrative-step > .prose {
+    font-size: 18px;
+  }
+
+  .hover-tip {
+    display: none;
+  }
+
+  .viz-title {
+    font-size: 18px;
+  }
 }

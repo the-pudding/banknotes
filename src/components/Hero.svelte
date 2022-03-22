@@ -130,4 +130,11 @@
     height: 450px;
     margin: 100px auto;
   }
+
+  @media screen and (max-width: 600px) {
+    .prompt {
+      font-size: 22px;
+      width: 90vw;
+    }
+  }
 </style>
