@@ -30,7 +30,7 @@
       occupation: d[0],
       key: camelCase(d[0]),
       count: d[1].length,
-      members: d[1].sort((a, b) => d3.descending(a.gender, b.gender)),
+      members: d[1].sort((a, b) => d3.ascending(a.gender, b.gender)),
     }))
     .sort((a, b) => d3.descending(a.count, b.count));
 
@@ -85,8 +85,8 @@
 
 <div class="container">
   <div class="background">
-    <div class="hover-tip">Hover over the circles to see the names of each individual</div>
     <h3 class="body-content viz-title">Occupations of individuals portrayed on banknotes</h3>
+    <div class="hover-tip">Hover over the circles to see the names of each individual</div>
     <div class="viz-container">
       {#each data as { occupation, key, members }}
         <Group {occupation} {key} {members} {highlightedIDs} />

@@ -23,14 +23,14 @@
       ).filter(d => d.knownForBeingFirst),
       d => d.country
     )
-    .map(d => ({ country: d[0], firsts: d[1] }));
+    .map(d => ({ country: d[0], firsts: d[1].sort((a, b) => d3.ascending(a.gender, b.gender)) }));
 
   let max = d3.max(data.map(d => d.firsts.length));
 </script>
 
 <div class="viz-container">
-  <div class="hover-tip">Hover over the rectangles to to see why each person was a "first"</div>
   <h3 class="body-content viz-title">Notable "Firsts" Honored on Bankotes</h3>
+  <div class="hover-tip">Hover over the rectangles to to see why each person was a "first"</div>
   <LayerCake
     xScale={d3.scaleBand().paddingInner(0.01)}
     xDomain={[...Array(max).keys()]}
