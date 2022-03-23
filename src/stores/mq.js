@@ -1,4 +1,5 @@
 import { readable } from "svelte/store";
+import { browser } from "$app/env";
 
 const breakpoints = {
   // screen size considered <key> if up to <value>
@@ -31,8 +32,10 @@ export default readable({}, set => {
   const onChange = () => set(calculateMedia(mqls));
 
   for (let q in queries) {
-    mqls[q] = window.matchMedia(queries[q]);
-    mqls[q].addListener(onChange);
+    if (browser) {
+      mqls[q] = window.matchMedia(queries[q]);
+      mqls[q].addListener(onChange);
+    }
   }
 
   onChange();
