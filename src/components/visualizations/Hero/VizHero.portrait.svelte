@@ -1,6 +1,8 @@
 <script>
   import {onMount} from "svelte";
   import { randBw, randFromArr } from "$utils/utils";
+  import mq from "$stores/mq.js";
+
   import gsap from "gsap";
   gsap.config({  // <-- turn off irritating warnings that are specific to staging
     nullTargetWarn: false,
@@ -32,7 +34,7 @@
     const tl = gsap.timeline({onComplete: generateTL});  
 
     // pop-up, pop-dow
-    tl.to(ref, {delay: randBw(0,2), duration: .5, y: -180, rotate: rotate, ease: "back.out"})
+    tl.to(ref, {delay: randBw(0,2), duration: .5, y: $mq.sm ? -75 : -180, rotate: rotate, ease: "back.out"})
       .to(ref, {delay: randBw(1,3), duration: .5, y: 0, rotate: 0, ease: "back.out"})
   }
 
@@ -76,6 +78,14 @@
     outline: solid 10px var(--color-brown);
   }
 
+
+  @media screen and (max-width: 600px){
+    .portrait {
+      outline: solid 5px var(--color-green);
+      outline-offset: -6px;
+      height: 80px;
+    }
+  }
 
 
 </style>

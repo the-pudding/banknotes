@@ -1,6 +1,7 @@
 <script>
   import { tooltip } from "$actions/tooltip";
   import Tooltip from "$components/common/Tooltip.svelte";
+  import mq from "$stores/mq.js";
   import * as d3 from "d3";
   import { defaultChart } from "./chartSteps.js";
   import { color } from "$data/variables.json";
@@ -46,6 +47,13 @@
       xTicks.push(i);
     }
   }
+
+  let highlightedRadius = 8;
+  let highlightedStroke = 4;
+  $: if ($mq.sm) {
+    highlightedRadius = 6;
+    highlightedStroke = 3;
+  }
 </script>
 
 <svg width={w} height={h}>
@@ -88,23 +96,23 @@
         x2={xScale(d.deathDate)}
         y2={yScale(d.elapsed)}
         stroke={color.green}
-        stroke-width={4}
+        stroke-width={highlightedStroke}
       />
       <circle
         cx={xScale(d.issueDate)}
         cy={yScale(d.elapsed)}
-        r={8}
+        r={highlightedRadius}
         fill={color.background}
         stroke={color.green}
-        stroke-width={4}
+        stroke-width={highlightedStroke}
       />
       <circle
         cx={xScale(d.deathDate)}
         cy={yScale(d.elapsed)}
-        r={8}
+        r={highlightedRadius}
         fill={color.background}
         stroke={color.green}
-        stroke-width={4}
+        stroke-width={highlightedStroke}
       />
     </g>
 
@@ -144,9 +152,15 @@
     <text class="axis-label" text-anchor="middle" transform="translate({xMidpt}, -35)">Year</text>
     {#each xTicks as xTick}
       {@const label = xTick < 0 ? `${xTick * -1} BCE` : xTick}
-      <g class="tick" transform="translate({xScale(xTick)},0)">
-        <text text-anchor="middle" dominant-baseline="bottom" y="-7">{label}</text>
+      <g class="tick" transform="translate({xScale(xTick)}, 0)">
+        <text class="year-tick" text-anchor="middle" dominant-baseline="bottom" y="-7">{label}</text>
+        <line class="year-line"
+          y1=10
+          y2={h-margin.top-margin.bottom}
+          opacity=".1"
+        />
       </g>
+
     {/each}
   </g>
 
@@ -189,6 +203,16 @@
     
     &:hover {
       opacity: .5;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .axis-label {
+      font-size: 14px;
+    }
+
+    .year-tick {
+      transform: translate(0, -6px) rotate(-45deg);
     }
   }
 </style>

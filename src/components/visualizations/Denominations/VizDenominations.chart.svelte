@@ -1,6 +1,7 @@
 <script>
   import { getContext } from "svelte";
   import { tooltip } from "$actions/tooltip";
+  import mq from "$stores/mq.js";
   import { forceSimulation, forceX, forceY, forceCollide } from "d3-force";
   import { startCase } from "lodash";
   import { category } from "$data/variables.json";
@@ -44,10 +45,17 @@
   };
 
   // set axes based on current sort
-  $: yLabels = $yDomain.map(d => ({ label: d, y: $yScale(d) }));
+  $: yLabels = $yDomain.map(d => {
+    let label = d;
+    if (currentSort === "gender") {
+      label = d === "M" ? "Male" : "Female";
+    }
+    return { label, y: $yScale(d) };
+  });
+  let yLabel_xOffset = -65;
   $: xLabels = [
-    { label: "⟵ lower value", x: $xScale(0.3) },
-    { label: "higher value ⟶", x: $xScale(0.7) },
+    { label: "⟵ lower value", x: $mq.sm ? $xScale(0.2) : $xScale(0.3) },
+    { label: "higher value ⟶", x: $mq.sm ? $xScale(0.8) : $xScale(0.7) },
   ];
 
   // color mapping
@@ -55,6 +63,15 @@
     F: category.female,
     M: category.male,
   };
+
+  // mobile
+  $: if ($mq.sm) {
+    r = 4;
+    simulation.stop();
+    simulation.force("collide", forceCollide(r * 1.2).iterations(1)).restart();
+
+    yLabel_xOffset = -35;
+  }
 </script>
 
 <g class="x-axis">
@@ -65,7 +82,7 @@
 
 <g class="y-axis">
   {#each yLabels as { label, y }}
-    <text {y} x="-65" dominant-baseline="middle" text-anchor="end">{label}</text>
+    <text {y} x={yLabel_xOffset} dominant-baseline="middle" text-anchor="end">{label}</text>
     <line x1={$xScale(0)} y1={y} x2={$xScale(1)} y2={y} stroke="#ccc" opacity={1} />
   {/each}
 </g>
@@ -105,6 +122,12 @@
     &:hover {
       stroke-width: 3px;
       stroke: var(--color-green);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .x-axis {
+      font-size: 16px;
     }
   }
 </style>

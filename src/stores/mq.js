@@ -1,42 +1,45 @@
-import { browser } from '$app/env';
 import { readable } from "svelte/store";
 
+const breakpoints = {
+  // screen size considered <key> if up to <value>
+  sm: 600,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+};
+
 const queries = {
-	"sm": "(min-width: 640px)",
-	"md": "(min-width: 768px)",
-	"lg": "(min-width: 1024px)",
-	"xl": "(min-width: 1280px)",
-	"reducedMotion": "(prefers-reduced-motion: reduce)"
+  sm: `(max-width: ${breakpoints.sm}px)`,
+  md: `(min-width: ${breakpoints.sm + 1}px) and (max-width: ${breakpoints.md}px)`,
+  lg: `(min-width: ${breakpoints.md + 1}px) and (max-width: ${breakpoints.lg}px)`,
+  xl: `(min-width: ${breakpoints.lg + 1}px)`,
 };
 
 function calculateMedia(mqls) {
-	const media = { classNames: '' };
-	const mediaClasses = [];
-	for (let name in mqls) {
-		media[name] = mqls[name].matches;
-		if (media[name]) mediaClasses.push(`mq-${name}`);
-	}
-	media.classNames = mediaClasses.join(" ");
-	return media;
+  const media = { classNames: "" };
+  const mediaClasses = [];
+  for (let name in mqls) {
+    media[name] = mqls[name].matches;
+    if (media[name]) mediaClasses.push(`mq-${name}`);
+  }
+  media.classNames = mediaClasses.join(" ");
+  return media;
 }
 
-export default readable({}, (set) => {
-	if (!browser) return;
-	const mqls = {};
-	const onChange = () => set(calculateMedia(mqls));
+export default readable({}, set => {
+  const mqls = {};
+  const onChange = () => set(calculateMedia(mqls));
 
-	if (browser) {
-		for (let q in queries) {
-			mqls[q] = window.matchMedia(queries[q]);
-			mqls[q].addListener(onChange);
-		}
+  for (let q in queries) {
+    mqls[q] = window.matchMedia(queries[q]);
+    mqls[q].addListener(onChange);
+  }
 
-		onChange();
-	}
+  onChange();
 
-	return () => {
-		for (let q in mqls) {
-			mqls[q].removeListener(onChange);
-		}
-	};
+  return () => {
+    for (let q in mqls) {
+      mqls[q].removeListener(onChange);
+    }
+  };
 });

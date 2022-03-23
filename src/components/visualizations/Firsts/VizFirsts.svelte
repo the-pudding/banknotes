@@ -3,6 +3,7 @@
   import * as d3 from "d3";
   import { rawData } from "$data/data.js";
   import { uniqWith, isEqual } from "lodash";
+  import mq from "$stores/mq.js";
   import { LayerCake, Svg } from "layercake";
 
   import FirstsChart from "./VizFirsts.chart.svelte";
@@ -25,6 +26,11 @@
     )
     .map(d => ({ country: d[0], firsts: d[1].sort((a, b) => d3.ascending(a.gender, b.gender)) }));
 
+  let padding = { top: 20, bottom: 20, left: 200, right: 50 };
+  $: if ($mq.sm) {
+    padding = { top: 20, bottom: 60, left: 125, right: 10 };
+  }
+
   let max = d3.max(data.map(d => d.firsts.length));
 </script>
 
@@ -36,7 +42,7 @@
     xDomain={[...Array(max).keys()]}
     yScale={d3.scaleBand().paddingInner(0.05)}
     yDomain={data.map(d => d.country).reverse()}
-    padding={{ top: 20, bottom: 20, left: 200, right: 50 }}
+    {padding}
     {data}
   >
     <Svg>
@@ -63,8 +69,8 @@
       margin: 15px auto;
     }
 
-    * {
+    /* * {
       border: solid 1px red;
-    }
+    } */
   }
 </style>

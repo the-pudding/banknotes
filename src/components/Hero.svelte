@@ -136,5 +136,9 @@
       font-size: 22px;
       width: 90vw;
     }
+
+    // .hero-vis {
+    //   height: 300px;
+    // }
   }
 </style>

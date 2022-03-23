@@ -35,4 +35,16 @@
     font-size: 20px;
     line-height: 30px;
   }
+
+  @media screen and (max-width: 600px) {
+    .box {
+      margin: 50px auto;
+      padding: 30px;
+    }
+
+    .body {
+      font-size: 16px;
+      line-height: 1.333;
+    }
+  }
 </style>

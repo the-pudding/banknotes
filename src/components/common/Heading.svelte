@@ -20,6 +20,7 @@
     h2 {
       width: 90vw;
       font-size: 32px;
+      line-height: 1.05;
     }
   }
 </style>

@@ -21,7 +21,7 @@
     });
 </script>
 
-<div class='container' style:width style:height="500px" >
+<div class='container' style:width >
   <!--background wallet -->
   <img class="wallet" src="assets/images/wallet_bg.webp" alt="wallet"/>
 
@@ -42,6 +42,7 @@
 <style>
   .container {
     position: relative;
+    height: 500px;
   }
 
   .portraits-container {
@@ -53,7 +54,7 @@
     justify-content: space-between;
     width: 80%;
     height: 200px;
-    border: solid 2px red;
+    /* border: solid 2px red; */
   }
 
   .wallet {
@@ -62,5 +63,27 @@
     left: 50%;
     transform: translate(-50%,-50%);
     width: 850px;
+  }
+
+  @media screen and (max-width: 600px){
+    /* * {
+      border: solid 1px red;
+    } */
+
+    .container {
+      margin-top: 150px;
+      height: 200px;
+    }
+
+    .portraits-container {
+      height: 0px;
+      top: 25%;
+    }
+
+    .wallet {
+      top: 30%;
+    }
+
+
   }
 </style>

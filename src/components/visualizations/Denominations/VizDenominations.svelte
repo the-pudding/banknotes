@@ -2,6 +2,7 @@
 <script>
   import * as d3 from "d3";
   import { rawData } from "$data/data.js";
+  import mq from "$stores/mq.js";
   import { normRankBills } from "$utils/dataProcessing";
   import { LayerCake, Svg } from "layercake";
 
@@ -38,6 +39,14 @@
   let visContainerHeight = '800px'
   $: visContainerHeight = currentSort === 'gender' ? '500px' : '800px';
 
+  let padding = { top: 10, bottom: 60, left: 200, right: 200 }
+  $: if ($mq.sm) {
+    padding = { top: 20, bottom: 20, left: 120, right: 50 };
+     
+    visContainerHeight = currentSort === 'gender' ? '300px' : '500px';
+
+  }
+
 </script>
 
 <div class="container">
@@ -54,7 +63,7 @@
     <LayerCake
       xDomain={[0, 1]}
       yScale={d3.scalePoint().padding(0.3)}
-      padding={{ top: 10, bottom: 60, left: 200, right: 200 }}
+      {padding}
       {yDomain}
       {data}
     >
@@ -104,6 +113,15 @@
     &.active {
       background-color: var(--color-green);
       color: white;
+    }
+  }
+
+  @media screen and (max-width: 600px){
+
+    .sort-option {
+      width: 150px;
+      height: 25px;
+      font-size: 16px;
     }
   }
 </style>

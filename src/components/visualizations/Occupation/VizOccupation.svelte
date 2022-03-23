@@ -148,4 +148,10 @@
     //   min-height: 80vh;
     // }
   }
+
+  @media screen and (max-width: 600px) {
+    .viz-container {
+      max-height: 600px;
+    }
+  }
 </style>

@@ -51,5 +51,10 @@
     padding: 1em;
   }
 
+  @media screen and (max-width: 600px) {
+    p {
+      padding: 1em 0;
+    }
+  }
 
 </style>

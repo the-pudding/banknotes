@@ -155,7 +155,7 @@ mark a {
   color: var(--color-gray-dark);
   width: 100%;
   text-align: center;
-  margin: 15px;
+  margin: 15px auto;
 }
 
 .prose {
