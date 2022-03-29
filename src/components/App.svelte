@@ -1,5 +1,5 @@
 <script>
-  import { setContext } from "svelte";
+  import { setContext, onMount } from "svelte";
   import { getComponent } from "$utils/componentMap";
 
   import Meta from "$components/Meta.svelte";
@@ -12,6 +12,11 @@
 
   // construct array of components based on the "type" of each item in content array
   const outline = content.map(item => getComponent(item));
+
+  // onMount(() => {
+  //   // hide errors
+  //   setTimeout(() => console.clear(), 100);
+  // });
 </script>
 
 <Meta title={meta.title} description={meta.description} url={meta.url} />
