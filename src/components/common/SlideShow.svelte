@@ -3,6 +3,9 @@
   import Icon from "$components/helpers/Icon.svelte";
   import { color as appColors } from "$data/variables.json";
 
+  export let images = [];
+  export let title = "";
+
   let Carousel;
   let carousel;
   onMount(async () => {
@@ -25,11 +28,10 @@
     pauseOnFocus: true,
     swiping: true,
   };
-
-  export let images = [];
 </script>
 
 <div class="container">
+  <h3 class="body-content viz-title">{title}</h3>
   <svelte:component this={Carousel} bind:this={carousel} {...props}>
     <div slot="prev" class="arrow-container">
       <div class="slideshow-arrow" on:click={handlePrevClick}>

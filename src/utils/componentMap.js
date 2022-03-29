@@ -73,7 +73,7 @@ export function getComponent(copyEntry) {
       return {
         name: "SlideShow",
         cmp: SlideShow,
-        props: { images: value.images },
+        props: { images: value.images, title: value.title },
       };
     case "viz":
       return {
