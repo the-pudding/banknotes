@@ -34,7 +34,7 @@
     const tl = gsap.timeline({onComplete: generateTL});  
 
     // pop-up, pop-dow
-    tl.to(ref, {delay: randBw(0,2), duration: .5, y: $mq.sm ? -75 : -180, rotate: rotate, ease: "back.out"})
+    tl.to(ref, {delay: randBw(0,2), duration: .5, y: $mq.sm ? -85 : -180, rotate: rotate, ease: "back.out"})
       .to(ref, {delay: randBw(1,3), duration: .5, y: 0, rotate: 0, ease: "back.out"})
   }
 

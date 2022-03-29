@@ -56,7 +56,7 @@ h1 {
   width: 60vw;
   max-width: 760px;
   margin: 0 auto;
-  font-family: "Baloo Bhai 2", cursive;
+  font-family: "Baloo Bhai 2", sans-serif;
   font-size: 80px;
   line-height: 80px;
 }
@@ -140,6 +140,10 @@ mark a {
   box-shadow: -10px 15px 20px rgba(0, 0, 0, 0.1);
 }
 
+.narrative-step > .prose {
+  margin: 1em;
+}
+
 .hover-tip {
   background: var(--color-brown);
   color: var(--color-background);
@@ -149,7 +153,7 @@ mark a {
 }
 
 .viz-title {
-  font-family: "Baloo Bhai 2", cursive;
+  font-family: "Baloo Bhai 2", sans-serif;
   font-weight: 600;
   font-size: 22px;
   color: var(--color-gray-dark);
@@ -159,7 +163,7 @@ mark a {
 }
 
 .prose {
-  font-family: "Abhaya Libre", serif;
+  font-family: "Abhaya Libre", sans-serif;
   font-size: 24px;
   line-height: 1.5;
 }
@@ -185,7 +189,7 @@ mark a {
   }
 
   .body-content {
-    width: 80vw;
+    width: 90vw;
   }
 
   .prose {
@@ -206,11 +210,11 @@ mark a {
     font-size: 18px;
   }
 
-  .hover-tip {
+  /* .hover-tip {
     display: none;
-  }
+  } */
 
   .viz-title {
-    font-size: 18px;
+    font-size: 16px;
   }
 }

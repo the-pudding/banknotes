@@ -1,4 +1,6 @@
 <script>
+  import favicon from "$svg/logo.svg";
+
   export let title = "Title TK";
   export let description = "Description TK";
   export let url = "https://pudding.cool";

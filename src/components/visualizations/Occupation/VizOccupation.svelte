@@ -5,9 +5,11 @@
   import * as d3 from "d3";
   import { rawData } from "$data/data.js";
   import { uniqWith, isEqual } from "lodash";
+  import mq from "$stores/mq.js";
   import camelCase from "lodash/camelCase.js"; // <-- get around sveltekit build bug
 
   import Group from "./VizOccupation.group.svelte";
+  import { geoMercatorRaw } from "d3";
   export let props = {};
 
   // prep data
@@ -81,12 +83,14 @@
   }
 
   $: scrollStep, clearTooltips();
+
+  $: hoverAction = $mq.sm ? "Click" : "Hover over";
 </script>
 
 <div class="container">
   <div class="background">
     <h3 class="body-content viz-title">Occupations of individuals portrayed on banknotes</h3>
-    <div class="hover-tip">Hover over the circles to see the names of each individual</div>
+    <div class="hover-tip">{`${hoverAction} the circles to see the names of each individual`}</div>
     <div class="viz-container">
       {#each data as { occupation, key, members }}
         <Group {occupation} {key} {members} {highlightedIDs} />
@@ -112,7 +116,7 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
-    margin: 150px auto;
+    margin: 50px auto;
   }
 
   .background {
@@ -144,14 +148,27 @@
     justify-content: center;
     align-items: flex-end;
 
-    // &:last-of-type {
-    //   min-height: 80vh;
-    // }
+    :global span {
+      padding: 2px 5px;
+      border-radius: 5px;
+      white-space: nowrap;
+
+      &.male {
+        background-color: var(--category-male);
+        color: var(--color-background);
+      }
+
+      &.female {
+        background-color: var(--category-female);
+      }
+    }
   }
 
   @media screen and (max-width: 600px) {
     .viz-container {
       max-height: 600px;
+      width: 90vw;
+      margin: 0 auto;
     }
   }
 </style>

@@ -23,12 +23,11 @@
   <!-- By Lines -->
   <div class="bylines-container">
     <div class="byline">
-      <div class="role">Story & Data</div>
+      <div class="role">Story, Data, & Design</div>
       <div class="authors">
         <a href="https://www.pudding.cool/author/alejandra-arevalo"
           ><nobr>Alejandra Arevalo</nobr></a
-        >
-        &
+        >,
         <a href="https://www.pudding.cool/author/eric-hausken"><nobr>Eric Hausken</nobr></a>
       </div>
     </div>
@@ -92,9 +91,7 @@
 
   .bylines-container {
     max-width: 500px;
-    // display: flex;
     margin: 20px auto;
-    // border: solid 1px red;
   }
 
   time {
@@ -105,22 +102,24 @@
   }
 
   .byline {
+    // border: solid 1px red;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
     font-family: "ABeeZee", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     margin: 15px;
-    gap: 20px;
+    // gap: 20px;
 
     .role {
+      font-size: 14px;
       flex: 1;
-      text-align: right;
       color: #424242;
     }
 
     .authors {
       flex: 1;
-      text-align: left;
     }
   }
 
@@ -137,8 +136,9 @@
       width: 90vw;
     }
 
-    // .hero-vis {
-    //   height: 300px;
-    // }
+    .hero-vis {
+      // border: solid 1px red;
+      height: 100%;
+    }
   }
 </style>

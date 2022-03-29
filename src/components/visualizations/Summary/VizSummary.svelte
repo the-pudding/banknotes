@@ -1,12 +1,14 @@
 <script>
   export let props;
-  let { mapID, nBanknotes, nIndividuals, propFemale, propMale } = props;
+  let { mapID, nBanknotes, nIndividuals, text, propFemale, propMale } = props;
 
   let w = 0;
   $: femaleW = w * parseFloat(propFemale);
   $: maleW = w * parseFloat(propMale);
-  $: femalePercent = (parseFloat(propFemale) * 100).toFixed(1);
-  $: malePercent = (parseFloat(propMale) * 100).toFixed(1);
+  $: femalePercent = (parseFloat(propFemale) * 100).toFixed(0);
+  $: malePercent = (parseFloat(propMale) * 100).toFixed(0);
+  $: nMale = Math.round((parseFloat(propMale) * nIndividuals))
+  $: nFemale = Math.round(nIndividuals - nMale);
 
 
 </script>
@@ -24,29 +26,30 @@
     </div>
   </div>
 
+  <p class="body-content prose">{@html text}</p>
+
   <div bind:clientWidth={w} class="body-content gender-proportions">
     <div class="gender-container">
       <div class="females gender-rect" style:width="{femaleW}px" />
-      <div class="gender-label">Female ({femalePercent}%)</div>
+      <div class="gender-label">Female - {nFemale} ({femalePercent}%)</div>
     </div>
 
     <div class="gender-container">
       <div class="males gender-rect" style:width="{maleW}px" />
-      <div class="gender-label">Male ({malePercent}%)</div>
+      <div class="gender-label">Male - {nMale} ({malePercent}%)</div>
     </div>
 
   </div>
 
   <!-- BG Image -->
-  <img class="bg-image" src={`assets/images/${mapID}`} alt="" />
+  <!-- <img class="bg-image" src={`assets/images/${mapID}`} alt="" /> -->
 </div>
 
 <style lang="scss">
   .container {
     position: relative;
-    margin: 15vh auto;
+    margin: 0px auto;
   }
-
 
   // * {
   //     border: solid 1px red;
@@ -66,7 +69,7 @@
   .stats {
     display: flex;
     justify-content: space-around;
-    margin: 100px auto;
+    margin: 50px auto;
   }
 
   .stat-container {
@@ -99,6 +102,7 @@
     font-weight: 600;
     font-size: 24px;
     z-index: 1;
+    margin-top: 5vh;
 
     .gender-container {
       display: flex;

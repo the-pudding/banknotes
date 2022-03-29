@@ -116,6 +116,7 @@
   @media screen and (max-width: 600px) {
     .container {
       width: 90vw;
+      margin: 50px auto;
     }
 
     .arrow-container {

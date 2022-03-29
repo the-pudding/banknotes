@@ -111,7 +111,7 @@
   <div class="spacer" />
 </div>
 
-<style>
+<style lang="scss">
   /* * {
     border: solid 1px red;
   } */
@@ -149,6 +149,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    :global span {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background-color: var(--color-green);
+      color: var(--color-background);
+      white-space: nowrap;
+    }
   }
 
   .spacer {

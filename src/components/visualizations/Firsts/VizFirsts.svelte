@@ -32,11 +32,15 @@
   }
 
   let max = d3.max(data.map(d => d.firsts.length));
+
+  $: hoverAction = $mq.sm ? "Click" : "Hover over";
 </script>
 
 <div class="viz-container">
-  <h3 class="body-content viz-title">Notable "Firsts" Honored on Bankotes</h3>
-  <div class="hover-tip">Hover over the rectangles to to see why each person was a "first"</div>
+  <h3 class="body-content viz-title">Notable “Firsts” Honored on Banknotes</h3>
+  <div class="hover-tip">
+    {`${hoverAction} the rectangles to see to see why each person was a “first”`}
+  </div>
   <LayerCake
     xScale={d3.scaleBand().paddingInner(0.01)}
     xDomain={[...Array(max).keys()]}
