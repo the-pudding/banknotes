@@ -7,6 +7,7 @@
   import { LayerCake, Svg } from "layercake";
 
   import FirstsChart from "./VizFirsts.chart.svelte";
+  import Legend from "$components/common/Legend.svelte";
 
   let data = d3
     .flatGroup(
@@ -39,7 +40,8 @@
 <div class="viz-container">
   <h3 class="body-content viz-title">Notable “Firsts” Honored on Banknotes</h3>
   <div class="hover-tip">
-    {`${hoverAction} the rectangles to see to see why each person was a “first”`}
+    <div>{`${hoverAction} the rectangles to see to see why each person was a “first”`}</div>
+    <Legend />
   </div>
   <LayerCake
     xScale={d3.scaleBand().paddingInner(0.01)}

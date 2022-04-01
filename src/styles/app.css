@@ -145,11 +145,14 @@ mark a {
 }
 
 .hover-tip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: var(--color-brown);
   color: var(--color-background);
   margin-bottom: 15px;
   padding: 5px 10px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .viz-title {

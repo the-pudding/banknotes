@@ -9,7 +9,8 @@
   import camelCase from "lodash/camelCase.js"; // <-- get around sveltekit build bug
 
   import Group from "./VizOccupation.group.svelte";
-  import { geoMercatorRaw } from "d3";
+  import Legend from "$components/common/Legend.svelte";
+
   export let props = {};
 
   // prep data
@@ -90,7 +91,10 @@
 <div class="container">
   <div class="background">
     <h3 class="body-content viz-title">Occupations of individuals portrayed on banknotes</h3>
-    <div class="hover-tip">{`${hoverAction} the circles to see the names of each individual`}</div>
+    <div class="hover-tip">
+      <div>{`${hoverAction} the circles to see the names of each individual`}</div>
+      <Legend />
+    </div>
     <div class="viz-container">
       {#each data as { occupation, key, members }}
         <Group {occupation} {key} {members} {highlightedIDs} />

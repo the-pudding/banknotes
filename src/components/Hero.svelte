@@ -77,6 +77,7 @@
     max-width: 600px;
     padding-top: 0em;
     text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
   }
 
   .prompt {

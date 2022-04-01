@@ -13,10 +13,10 @@
   // construct array of components based on the "type" of each item in content array
   const outline = content.map(item => getComponent(item));
 
-  // onMount(() => {
-  //   // hide errors
-  //   setTimeout(() => console.clear(), 100);
-  // });
+  onMount(() => {
+    // hide errors
+    setTimeout(() => console.clear(), 100);
+  });
 </script>
 
 <Meta title={meta.title} description={meta.description} url={meta.url} />
