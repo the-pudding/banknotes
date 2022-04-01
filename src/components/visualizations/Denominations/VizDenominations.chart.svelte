@@ -5,8 +5,10 @@
   import { forceSimulation, forceX, forceY, forceCollide } from "d3-force";
   import { startCase } from "lodash";
   import { category } from "$data/variables.json";
+  import * as d3 from "d3";
 
   import Tooltip from "$components/common/Tooltip.svelte";
+  import { text } from "svelte/internal";
 
   export let currentSort = "gender";
 
@@ -22,6 +24,19 @@
     .on("tick", () => {
       nodes = nodes;
     });
+
+  // calculate median
+  let medians = [];
+  $: if ($data) {
+    let levels = Array.from(new Set($data.map(d => d[currentSort])));
+    medians = levels.map(level => ({
+      level,
+      median: d3.median(
+        $data.filter(d => d[currentSort] === level),
+        d => d.normRank
+      ),
+    }));
+  }
 
   // update sim whenever currentSort changes
   $: currentSort, $xScale, updateSim(currentSort); // <- have to wait for $xScale changes too
@@ -74,6 +89,7 @@
   }
 </script>
 
+<!-- AXES -->
 <g class="x-axis">
   {#each xLabels as { label, x }}
     <text {x} y={$yScale.range()[0] + 50} text-anchor="middle">{label}</text>
@@ -87,6 +103,28 @@
   {/each}
 </g>
 
+<!-- Medians -->
+<g class="medians">
+  {#each medians as median}
+    <line
+      class="median"
+      x1={$xScale(median.median)}
+      x2={$xScale(median.median)}
+      y1={$yScale(median.level) + $yScale.range()[0] * 0.15}
+      y2={$yScale(median.level) - $yScale.range()[0] * 0.15}
+      stroke="#ccc"
+      stroke-dasharray="4"
+    />
+    <text
+      x={$xScale(median.median)}
+      y={$yScale(median.level) - 5 - $yScale.range()[0] * 0.15}
+      text-anchor="middle"
+      fill="#ccc">median</text
+    >
+  {/each}
+</g>
+
+<!-- DATA -->
 <g class="data-container">
   {#each nodes as node}
     <circle

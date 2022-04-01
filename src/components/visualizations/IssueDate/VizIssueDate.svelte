@@ -82,7 +82,7 @@
 
 <div class="container">
   <div class="background">
-    <h3 class="body-content viz-title">Interval between death and appearance on banknote</h3>
+    <h3 class="body-content viz-title">How many years between death and appearance on banknote?</h3>
     <div class="viz-container" bind:clientHeight={vizHeight} bind:clientWidth={vizWidth}>
       <Chart
         w={vizWidth}

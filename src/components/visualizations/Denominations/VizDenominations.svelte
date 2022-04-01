@@ -28,7 +28,7 @@
     .flat();
 
   // set up sort controls
-  let sortOpts = ["gender", "occupation"];
+  let sortOpts = ["gender", "occupation", "country"];
   let currentSort = "gender";
   const setSort = opt => (currentSort = opt);
 
@@ -50,14 +50,14 @@
 </script>
 
 <div class="container">
-  <h3 class="body-content viz-title">Distribution of bill values by {currentSort} (normalized within country)</h3>
-  <div class="controls">
+  <h3 class="body-content viz-title">Distribution of bill values are similar by {currentSort} (normalized within country)</h3>
+  <!-- <div class="controls">
     {#each sortOpts as opt}
       <div class="sort-option" class:active={currentSort === opt} on:click={() => setSort(opt)}>
         {opt}
       </div>
     {/each}
-  </div>
+  </div> -->
 
   <div class="viz-container" style:height={visContainerHeight}>
     <LayerCake

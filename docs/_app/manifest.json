@@ -1,10 +1,10 @@
 {
   ".svelte-kit/build/runtime/internal/start.js": {
-    "file": "start-bba78738.js",
+    "file": "start-cb90e965.js",
     "src": ".svelte-kit/build/runtime/internal/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-3bc300a1.js",
+      "_vendor-e7f84cb6.js",
       "_preload-helper-2f605d29.js"
     ],
     "dynamicImports": [
@@ -17,12 +17,12 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-479c357d.js",
+    "file": "pages/__layout.svelte-25b920b8.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-3bc300a1.js",
+      "_vendor-e7f84cb6.js",
       "_wordmark-0849a013.js"
     ],
     "css": [
@@ -30,21 +30,21 @@
     ]
   },
   ".svelte-kit/build/components/error.svelte": {
-    "file": "error.svelte-4f1d6775.js",
+    "file": "error.svelte-b0296d48.js",
     "src": ".svelte-kit/build/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-3bc300a1.js"
+      "_vendor-e7f84cb6.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-53be7f53.js",
+    "file": "pages/index.svelte-ffe41242.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-3bc300a1.js",
+      "_vendor-e7f84cb6.js",
       "_wordmark-0849a013.js",
       "_preload-helper-2f605d29.js"
     ],
@@ -52,11 +52,11 @@
       "node_modules/svelte-carousel/src/main.js"
     ],
     "css": [
-      "assets/pages/index.svelte-8354751b.css"
+      "assets/pages/index.svelte-e132b243.css"
     ]
   },
-  "_vendor-3bc300a1.js": {
-    "file": "chunks/vendor-3bc300a1.js",
+  "_vendor-e7f84cb6.js": {
+    "file": "chunks/vendor-e7f84cb6.js",
     "css": [
       "assets/vendor-84c84b4d.css"
     ]
@@ -68,11 +68,11 @@
     "file": "chunks/wordmark-0849a013.js"
   },
   "node_modules/svelte-carousel/src/main.js": {
-    "file": "chunks/main-4f6a9e22.js",
+    "file": "chunks/main-5ce5c6e6.js",
     "src": "node_modules/svelte-carousel/src/main.js",
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-3bc300a1.js"
+      "_vendor-e7f84cb6.js"
     ],
     "css": [
       "assets/main-59c19fa3.css"
