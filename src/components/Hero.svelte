@@ -120,6 +120,10 @@
 
     .authors {
       flex: 1;
+
+      a {
+        color: var(--color-green);
+      }
     }
   }
 
