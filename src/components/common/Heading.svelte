@@ -9,7 +9,7 @@
     width: 70vw;
     max-width: 1200px;
     margin: 2.5em auto 0.5em;
-    font-family: "Baloo Bhai 2", cursive;
+    font-family: "Baloo Bhai 2", sans-serif;
     font-size: 50px;
     line-height: 1.33;
     text-align: center;

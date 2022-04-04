@@ -41,5 +41,7 @@
 
   .label {
     padding-left: 5px;
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-size: 16px;
   }
 </style>

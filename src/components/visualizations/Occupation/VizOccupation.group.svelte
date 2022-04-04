@@ -65,7 +65,7 @@
     margin: 0 auto;
     padding-right: 5px;
     font-size: 16px;
-    font-family: "ABeeZee", sans-serif;
+    font-family: "Baloo Bhai 2", sans-serif;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -103,14 +103,18 @@
   }
 
   @media screen and (max-width: 600px) {
+    .group-container {
+      margin: 0px;
+    }
+
     .label {
       width: 25%;
       font-size: 13px;
     }
 
     .member {
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
     }
   }
 </style>

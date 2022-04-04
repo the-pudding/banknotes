@@ -10,9 +10,45 @@
 			License: 1704-GNCLGK
 */
 
-/* Google Fonts */
+/* 
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abhaya+Libre:wght@400;500;800&family=Antic+Slab&family=Baloo+Bhai+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+ */
+
+/* Google Fonts */
+/* @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Baloo+Bhai+2&family=Roboto+Condensed&display=swap");
+ */
+
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("https://pudding.cool/assets/fonts/abhaya-libre/abhaya-libre-v11-latin-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("https://pudding.cool/assets/fonts/roboto/roboto-condensed-v24-latin-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baloo Bhai 2";
+  src: url("https://pudding.cool/assets/fonts/baloo-bhai/baloo-bhai-2-v16-latin-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
 /*
 ********************
 	National

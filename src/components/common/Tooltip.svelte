@@ -74,7 +74,7 @@
 
     .name {
       font-size: 18px;
-      font-family: "Baloo Bhai 2", cursive;
+      font-family: "Baloo Bhai 2", sans-serif;
       line-height: 1.1;
     }
 

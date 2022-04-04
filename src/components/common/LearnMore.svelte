@@ -11,7 +11,7 @@
   <CollapsibleCard bind:open={isOpen}>
     <div slot="header" class="header">
       <div class="triangle" class:active={isOpen} />
-      <div class="title">{title}</div>
+      <div class="title"><b>{title}</b></div>
     </div>
 
     <div slot="body" class="body" class:active={isOpen}>{@html text}</div>
@@ -32,11 +32,13 @@
 
   .title {
     font-family: "Abhaya Libre", serif;
-    font-weight: 800;
     font-size: 20px;
     line-height: 30px;
-    color: var(--color-dark-gray);
     padding-left: 10px;
+
+    b {
+      color: var(--color-dark-gray);
+    }
   }
 
   .triangle {
@@ -59,7 +61,6 @@
     padding: 0 35px;
     margin: 20px auto;
     font-family: "Abhaya Libre", serif;
-    font-weight: 400;
     font-size: 20px;
     line-height: 30px;
   }

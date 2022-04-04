@@ -143,7 +143,7 @@
     <!-- <line x1="0" y1={yScale(yRange[0])} x2="0" y2={yScale(yRange[1])} /> -->
     {#each yTicks as yTick}
       <g class="tick" transform="translate(0, {yScale(yTick)})">
-        <text text-anchor="start" dominant-baseline="middle" x="5">{yTick}</text>
+        <text class="year-tick" text-anchor="start" dominant-baseline="middle" x="5">{yTick}</text>
       </g>
     {/each}
   </g>
@@ -186,16 +186,18 @@
   .annotation {
     text-transform: uppercase;
     opacity: .5;
-    font-family: "ABeeZee";
-    font-weight: 500;
+    font-family: "Baloo Bhai 2", sans-serif;
   }
 
   .axis-label {
     text-transform: uppercase;
     opacity: .5;
     font-size: 18px;
-    font-family: "ABeeZee";
-    font-weight: 500;
+    font-family: "Baloo Bhai 2", sans-serif;
+  }
+
+  .year-tick {
+    font-family: "Baloo Bhai 2", sans-serif;
   }
 
   .highlighted-person {

@@ -171,6 +171,7 @@
       max-height: 600px;
       width: 90vw;
       margin: 0 auto;
+      overflow: hidden;
     }
   }
 </style>

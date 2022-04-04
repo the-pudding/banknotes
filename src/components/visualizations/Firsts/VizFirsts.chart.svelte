@@ -19,6 +19,7 @@
 {#each $data as { country, firsts }, i}
   <!-- Add the country label -->
   <text
+    class="label"
     x={$xScale(0) - 5}
     y={$yScale(country) + $yScale.bandwidth() / 2}
     text-anchor="end"
@@ -49,12 +50,22 @@
 {/each}
 
 <style lang="scss">
+  .label {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-size: 16px;
+  }
   rect {
     cursor: pointer;
     fill-opacity: 1;
 
     &:hover {
       fill-opacity: 0.4;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .label {
+      font-size: 13px;
     }
   }
 </style>

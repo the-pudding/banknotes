@@ -16,12 +16,12 @@
 <div class="container">
   <div class="body-content stats">
     <div class="stat-container">
-      <h2 class="big-number">{nBanknotes}</h2>
+      <h2 class="big-number"><b>{nBanknotes}</b></h2>
       <div class="label">unique banknotes</div>
     </div>
 
     <div class="stat-container">
-      <h2 class="big-number">{nIndividuals}</h2>
+      <h2 class="big-number"><b>{nIndividuals}</b></h2>
       <div class="label">unique individuals</div>
     </div>
   </div>
@@ -83,14 +83,12 @@
       margin: 0;
       font-size: 80px;
       line-height: 70px;
-      font-weight: 600;
       color: var(--color-brown);
     }
 
     .label {
       color: var(--color-gray-dark);
       font-size: 24px;
-      font-weight: 600;
     }
   }
 
@@ -99,8 +97,7 @@
     height: 80px;
     font-family: "Abhaya Libre";
     color: var(--color-gray-dark);
-    font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     z-index: 1;
     margin-top: 5vh;
 

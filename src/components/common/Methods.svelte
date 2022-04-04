@@ -26,12 +26,15 @@
     padding: 30px 50px;
     margin: 100px auto;
     border-radius: 10px;
+
+    b {
+      color: var(--color-background);
+    }
   }
 
   .body {
     margin: 20px auto;
     font-family: "Abhaya Libre", serif;
-    font-weight: 400;
     font-size: 20px;
     line-height: 30px;
   }

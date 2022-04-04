@@ -83,7 +83,6 @@
   .prompt {
     max-width: 600px;
     font-family: "Abhaya Libre", serif;
-    font-weight: 500;
     font-size: 24px;
     line-height: 1.33;
     margin: 30px auto;
@@ -108,13 +107,13 @@
     flex-direction: column;
     // justify-content: center;
     align-items: center;
-    font-family: "ABeeZee", sans-serif;
-    font-size: 14px;
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-size: 18px;
     margin: 15px;
     // gap: 20px;
 
     .role {
-      font-size: 14px;
+      font-size: 18px;
       flex: 1;
       color: #424242;
     }

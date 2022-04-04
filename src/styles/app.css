@@ -18,17 +18,17 @@
 
   /* presets */
   --border-radius: 4px;
-  --font-body: var(--sans);
+  --font-body: var(--serif);
   --font-form: var(--sans);
   --color-bg: var(--color-white);
-  --color-fg: var(--color-off-black);
-  --color-placeholder: var(--color-gray-dark);
+  --color-fg: var(--color-gray-900);
+  --color-placeholder: var(--color-gray-500);
   --color-link: var(--color-purple);
   --color-focus: var(--color-red);
-  --color-form-bg: var(--color-gray-dark);
-  --color-form-fg: var(--color-off-black);
-  --color-border: var(--color-gray-light);
-  --color-selection: var(--color-gray-light);
+  --color-form-bg: var(--color-gray-300);
+  --color-form-fg: var(--color-gray-900);
+  --color-border: var(--color-gray-300);
+  --color-selection: var(--color-gray-300);
   --color-highlight: var(--color-yellow);
 }
 
@@ -101,7 +101,7 @@ select:after {
 }
 
 a {
-  color: var(--color-green);
+  color: var(--color-gray-dark);
 }
 
 a:hover {
@@ -145,6 +145,7 @@ mark a {
 }
 
 .hover-tip {
+  font-family: "Baloo Bhai 2", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -85,7 +85,7 @@
   .nav-link {
     padding: 5px 0;
     margin: 0 1em;
-    font-family: "ABeeZee", sans-serif;
+    font-family: "Baloo Bhai 2", sans-serif;
     font-style: italic;
     font-size: 26px;
     line-height: 1.33;
@@ -151,7 +151,7 @@
   .mobile-nav-link {
     padding: 10px 50px;
     width: 100vw;
-    font-family: "ABeeZee", sans-serif;
+    font-family: "Baloo Bhai 2", sans-serif;
     font-style: italic;
     font-size: 32px;
     line-height: 1.5;

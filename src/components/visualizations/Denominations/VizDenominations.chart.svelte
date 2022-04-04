@@ -92,13 +92,15 @@
 <!-- AXES -->
 <g class="x-axis">
   {#each xLabels as { label, x }}
-    <text {x} y={$yScale.range()[0] + 50} text-anchor="middle">{label}</text>
+    <text class="axis-label" {x} y={$yScale.range()[0] + 50} text-anchor="middle">{label}</text>
   {/each}
 </g>
 
 <g class="y-axis">
   {#each yLabels as { label, y }}
-    <text {y} x={yLabel_xOffset} dominant-baseline="middle" text-anchor="end">{label}</text>
+    <text class="axis-label" {y} x={yLabel_xOffset} dominant-baseline="middle" text-anchor="end"
+      >{label}</text
+    >
     <line x1={$xScale(0)} y1={y} x2={$xScale(1)} y2={y} stroke="#ccc" opacity={1} />
   {/each}
 </g>
@@ -147,6 +149,14 @@
 </g>
 
 <style lang="scss">
+  .medians {
+    font-family: "Baloo Bhai 2", sans-serif;
+  }
+
+  .axis-label {
+    font-family: "Baloo Bhai 2", sans-serif;
+  }
+
   .x-axis {
     font-size: 24px;
     font-style: italic;
