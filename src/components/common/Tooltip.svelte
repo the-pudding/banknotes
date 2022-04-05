@@ -71,6 +71,7 @@
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
     border: solid 1px var(--color-background);
     text-align: center;
+    font-family: "Baloo Bhai 2", sans-serif;
 
     .name {
       font-size: 18px;
@@ -79,11 +80,11 @@
     }
 
     .country {
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .text {
-      font-size: 13px;
+      font-size: 14px;
       margin-top: 10px;
     }
 
