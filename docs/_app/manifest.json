@@ -1,6 +1,6 @@
 {
   ".svelte-kit/build/runtime/internal/start.js": {
-    "file": "start-d6e7a11f.js",
+    "file": "start-aa62d2cf.js",
     "src": ".svelte-kit/build/runtime/internal/start.js",
     "isEntry": true,
     "imports": [
@@ -39,7 +39,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-bc8088f5.js",
+    "file": "pages/index.svelte-acafa1ba.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -52,7 +52,7 @@
       "node_modules/svelte-carousel/src/main.js"
     ],
     "css": [
-      "assets/pages/index.svelte-8da1aebf.css"
+      "assets/pages/index.svelte-11891bcf.css"
     ]
   },
   "_vendor-e7f84cb6.js": {

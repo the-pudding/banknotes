@@ -46,11 +46,11 @@
     // get the ids of individuals to highlight on this step
     let highlightedIDs;
     if (i === 0) {
-      // writers
-      highlightedIDs = (data.find(dd => dd.key === "writer") || {}).members.map(dd => dd.id);
-    } else if (i === 7) {
       // all
       highlightedIDs = data.map(d => d.members.map(dd => dd.id)).flat();
+    } else if (i === 1) {
+      // writers
+      highlightedIDs = (data.find(dd => dd.key === "writer") || {}).members.map(dd => dd.id);
     } else {
       highlightedIDs = d.nameIDs.replace(" ", "").split(",");
     }

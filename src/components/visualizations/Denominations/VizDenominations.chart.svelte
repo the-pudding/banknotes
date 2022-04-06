@@ -92,7 +92,7 @@
 <!-- AXES -->
 <g class="x-axis">
   {#each xLabels as { label, x }}
-    <text class="axis-label" {x} y={$yScale.range()[0] + 50} text-anchor="middle">{label}</text>
+    <text class="axis-label" {x} y={$yScale.range()[0] / 2} text-anchor="middle">{label}</text>
   {/each}
 </g>
 
@@ -175,7 +175,7 @@
 
   @media screen and (max-width: 600px) {
     .x-axis {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 </style>
