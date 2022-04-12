@@ -1,53 +1,53 @@
 {
-  "name": "svelte-starter",
-  "version": "3.0.3",
-  "scripts": {
-    "gdoc": "node tasks/fetch-google.js",
-    "style": "node tasks/style-dictionary.js",
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "start": "svelte-kit start",
-    "lint": "prettier --check .",
-    "format": "prettier --write ."
-  },
-  "devDependencies": {
-    "@popperjs/core": "^2.11.2",
-    "@rollup/plugin-dsv": "^2.0.3",
-    "@sveltejs/adapter-static": "^1.0.0-next.24",
-    "@sveltejs/kit": "^1.0.0-next.212",
-    "archieml": "^0.5.0",
-    "autoprefixer": "^10.4.1",
-    "csvtojson": "^2.0.10",
-    "d3": "^7.2.1",
-    "fast-csv": "^4.3.6",
-    "feather-icons": "^4.28.0",
-    "layercake": "^6.0.2",
-    "lodash": "^4.17.21",
-    "lodash.debounce": "^4.0.8",
-    "node-fetch": "^3.1.0",
-    "p5-svelte": "^3.0.1",
-    "postcss": "^8.4.5",
-    "prettier": "^2.5.1",
-    "prettier-plugin-svelte": "^2.5.1",
-    "rollup-plugin-svg": "^2.0.0",
-    "sass": "^1.47.0",
-    "style-dictionary": "^3.1.1",
-    "svelte": "^3.46.2",
-    "svelte-carousel": "^1.0.17-rc4",
-    "svelte-collapsible": "^0.2.1",
-    "svelte-preprocess": "^4.10.1",
-    "svelte-scrollto": "^0.2.0",
-    "vite-plugin-svgstring": "^1.0.0"
-  },
-  "type": "module",
-  "engines": {
-    "node": ">= 16.13.0"
-  },
-  "browserslist": "> 0.5%, last 4 versions, not ie <= 11, not ie_mob <= 11",
-  "svelteStarter": {
-    "subdirectory": "banknotes"
-  },
-  "dependencies": {
-    "gsap": "^3.9.1"
-  }
+	"name": "svelte-starter",
+	"version": "3.0.3",
+	"scripts": {
+		"gdoc": "node tasks/fetch-google.js",
+		"style": "node tasks/style-dictionary.js",
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"start": "svelte-kit start",
+		"lint": "prettier --check .",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"@popperjs/core": "^2.11.2",
+		"@rollup/plugin-dsv": "^2.0.3",
+		"@sveltejs/adapter-static": "^1.0.0-next.24",
+		"@sveltejs/kit": "^1.0.0-next.212",
+		"archieml": "^0.5.0",
+		"autoprefixer": "^10.4.1",
+		"csvtojson": "^2.0.10",
+		"d3": "^7.2.1",
+		"fast-csv": "^4.3.6",
+		"feather-icons": "^4.28.0",
+		"layercake": "^6.0.2",
+		"lodash": "^4.17.21",
+		"lodash.debounce": "^4.0.8",
+		"node-fetch": "^3.1.0",
+		"p5-svelte": "^3.0.1",
+		"postcss": "^8.4.5",
+		"prettier": "^2.5.1",
+		"prettier-plugin-svelte": "^2.5.1",
+		"rollup-plugin-svg": "^2.0.0",
+		"sass": "^1.47.0",
+		"style-dictionary": "^3.1.1",
+		"svelte": "^3.46.2",
+		"svelte-carousel": "^1.0.17-rc4",
+		"svelte-collapsible": "^0.2.1",
+		"svelte-preprocess": "^4.10.1",
+		"svelte-scrollto": "^0.2.0",
+		"vite-plugin-svgstring": "^1.0.0"
+	},
+	"type": "module",
+	"engines": {
+		"node": ">= 16.13.0"
+	},
+	"browserslist": "> 0.5%, last 4 versions, not ie <= 11, not ie_mob <= 11",
+	"svelteStarter": {
+		"subdirectory": "2022/04/banknotes"
+	},
+	"dependencies": {
+		"gsap": "^3.9.1"
+	}
 }
